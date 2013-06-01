@@ -13,7 +13,7 @@ import org.beanio.types.TypeHandler;
  *
  * @author Jeandeson O. Merelis
  */
-public class StringHandler implements ConfigurableTypeHandler {
+public class StringHandler implements ConfigurableTypeHandler,Cloneable{
 
     private Integer maxLength;
     private Integer minLength;
@@ -43,17 +43,17 @@ public class StringHandler implements ConfigurableTypeHandler {
 
     @Override
     public TypeHandler newInstance(Properties properties) throws IllegalArgumentException {
-        String pattern = properties.getProperty(FORMAT_SETTING);
-        if (pattern == null || "".equals(pattern)) {
-            setDefaultValues();
+        String patt = properties.getProperty(FORMAT_SETTING);
+        if (patt == null || "".equals(patt)) {
             return this;
         }
-        if (!pattern.equals(this.pattern)) {
-            setPattern(pattern);
+        if (patt.equals(this.pattern)) {
+            return this;
         }
 
-        return this;
-        //TODO: verificar se é necessário criar realmente uma nova instancia, ou se apenas ajustar os paramentos é mais eficiente.
+        StringHandler handler = new StringHandler();
+        handler.setPattern(patt);
+        return handler;        
     }
 
     @Override
@@ -81,8 +81,8 @@ public class StringHandler implements ConfigurableTypeHandler {
             s = s.replaceAll("[^0-9\\p{L}]", "");
         }
 
-        if (maxLength != null) {
-            s = s.length() <= maxLength ? s : s.substring(0, maxLength);
+        if (maxLength != null && s.length() > maxLength) {
+            s = s.substring(0, maxLength);
         }
 
         if (minLength != null) {

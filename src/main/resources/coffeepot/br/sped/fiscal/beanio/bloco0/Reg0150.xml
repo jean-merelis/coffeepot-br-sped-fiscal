@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        <typeHandler type="date" class="coffeepot.br.sped.fiscal.typeHandler.DateHandler" />
+        
+        <group name="reg0150" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0150" >                        
+            <record name="reg0150" order="1" minOccurs="1">
+                <field name="delimiter" literal="" ignore="true"/>
+                <field name="reg" rid="true" literal="0150" ignore="true" />
+                <field name="codPart" type="string" />
+                <field name="nome" type="string" />
+                <field name="codPais" type="int" />
+                <field name="cnpj" type="string" format="numbersOnly=true" />
+                <field name="cpf" type="string" format="numbersOnly=true" />
+                <field name="ie" type="string" format="numbersLettersOnly=true"  />
+                <field name="codMun" type="int" length="7" justify="right" padding="0" />
+                <field name="suframa" type="string" format="numbersLettersOnly=true; min=9"   />
+                <field name="end" type="string" />
+                <field name="num" type="string" />
+                <field name="compl" type="string" />
+                <field name="bairro" type="string" />
+                <field name="delimiter" literal="" ignore="true"/>
+            </record>
+            <record name="reg0175List" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0175" collection="list" order="2" minOccurs="0" maxOccurs="unbounded">
+                <field name="delimiter" literal="" ignore="true"/>
+                <field name="reg" rid="true" literal="0175" ignore="true" />
+                <field name="dtAlt" type="date"/>
+                <field name="nrCamp" type="int" length="2" justify="right" padding="0" />
+                <field name="contAnt" type="string"  />
+                <field name="delimiter" literal="" ignore="true"/>
+            </record>
+        </group>
+    </stream>
+</beanio>

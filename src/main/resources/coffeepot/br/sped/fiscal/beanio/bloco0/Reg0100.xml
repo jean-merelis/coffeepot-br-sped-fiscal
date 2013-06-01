@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        
+        <record name="reg0100" minOccurs="1" maxOccurs="1" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0100">
+            <field name="delimiter" literal="" ignore="true"/> 
+            <field name="reg" rid="true" literal="0100" ignore="true" />
+            <field name="nome" type="string"  format="max=100" />
+            <field name="cpf" type="string" format="numbersOnly=true" />
+            <field name="crc" type="string" format="numbersLettersOnly=true" />
+            <field name="cnpj" type="string" format="numbersOnly=true" />
+            <field name="cep" type="string" format="numbersOnly=true; min=8; padding=0" />
+            <field name="end" type="string"  />
+            <field name="num" type="string"  />
+            <field name="compl" type="string"  />
+            <field name="bairro" type="string"  />
+            <field name="fone" type="string" format="numbersOnly=true; min=11" />
+            <field name="fax" type="string" format="numbersOnly=true; min=11" />
+            <field name="email" type="string"  />
+            <field name="codMun" type="int" length="7" padding="0" justify="right"/>
+            <field name="delimiter" literal="" ignore="true"/> 
+        </record>
+    </stream>
+</beanio>

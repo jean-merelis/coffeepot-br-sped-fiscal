@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        <typeHandler type="date" class="coffeepot.br.sped.fiscal.typeHandler.DateHandler" />
+        <typeHandler name="finalidadeArquivoHandler" class="coffeepot.br.sped.fiscal.typeHandler.FinalidadeArquivoHandler" />        
+        <typeHandler name="perfilHandler" class="coffeepot.br.sped.fiscal.typeHandler.PerfilHandler" />
+        <typeHandler name="indicadorAtividadeHandler" class="coffeepot.br.sped.fiscal.typeHandler.IndicadorAtividadeHandler" />
+                
+        <record name="reg0000" minOccurs="1" maxOccurs="1" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0000">
+            <field name="delimiter" literal="" ignore="true"/>
+            <field name="reg" rid="true" literal="0000" ignore="true" />
+            <field name="codVer" type="int" length="3" justify="right" padding="0" />
+            <field name="codFin" typeHandler="finalidadeArquivoHandler"/>
+            <field name="dtIni" type="date"/>
+            <field name="dtFin" type="date"/>
+            <field name="nome" type="string" format="max=100" />
+            <field name="cnpj" type="string" format="numbersOnly=true" />
+            <field name="cpf" type="string" format="numbersOnly=true" />
+            <field name="uf" type="string" length="2" />
+            <field name="ie" type="string" format="numbersLettersOnly=true" />
+            <field name="codMun" type="int" length="7" justify="right" padding="0"/>
+            <field name="im" type="string" format="numbersLettersOnly=true" />
+            <field name="suframa" type="string" format="numbersLettersOnly=true;min=9" />
+            <field name="indPerfil" typeHandler="perfilHandler"/>
+            <field name="indAtiv" typeHandler="indicadorAtividadeHandler"/>
+            <field name="delimiter" literal="" ignore="true"/>
+        </record>
+    </stream>
+</beanio>

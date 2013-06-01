@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        
+        <record name="reg0400" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0400">
+            <field name="delimiter" literal="" ignore="true"/> 
+            <field name="reg" rid="true" literal="0400" ignore="true" />
+            <field name="codNat" type="string" />
+            <field name="descrNat" type="string" />            
+            <field name="delimiter" literal="" ignore="true"/> 
+        </record>
+    </stream>
+</beanio>

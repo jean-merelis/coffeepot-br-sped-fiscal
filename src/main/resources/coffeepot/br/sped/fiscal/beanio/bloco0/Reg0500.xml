@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        <typeHandler type="date" class="coffeepot.br.sped.fiscal.typeHandler.DateHandler" />
+        <typeHandler name="naturezaContaContabilHandler" class="coffeepot.br.sped.fiscal.typeHandler.NaturezaContaContabilHandler" />
+        <typeHandler name="tipoContaContabilHandler" class="coffeepot.br.sped.fiscal.typeHandler.TipoContaContabilHandler" />
+        
+        <record name="reg0500" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0500">
+            <field name="delimiter" literal="" ignore="true"/>
+            <field name="reg" rid="true" literal="0500" ignore="true" />
+            <field name="dtAlt" type="date" />
+            <field name="codNatCc" typeHandler="naturezaContaContabilHandler" />
+            <field name="indCta" typeHandler="tipoContaContabilHandler"  />
+            <field name="nivel" type="int" />
+            <field name="codCta" type="string" />
+            <field name="nomeCta" type="string" />
+            <field name="delimiter" literal="" ignore="true"/>
+        </record>
+    </stream>
+</beanio>

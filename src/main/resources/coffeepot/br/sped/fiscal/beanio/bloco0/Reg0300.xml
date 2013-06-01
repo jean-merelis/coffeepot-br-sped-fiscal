@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+    <stream name="sped" format="delimited">
+        <parser>
+            <property name="delimiter" value="|" />
+            <property name="recordTerminator" value="\r\n" />      
+        </parser>
+        
+        <typeHandler type="string" class="coffeepot.br.sped.fiscal.typeHandler.StringHandler" />
+        <typeHandler name="identificacaoMercadoriaHandler" class="coffeepot.br.sped.fiscal.typeHandler.IdentificacaoMercadoriaHandler" />
+        
+        <group name="reg0300" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0300" >                        
+            <record name="reg0300" order="1" minOccurs="1">
+                <field name="delimiter" literal="" ignore="true"/>
+                <field name="reg" rid="true" literal="0300" ignore="true" />
+                <field name="codIndBem" type="string"  />
+                <field name="identMerc" typeHandler="identificacaoMercadoriaHandler"  />
+                <field name="descrItem" type="string" />
+                <field name="codPrnc" type="string"  />
+                <field name="codCta" type="string" />
+                <field name="nrParc" type="int"/>                
+                <field name="delimiter" literal="" ignore="true"/>
+            </record>
+            <record name="reg0305" class="coffeepot.br.sped.fiscal.blocos.bloco0.Reg0305" order="2" minOccurs="0" maxOccurs="1">
+                <field name="delimiter" literal="" ignore="true"/>
+                <field name="reg" rid="true" literal="0305" ignore="true" />
+                <field name="codCcus" type="string"/>
+                <field name="func" type="string"/>
+                <field name="vidaUtil" type="int"/>
+                <field name="delimiter" literal="" ignore="true"/>
+            </record>
+        </group>
+    </stream>
+</beanio>

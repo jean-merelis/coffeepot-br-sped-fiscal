@@ -7,27 +7,29 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum IndicadorMovimento {
+public enum IndicadorMovimento implements EnumCodificado{
 
-    COMDADOS("0"),
-    SEMDADOS("1");
+    COM_DADOS("0"),
+    SEM_DADOS("1");
     private String codigo;
 
     private IndicadorMovimento(String codigo) {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static IndicadorMovimento parse(String codigo) {
+    @Override
+    public IndicadorMovimento parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
-            return COMDADOS;
+            return COM_DADOS;
         }
         if ("1".equals(codigo)) {
-            return SEMDADOS;
+            return SEM_DADOS;
         }
-        return null;
+        throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo IndicadorMovimento");
     }
 }

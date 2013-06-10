@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  * 
  * @author Jeandeson O. Merelis
  */
-public enum NaturezaContaContabil {
+public enum NaturezaContaContabil implements EnumCodificado{
     /**
      * Contas de ativo.
      */
@@ -20,7 +20,7 @@ public enum NaturezaContaContabil {
     /**
      * Patrimônio líquido.
      */
-    PATRIMONIOLIQUIDO("03","Patrimônio líquido"),
+    PATRIMONIO_LIQUIDO("03","Patrimônio líquido"),
     /**
      * Contas de resultado.
      */
@@ -42,6 +42,7 @@ public enum NaturezaContaContabil {
         this.descricao = descricao;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
@@ -50,11 +51,12 @@ public enum NaturezaContaContabil {
         return descricao;
     }
     
-    public static NaturezaContaContabil parse(String codigo) throws ParseException{        
+    @Override
+    public NaturezaContaContabil parse(String codigo) throws ParseException{        
         switch (codigo){
             case "01": return ATIVO;
             case "02": return PASSIVO;
-            case "03": return PATRIMONIOLIQUIDO;
+            case "03": return PATRIMONIO_LIQUIDO;
             case "04": return RESULTADO;
             case "05": return COMPENSACAO;
             case "09": return OUTRAS;

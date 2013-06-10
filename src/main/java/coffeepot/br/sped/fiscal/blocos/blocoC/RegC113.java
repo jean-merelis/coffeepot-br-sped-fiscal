@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.blocos.blocoC;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
 import coffeepot.br.sped.fiscal.tipos.EmissaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.Operacao;
@@ -12,7 +14,19 @@ import java.util.Date;
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "", constantValue = "C113"),
+    @Field(name = "indOper"),
+    @Field(name = "indEmit"),
+    @Field(name = "codPart"),
+    @Field(name = "codMod"),
+    @Field(name = "ser"),
+    @Field(name = "sub"),
+    @Field(name = "numDoc"),
+    @Field(name = "dtDoc")
+})
 public class RegC113 {
+
     private Operacao indOper;
     private EmissaoDocumento indEmit;
     private String codPart;
@@ -84,5 +98,5 @@ public class RegC113 {
 
     public void setDtDoc(Date dtDoc) {
         this.dtDoc = dtDoc;
-    }        
+    }
 }

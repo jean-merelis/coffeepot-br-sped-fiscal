@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum DocumentoFiscal {
+public enum DocumentoFiscal  implements EnumCodificado{
 
     NOTA_FISCAL("01", "Nota Fiscal, modelo 1"),
     NOTA_FISCAL_AVULSA("1B", "Nota Fiscal Avulsa"),
@@ -52,6 +52,7 @@ public enum DocumentoFiscal {
         this.descricao = descricao;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
@@ -60,7 +61,8 @@ public enum DocumentoFiscal {
         return descricao;
     }
 
-    public static DocumentoFiscal parse(String codigo) throws ParseException {
+    @Override
+    public DocumentoFiscal parse(String codigo) throws ParseException {
         if (codigo == null) {
             throw new ParseException();
         }

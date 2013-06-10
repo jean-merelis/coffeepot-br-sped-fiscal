@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum CondicaoPagamento {
+public enum CondicaoPagamento  implements EnumCodificado{
 
     A_VISTA("0"),
     A_PRAZO("1"),
@@ -19,11 +19,13 @@ public enum CondicaoPagamento {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static CondicaoPagamento parse(String codigo) throws ParseException {
+    @Override
+    public CondicaoPagamento parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
             return A_VISTA;
         }

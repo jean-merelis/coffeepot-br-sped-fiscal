@@ -1,5 +1,33 @@
+/*
+ * Copyright 2013 - Jeandeson O. Merelis
+ */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import coffeepot.bean.wr.types.Align;
+
+/**
+ *
+ * @author Jeandeson O. Merelis
+ */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0100"),
+    @Field(name = "nome", maxLength = 100),
+    @Field(name = "cpf", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "crc", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "cnpj", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "cep", length = 8, padding = '0', paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "end", maxLength = 60),
+    @Field(name = "num", maxLength = 10),
+    @Field(name = "compl", maxLength = 60),
+    @Field(name = "bairro", maxLength = 60),
+    @Field(name = "fone", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "fax", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "email"),
+    @Field(name = "codMun", length = 7, align = Align.RIGHT, padding = '0', paddingIfNullOrEmpty = true)
+})
 public class Reg0100 {
 
     private String nome;
@@ -26,8 +54,6 @@ public class Reg0100 {
     public void setCep(String cep) {
         this.cep = cep;
     }
-
-
 
     public String getEnd() {
         return end;

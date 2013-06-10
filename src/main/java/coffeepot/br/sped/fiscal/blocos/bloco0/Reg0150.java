@@ -1,7 +1,30 @@
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import java.util.List;
 
+/**
+ *
+ * @author Jeandeson O. Merelis
+ */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0150"),
+    @Field(name = "codPart"),
+    @Field(name = "nome", maxLength = 100),
+    @Field(name = "codPais"),
+    @Field(name = "cnpj", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "cpf", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "ie", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "codMun"),
+    @Field(name = "suframa", length = 9, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "end", maxLength = 60),
+    @Field(name = "num", maxLength = 10),
+    @Field(name = "compl", maxLength = 60),
+    @Field(name = "bairro", maxLength = 60),
+    @Field(name = "reg0175List"),
+})
 public class Reg0150 {
 
     private String codPart;

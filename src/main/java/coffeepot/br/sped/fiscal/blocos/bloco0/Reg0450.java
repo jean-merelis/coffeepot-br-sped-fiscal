@@ -3,10 +3,18 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0450"),
+    @Field(name = "codInf"),
+    @Field(name = "txt")
+})
 public class Reg0450 {
 
     private String codInf;

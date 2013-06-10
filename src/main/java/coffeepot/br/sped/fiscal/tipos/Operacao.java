@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum Operacao {
+public enum Operacao implements EnumCodificado {
 
     ENTRADA("0"),
     SAIDA("1");
@@ -18,11 +18,13 @@ public enum Operacao {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static Operacao parse(String codigo) throws ParseException {
+    @Override
+    public Operacao parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
             return ENTRADA;
         }

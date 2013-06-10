@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum Perfil {
+public enum Perfil  implements EnumCodificado{
 
     A("A"),
     B("B"),
@@ -20,11 +20,13 @@ public enum Perfil {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static Perfil parse(String codigo) {
+    @Override
+    public Perfil parse(String codigo) {
         if ("A".equals(codigo)) {
             return A;
         }

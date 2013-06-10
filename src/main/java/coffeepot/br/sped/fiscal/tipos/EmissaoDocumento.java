@@ -4,11 +4,12 @@
 package coffeepot.br.sped.fiscal.tipos;
 
 /**
- * Indicador do emitente do documento fiscal, referenciado no registro C100.
+ * Indicador do emitente do documento fiscal, referenciado no registro C100 e
+ * C140.
  *
  * @author Jeandeson O. Merelis
  */
-public enum EmissaoDocumento {
+public enum EmissaoDocumento implements EnumCodificado {
 
     PROPRIA("0"),
     TERCEIROS("1");
@@ -18,11 +19,13 @@ public enum EmissaoDocumento {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static EmissaoDocumento parse(String codigo) throws ParseException {
+    @Override
+    public EmissaoDocumento parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
             return PROPRIA;
         }

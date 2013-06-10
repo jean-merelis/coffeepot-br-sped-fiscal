@@ -1,10 +1,38 @@
+/*
+ * Copyright 2013 - Jeandeson O. Merelis
+ */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import coffeepot.bean.wr.types.Align;
 import coffeepot.br.sped.fiscal.tipos.FinalidadeArquivo;
 import coffeepot.br.sped.fiscal.tipos.IndicadorAtividade;
 import coffeepot.br.sped.fiscal.tipos.Perfil;
 import java.util.Date;
 
+/**
+ *
+ * @author Jeandeson O. Merelis
+ */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0000"),
+    @Field(name = "codVer", length = 3, align = Align.RIGHT, padding = '0'),
+    @Field(name = "codFin"),
+    @Field(name = "dtIni"),
+    @Field(name = "dtFin"),
+    @Field(name = "nome", maxLength = 100),
+    @Field(name = "cnpj", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "cpf", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "uf"),
+    @Field(name = "ie", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "codMun", length = 7, align = Align.RIGHT, padding = '0', paddingIfNullOrEmpty = true),
+    @Field(name = "im", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "suframa", length = 9, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
+    @Field(name = "indPerfil"),
+    @Field(name = "indAtiv")
+})
 public class Reg0000 {
 
     private int codVer;
@@ -132,5 +160,5 @@ public class Reg0000 {
 
     public void setIndAtiv(IndicadorAtividade indAtiv) {
         this.indAtiv = indAtiv;
-    }    
+    }
 }

@@ -3,10 +3,18 @@
  */
 package coffeepot.br.sped.fiscal.blocos.blocoC;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "C105"),
+    @Field( name = "oper"),
+    @Field( name = "uf")
+})
 public class RegC105 {
     private Integer oper;
     private String uf;

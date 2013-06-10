@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  * 
  * @author Jeandeson O. Merelis
  */
-public enum SituacaoDocumento {
+public enum SituacaoDocumento  implements EnumCodificado{
     REGULAR("00","Documento regular"),
     EXTEMPORANEA_REGULAR("01","Escrituração extemporânea de documento regular"),
     CANCELADO("02","Documento cancelado"),
@@ -27,6 +27,7 @@ public enum SituacaoDocumento {
         this.descricao = descricao;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
@@ -35,7 +36,8 @@ public enum SituacaoDocumento {
         return descricao;
     }
     
-    public static SituacaoDocumento parse(String codigo) throws ParseException{
+    @Override
+    public SituacaoDocumento parse(String codigo) throws ParseException{
         if ("00".equals(codigo)) return REGULAR;
         if ("01".equals(codigo)) return EXTEMPORANEA_REGULAR;
         if ("02".equals(codigo)) return CANCELADO;

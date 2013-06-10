@@ -8,7 +8,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum Frete {
+public enum Frete implements EnumCodificado{
 
     EMITENTE("0"),
     DESTINATARIO_REMETENTE("1"),
@@ -20,11 +20,13 @@ public enum Frete {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static Frete parse(String codigo) throws ParseException {
+    @Override
+    public Frete parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
             return EMITENTE;
         }

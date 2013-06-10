@@ -1,0 +1,55 @@
+|0000|006|0|10062013|10062013|EMPRESA FATURA PRA CARAMBA|12123123000199||ES|AA1516BBB165|0000555|adfdfa1111||A|0|
+|0001|0|
+|0005|Nome fantasia|29700000|Rua Sem Nome|s/n|Complemento|Bairro|2777775555 |2777775555 |email@email.com|
+|0015|RJ|IESUBSTITUTORJ|
+|0015|MG|IESUBSTITUTOMG|
+|0015|RJ|IESUBSTITUTORJ|
+|0015|MG|IESUBSTITUTOMG|
+|0100|Contador João|12312312399|CRC1516165161|12123123012399|29700000|Rua Sem Nome|s/n|Complemento|Bairro|2777775555 |2777775555 |email@email.com|0000000|
+|0150|6927012b-0665-47a0-8a97-b4f495c9e345|João da Silva|1|123123123000199|1234567890111|0IE0001234567A|55||Rua Qualquer|S/N|Complemento|Bairro|
+|0175|10062013|3|Joana da silva|
+|0175|10062013|10|Rua Sem Nome|
+|0190|un|Unidade|
+|0190|kg|Kilograma|
+|0190|m|Metro|
+|0190|cx|Caixa|
+|0190|kwh|Kilowatts/hora|
+|0200|CODIGO ITEM|Descrição do item|CODIGO DE BARRAS|CODIGO ANTERIOR|un|00|888888888|001|80||17|
+|0205|Descricao anterior|10062013|10062013|CODIGO ANTERIOR|
+|0205|Descricao anterior 2|10062013|10062013|CODIGO ANTERIOR 2|
+|0205|Descricao anterior 3|10062013|10062013|CODIGO ANTERIOR 3|
+|0206|CodigoComb|
+|0220|cx|12|
+|0220|kg|1000|
+|0200|CODIGO ITEM|Descrição do item|CODIGO DE BARRAS|CODIGO ANTERIOR|un|00|888888888|001|80||17|
+|0205|Descricao anterior|10062013|10062013|CODIGO ANTERIOR|
+|0205|Descricao anterior 2|10062013|10062013|CODIGO ANTERIOR 2|
+|0205|Descricao anterior 3|10062013|10062013|CODIGO ANTERIOR 3|
+|0206|CodigoComb|
+|0220|cx|12|
+|0220|kg|1000|
+|0200|CODIGO ITEM|Descrição do item|CODIGO DE BARRAS|CODIGO ANTERIOR|un|00|888888888|001|80||17|
+|0205|Descricao anterior|10062013|10062013|CODIGO ANTERIOR|
+|0205|Descricao anterior 2|10062013|10062013|CODIGO ANTERIOR 2|
+|0205|Descricao anterior 3|10062013|10062013|CODIGO ANTERIOR 3|
+|0206|CodigoComb|
+|0220|cx|12|
+|0220|kg|1000|
+|0300|Cod ind bem|1|Descr item|Cod prnc|COD CONTA CONTABIL|3|
+|0305|Cod ccus|Func|12|
+|0300|Cod ind bem|1|Descr item|Cod prnc|COD CONTA CONTABIL|3|
+|0305|Cod ccus|Func|12|
+|0300|Cod ind bem|1|Descr item|Cod prnc|COD CONTA CONTABIL|3|
+|0305|Cod ccus|Func|12|
+|0400|1|Vendas|
+|0400|2|Industrialização|
+|0400|3|Devolução|
+|0450|COD1|Texto da informação complementar|
+|0450|COD2|Texto da informação complementar 2|
+|0460|COD1|Texto da observação|
+|0460|COD2|Texto da observação 2|
+|0500|10062013|01|S|1|cod conta|Nome da conta|
+|0500|10062013|02|A|1|cod conta 2|Nome da conta 2|
+|0600|10062013|codigo centro custo|nome centro custo|
+|0600|10062013|codigo centro custo 2|nome centro custo 2|
+|0990|55|

@@ -1,5 +1,21 @@
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0005"),
+    @Field(name = "fantasia", maxLength = 60),
+    @Field(name = "cep", length = 8, padding = '0', paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "end", maxLength = 60),
+    @Field(name = "num", maxLength = 10),
+    @Field(name = "compl", maxLength = 60),
+    @Field(name = "bairro", maxLength = 60),
+    @Field(name = "fone", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "fax", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "email")
+})
 public class Reg0005 {
 
     private String fantasia;

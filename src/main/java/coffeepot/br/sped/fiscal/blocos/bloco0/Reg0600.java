@@ -3,12 +3,20 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
 import java.util.Date;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0600"),
+    @Field(name = "dtAlt"),
+    @Field(name = "codCcus"),
+    @Field(name = "ccus")
+})
 public class Reg0600 {
     private Date dtAlt;
     private String codCcus;

@@ -3,16 +3,28 @@
  */
 package coffeepot.br.sped.fiscal.blocos.blocoC;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.ParseException;
 import java.util.Date;
-import org.beanio.types.TypeConversionException;
-import org.beanio.types.TypeHandler;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "", constantValue = "C112"),
+    @Field(name = "codDa"),
+    @Field(name = "uf"),
+    @Field(name = "numDa"),
+    @Field(name = "codAut"),
+    @Field(name = "vlDa"),
+    @Field(name = "dtVcto"),
+    @Field(name = "dtPgto")
+})
 public class RegC112 {
+
     private DocumentoArrecadacao codDa;
     private String uf;
     private String numDa;
@@ -76,9 +88,8 @@ public class RegC112 {
     public void setDtPgto(Date dtPgto) {
         this.dtPgto = dtPgto;
     }
-    
 
-    public enum DocumentoArrecadacao {
+    public enum DocumentoArrecadacao implements EnumCodificado{
 
         ESTADUAL("0"),
         GNRE("1");
@@ -88,11 +99,13 @@ public class RegC112 {
             this.codigo = codigo;
         }
 
+        @Override
         public String getCodigo() {
             return codigo;
         }
 
-        public static DocumentoArrecadacao parse(String codigo) throws ParseException {
+        @Override
+        public DocumentoArrecadacao parse(String codigo) throws ParseException {
             if ("0".equals(codigo)) {
                 return ESTADUAL;
             }
@@ -100,34 +113,6 @@ public class RegC112 {
                 return GNRE;
             }
             throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo RegC112.DocumentoArrecadacao");
-        }
-    }
-
-    public static class DocumentoArrecadacaoHandler implements TypeHandler {
-
-        @Override
-        public Object parse(String text) throws TypeConversionException {
-            try {
-                if (text == null || "".equals(text)) {
-                    return null;
-                }
-                return DocumentoArrecadacao.parse(text);
-            } catch (ParseException ex) {
-                throw new TypeConversionException(ex.getMessage());
-            }
-        }
-
-        @Override
-        public String format(Object value) {
-            if (value == null) {
-                return null;
-            }
-            return ((DocumentoArrecadacao) value).getCodigo();
-        }
-
-        @Override
-        public Class<?> getType() {
-            return DocumentoArrecadacao.class;
         }
     }
 }

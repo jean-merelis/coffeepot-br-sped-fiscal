@@ -7,7 +7,7 @@ package coffeepot.br.sped.fiscal.tipos;
  * Identificação do tipo de mercadoria, referido no registro 0300.
  * @author Jeandeson O. Merelis
  */
-public enum IdentificacaoMercadoria {
+public enum IdentificacaoMercadoria implements EnumCodificado {
 
     BEM("1"),
     COMPONENTE("2");
@@ -17,11 +17,13 @@ public enum IdentificacaoMercadoria {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static IdentificacaoMercadoria parse(String codigo) throws ParseException {
+    @Override
+    public IdentificacaoMercadoria parse(String codigo) throws ParseException {
         if ("1".equals(codigo)) {
             return BEM;
         }

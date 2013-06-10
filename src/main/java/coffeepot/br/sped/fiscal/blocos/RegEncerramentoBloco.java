@@ -1,5 +1,12 @@
 package coffeepot.br.sped.fiscal.blocos;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+
+@Record(fields = {
+    @Field(name = "reg"),
+    @Field(name = "qtdLin")
+})
 public class RegEncerramentoBloco {
 
     private String reg;

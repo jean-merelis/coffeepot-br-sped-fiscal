@@ -3,12 +3,24 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
 import coffeepot.br.sped.fiscal.tipos.IdentificacaoMercadoria;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0300"),
+    @Field(name = "codIndBem"),
+    @Field(name = "identMerc"),
+    @Field(name = "descrItem"),
+    @Field(name = "codPrnc"),
+    @Field(name = "codCta"),
+    @Field(name = "nrParc"),
+    @Field(name = "reg0305")
+})
 public class Reg0300 {
 
     private String codIndBem;

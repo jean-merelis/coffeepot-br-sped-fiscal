@@ -3,12 +3,21 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
 import java.util.Date;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0205"),
+    @Field(name = "descrAntItem"),
+    @Field(name = "dtIni"),
+    @Field(name = "dtFim"),
+    @Field(name = "codAntItem")
+})
 public class Reg0205 {
 
     private String descrAntItem;
@@ -47,6 +56,4 @@ public class Reg0205 {
     public void setCodAntItem(String codAntItem) {
         this.codAntItem = codAntItem;
     }
-    
-    
 }

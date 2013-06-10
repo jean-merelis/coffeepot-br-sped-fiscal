@@ -9,118 +9,113 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum TipoItem {
+public enum TipoItem  implements EnumCodificado{
 
     /**
      * 00 - Mercadoria para Revenda.
      */
-    MERCADORIAREVENDA(0, "Mercadoria para Revenda"),
+    MERCADORIA_REVENDA("00", "Mercadoria para Revenda"),
     /**
      * 01 - Matéria-Prima.
      */
-    MATERIAPRIMA(1, "Matéria-Prima"),
+    MATERIA_PRIMA("01", "Matéria-Prima"),
     /**
      * 02 - Embalagem.
      */
-    EMBALAGEM(2, "Embalagem"),
+    EMBALAGEM("02", "Embalagem"),
     /**
      * 03 - Produto em Processo.
      */
-    PRODUTOEMPROCESSO(3, "Produto em Processo"),
+    PRODUTO_EM_PROCESSO("03", "Produto em Processo"),
     /**
      * 04 - Produto Acabado.
      */
-    PRODUTOACABADO(4, "Produto Acabado"),
+    PRODUTO_ACABADO("04", "Produto Acabado"),
     /**
      * 05 - Subproduto.
      */
-    SUBPRODUTO(5, "Subproduto"),
+    SUBPRODUTO("05", "Subproduto"),
     /**
      * 06 - Produto Intermediário.
      */
-    PRODUTOINTERMEDIARIO(6, "Produto Intermediário"),
+    PRODUTO_INTERMEDIARIO("06", "Produto Intermediário"),
     /**
      * 07 - Material de Uso e Consumo.
      */
-    MATERIALUSOCONSUMO(7, "Material de Uso e Consumo"),
+    MATERIAL_USO_CONSUMO("07", "Material de Uso e Consumo"),
     /**
      * 08 - Ativo Imobilizado.
      */
-    ATIVOIMOBILIZADO(8, "Ativo Imobilizado"),
+    ATIVO_IMOBILIZADO("08", "Ativo Imobilizado"),
     /**
      * 09 - Serviços.
      */
-    SERVICO(9, "Serviços"),
+    SERVICO("09", "Serviços"),
     /**
      * 10 - Outros insumos.
      */
-    OUTROSINSUMOS(10, "Outros insumos"),
+    OUTROS_INSUMOS("10", "Outros insumos"),
     /**
      * 99 - Outras.
      */
-    OUTRAS(99, "Outras");
-    private int codigo;
+    OUTRAS("99", "Outras");
+    private String codigo;
     private String descricao;
 
-    private TipoItem(int codigo, String descricao) {
+    private TipoItem(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
 
-    public int getCodigo() {
+    @Override
+    public String getCodigo() {
         return codigo;
-    }
-
-    public String getCodigoAsString() {
-        return String.valueOf(codigo);
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public static TipoItem parse(String codigo) throws ParseException {
-        if (codigo == null || "".equals(codigo)) {
-            return null;
-        }
+    @Override
+    public TipoItem parse(String codigo) throws ParseException {
         try {
             int i = Integer.parseInt(codigo);
             return parse(i);
         } catch (ParseException ex) {
             throw ex;
         } catch (Exception ex) {
-            throw new ParseException("Não foi possível converter código em texto para o tipo numérico");
+            throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo TipoItem");
         }
     }
 
     public static TipoItem parse(int codigo) throws ParseException {
         switch (codigo) {
             case 0:
-                return MERCADORIAREVENDA;
+                return MERCADORIA_REVENDA;
             case 1:
-                return MATERIAPRIMA;
+                return MATERIA_PRIMA;
             case 2:
                 return EMBALAGEM;
             case 3:
-                return PRODUTOEMPROCESSO;
+                return PRODUTO_EM_PROCESSO;
             case 4:
-                return PRODUTOACABADO;
+                return PRODUTO_ACABADO;
             case 5:
                 return SUBPRODUTO;
             case 6:
-                return PRODUTOINTERMEDIARIO;
+                return PRODUTO_INTERMEDIARIO;
             case 7:
-                return MATERIALUSOCONSUMO;
+                return MATERIAL_USO_CONSUMO;
             case 8:
-                return ATIVOIMOBILIZADO;
+                return ATIVO_IMOBILIZADO;
             case 9:
                 return SERVICO;
             case 10:
-                return OUTROSINSUMOS;
+                return OUTROS_INSUMOS;
             case 99:
                 return OUTRAS;
             default:
-                throw new ParseException("Não existe um TipoItem para o código informado");
+                throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo TipoItem");
         }
     }
 }

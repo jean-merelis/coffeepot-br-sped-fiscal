@@ -3,11 +3,19 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0220"),
+    @Field(name = "unidConv"),
+    @Field(name = "fatConv")
+})
 public class Reg0220 {
 
     private String unidConv;

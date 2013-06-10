@@ -8,10 +8,10 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum FinalidadeArquivo {
+public enum FinalidadeArquivo implements EnumCodificado {
 
-    ARQUIVOORIGINAL("0", "Remessa do arquivo original"),
-    ARQUIVOSUBSTITUTO("1", "Remessa do arquivo substituto");
+    ARQUIVO_ORIGINAL("0", "Remessa do arquivo original"),
+    ARQUIVO_SUBSTITUTO("1", "Remessa do arquivo substituto");
     private String codigo;
     private String descricao;
 
@@ -20,6 +20,7 @@ public enum FinalidadeArquivo {
         this.descricao = descricao;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
@@ -28,14 +29,15 @@ public enum FinalidadeArquivo {
         return descricao;
     }
 
-    public static FinalidadeArquivo parse(String codigo) {
+    @Override
+    public FinalidadeArquivo parse(String codigo) throws ParseException {
         if ("0".equals(codigo)) {
-            return ARQUIVOORIGINAL;
+            return ARQUIVO_ORIGINAL;
         }
 
         if ("1".equals(codigo)) {
-            return ARQUIVOSUBSTITUTO;
+            return ARQUIVO_SUBSTITUTO;
         }
-        return null;
+        throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo FinalidadeArquivo");
     }
 }

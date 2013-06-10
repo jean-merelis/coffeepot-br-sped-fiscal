@@ -7,7 +7,7 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public enum TipoContaContabil {
+public enum TipoContaContabil  implements EnumCodificado{
 
     SINTETICA("S"),
     ANALITICA("A");
@@ -17,11 +17,13 @@ public enum TipoContaContabil {
         this.codigo = codigo;
     }
 
+    @Override
     public String getCodigo() {
         return codigo;
     }
 
-    public static TipoContaContabil parse(String codigo) throws ParseException {
+    @Override
+    public TipoContaContabil parse(String codigo) throws ParseException {
         if ("S".equals(codigo)) {
             return SINTETICA;
         }

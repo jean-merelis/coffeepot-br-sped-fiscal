@@ -3,14 +3,20 @@
  */
 package coffeepot.br.sped.fiscal.blocos.blocoC;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.ParseException;
-import org.beanio.types.TypeConversionException;
-import org.beanio.types.TypeHandler;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "C111"),
+    @Field(name = "numProc"),
+    @Field(name = "indProc")
+})
 public class RegC111 {
     private String numProc;
     private OrigemProcesso indProc;
@@ -32,7 +38,7 @@ public class RegC111 {
     }
     
     
-    public enum OrigemProcesso {
+    public enum OrigemProcesso implements EnumCodificado{
 
         SEFAZ("0"),
         JUSTICA_FEDERAL("1"),
@@ -45,11 +51,13 @@ public class RegC111 {
             this.codigo = codigo;
         }
 
+        @Override
         public String getCodigo() {
             return codigo;
         }
 
-        public static OrigemProcesso parse(String codigo) throws ParseException {
+        @Override
+        public OrigemProcesso parse(String codigo) throws ParseException {
             if ("0".equals(codigo)) {
                 return SEFAZ;
             }
@@ -69,31 +77,4 @@ public class RegC111 {
         }
     }
 
-    public static class OrigemProcessoHandler implements TypeHandler {
-
-        @Override
-        public Object parse(String text) throws TypeConversionException {
-            try {
-                if (text == null || "".equals(text)) {
-                    return null;
-                }
-                return OrigemProcesso.parse(text);
-            } catch (ParseException ex) {
-                throw new TypeConversionException(ex.getMessage());
-            }
-        }
-
-        @Override
-        public String format(Object value) {
-            if (value == null) {
-                return null;
-            }
-            return ((OrigemProcesso) value).getCodigo();
-        }
-
-        @Override
-        public Class<?> getType() {
-            return OrigemProcesso.class;
-        }
-    }
 }

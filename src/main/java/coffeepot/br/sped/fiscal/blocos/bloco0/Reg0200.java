@@ -3,6 +3,10 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import coffeepot.bean.wr.types.Align;
 import coffeepot.br.sped.fiscal.tipos.TipoItem;
 import java.util.List;
 
@@ -10,6 +14,23 @@ import java.util.List;
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0200"),
+    @Field(name = "codItem"),
+    @Field(name = "descrItem"),
+    @Field(name = "codBarra"),
+    @Field(name = "codAntItem"),
+    @Field(name = "unidInv"),
+    @Field(name = "tipoItem"),
+    @Field(name = "codNcm", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "exIpi"),
+    @Field(name = "codGen", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "codLst"),
+    @Field(name = "aliqIcms"),
+    @Field(name = "reg0205List"),
+    @Field(name = "reg0206"),
+    @Field(name = "reg0220List")
+})
 public class Reg0200 {
 
     private String codItem;
@@ -138,5 +159,4 @@ public class Reg0200 {
     public void setReg0220List(List<Reg0220> reg0220List) {
         this.reg0220List = reg0220List;
     }
-
 }

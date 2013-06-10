@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.blocos.bloco0;
 
+import coffeepot.bean.wr.anotation.Field;
+import coffeepot.bean.wr.anotation.Record;
 import coffeepot.br.sped.fiscal.tipos.NaturezaContaContabil;
 import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
 import java.util.Date;
@@ -11,6 +13,15 @@ import java.util.Date;
  *
  * @author Jeandeson O. Merelis
  */
+@Record(fields = {
+    @Field(name = "reg", constantValue = "0500"),
+    @Field(name = "dtAlt"),
+    @Field(name = "codNatCc"),
+    @Field(name = "indCta"),
+    @Field(name = "nivel"),
+    @Field(name = "codCta"),
+    @Field(name = "nomeCta")
+})
 public class Reg0500 {
 
     private Date dtAlt;

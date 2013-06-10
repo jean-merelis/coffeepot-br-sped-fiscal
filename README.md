@@ -15,8 +15,8 @@ Projeto baseado em Maven. Utilizando JKD 1.7
 Dependência: coffeepot-bean-wr
 
 Andamento:
-	- Bloco 0 - pronto;
-	- Trabalhando no Bloco C.. registros C100 de filhos prontos.
+- Bloco 0  pronto;
+- Trabalhando no Bloco C.. registros C100 de filhos prontos.
 
 
 Jeandeson O. Merelis. <jean.merelis@gmail.com>

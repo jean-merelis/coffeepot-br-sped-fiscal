@@ -15,8 +15,10 @@ Projeto baseado em Maven. Utilizando JDK 1.7
 Dependência: coffeepot-bean-wr
 
 Andamento:
-- Bloco 0  pronto;
-- Trabalhando no Bloco C.. registros C100 prontos.
+- Bloco 0 - ok.
+- Trabalhando no Bloco C.
+	- série C100 .. C197 - ok.
+	- série C300 .. C390 - ok.
 
 
 Jeandeson O. Merelis. <jean.merelis@gmail.com>

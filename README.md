@@ -10,13 +10,13 @@ Este projeto é um mapeamento de classes Java para formatação e gravação do 
 
 Para manter uma relação com a documentação oficial do Sped e facilitar o entendimento dos campos, os nomes dos campos seguem a mesma nomeclatura que está no layout técnico do Sped, mas sem a utilização do underline, usando a notação camelCase.
 
-Projeto baseado em Maven. Utilizando JKD 1.7
+Projeto baseado em Maven. Utilizando JDK 1.7
 
 Dependência: coffeepot-bean-wr
 
 Andamento:
 - Bloco 0  pronto;
-- Trabalhando no Bloco C.. registros C100 de filhos prontos.
+- Trabalhando no Bloco C.. registros C100 prontos.
 
 
 Jeandeson O. Merelis. <jean.merelis@gmail.com>

@@ -13,7 +13,7 @@ import coffeepot.br.sped.fiscal.tipos.ParseException;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "C111"),
+    @Field(name = "", constantValue = "C111"),
     @Field(name = "numProc"),
     @Field(name = "indProc")
 })

@@ -12,13 +12,15 @@ Para manter uma relação com a documentação oficial do Sped e facilitar o ent
 
 Projeto baseado em Maven. Utilizando JDK 1.7
 
-Dependência: coffeepot-bean-wr
+Dependência: coffeepot-bean-wr - 
+	https://github.com/jom76/coffeepot-bean-wr
 
 Andamento:
 - Bloco 0 - ok.
 - Trabalhando no Bloco C.
 	- série C100 .. C197 - ok.
 	- série C300 .. C390 - ok.
+	- série C400 .. C495 - ok.
 
 
 Jeandeson O. Merelis. <jean.merelis@gmail.com>

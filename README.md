@@ -15,12 +15,46 @@ Projeto baseado em Maven. Utilizando JDK 1.7
 Dependência: coffeepot-bean-wr - 
 	https://github.com/jom76/coffeepot-bean-wr
 
-Andamento:
-- Bloco 0 - ok.
-- Trabalhando no Bloco C.
-	- série C100 .. C197 - ok.
-	- série C300 .. C390 - ok.
-	- série C400 .. C495 - ok.
+
+Exemplo escrevendo registro a registro no arquivo:
+
+		//Criando o escritor do Sped Fiscal
+		Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));       
+		SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
+		
+		Reg0000 reg = new Reg0000();
+		//atribui os dados do registro
+		//reg.set...
+		
+		//Escreve o registro no arquivo
+        spedFiscalWriter.write(reg);
+		
+		Reg0001 reg1 = new Reg0001();
+		//atribui os dados do registro
+		//reg1.set...
+		
+		//Escreve o registro no arquivo
+        spedFiscalWriter.write(reg1);		
+ 
+		spedFiscalWriter.writerFlush();
+        spedFiscalWriter.writerClose();
+		
+Exemplo escrevendo um bloco inteiro no arquivo:
+
+		//Criando o escritor do Sped Fiscal
+		Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));       
+		SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
+		
+		Bloco0 bloco0 = new Bloco0();
+		//atribui os registros do bloco
+		//bloco0.setReg...
+		
+		//Escreve o bloco no arquivo
+        spedFiscalWriter.write(bloco0);
+ 
+		spedFiscalWriter.writerFlush();
+        spedFiscalWriter.writerClose();
+
 
 
 Jeandeson O. Merelis. <jean.merelis@gmail.com>

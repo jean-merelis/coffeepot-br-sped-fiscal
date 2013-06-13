@@ -30,7 +30,7 @@ import java.util.List;
 public class Bloco9 {
 
     private Reg9001 reg9001;
-    private List<Reg9001> reg9900List;
+    private List<Reg9900> reg9900List;
     private Reg9990 reg9990;
     private Reg9999 reg9999;
 
@@ -42,11 +42,11 @@ public class Bloco9 {
         this.reg9001 = reg9001;
     }
 
-    public List<Reg9001> getReg9900List() {
+    public List<Reg9900> getReg9900List() {
         return reg9900List;
     }
 
-    public void setReg9900List(List<Reg9001> reg9900List) {
+    public void setReg9900List(List<Reg9900> reg9900List) {
         this.reg9900List = reg9900List;
     }
 

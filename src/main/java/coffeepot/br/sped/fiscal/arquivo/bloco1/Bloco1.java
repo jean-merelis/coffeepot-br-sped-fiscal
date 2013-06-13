@@ -22,8 +22,9 @@ import java.util.List;
  */
 @Record(fields = {
     @Field(name = "reg1001"),
+    @Field(name = "reg1010"),
     //TODO: Registros Bloco 1 ainda não implementados
-    //    @Field(name = "reg1010"),
+
     //    @Field(name = "reg1100List"),
     //    @Field(name = "reg1200List"),
     //    @Field(name = "reg1300List"),
@@ -41,8 +42,8 @@ import java.util.List;
 public class Bloco1 {
 
     private Reg1001 reg1001;
+    private Reg1010 reg1010;
     //TODO: Registros Bloco 1 ainda não implementados
-//    private Reg1010 reg1010;
 //    private List<Reg1100> reg1100List;
 //    private List<Reg1200> reg1200List;
 //    private List<Reg1300> reg1300List;
@@ -62,6 +63,14 @@ public class Bloco1 {
 
     public void setReg1001(Reg1001 reg1001) {
         this.reg1001 = reg1001;
+    }
+
+    public Reg1010 getReg1010() {
+        return reg1010;
+    }
+
+    public void setReg1010(Reg1010 reg1010) {
+        this.reg1010 = reg1010;
     }
 
     public Reg1990 getReg1990() {

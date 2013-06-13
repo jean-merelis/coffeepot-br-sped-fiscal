@@ -22,16 +22,14 @@ import java.util.List;
  */
 @Record(fields = {
     @Field(name = "regH001"),
-    //TODO: Registros Bloco H ainda não implementados
-    //    @Field(name = "regH005List"),
+    @Field(name = "regH005List"),
     @Field(name = "regH990")
 })
 @Deprecated
 public class BlocoH {
 
     private RegH001 regH001;
-    //TODO: Registros Bloco H ainda não implementados
-//    private List<RegH005> regH005List;
+    private List<RegH005> regH005List;
     private RegH990 regH990;
 
     public RegH001 getRegH001() {
@@ -40,6 +38,14 @@ public class BlocoH {
 
     public void setRegH001(RegH001 regH001) {
         this.regH001 = regH001;
+    }
+
+    public List<RegH005> getRegH005List() {
+        return regH005List;
+    }
+
+    public void setRegH005List(List<RegH005> regH005List) {
+        this.regH005List = regH005List;
     }
 
     public RegH990 getRegH990() {

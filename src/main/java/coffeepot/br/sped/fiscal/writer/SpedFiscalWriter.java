@@ -48,12 +48,30 @@ public class SpedFiscalWriter {
     public void writerFlush() throws IOException {
         beanWriter.flush();
     }
-    
+
     /**
      * Fecha o escritor.
-     * @throws IOException 
+     *
+     * @throws IOException
      */
-    public void writerClose() throws IOException{
+    public void writerClose() throws IOException {
         beanWriter.getWriter().close();
+    }
+
+    /**
+     * Libera os parsers (analisadores) do mapa.
+     * <p/>
+     * Todo objeto que é escrito precisa de um parser, para analisar suas
+     * informações e formatar seu conteúdo. Estes parsers são construídos usando
+     * as anotações que foram feitas nas classes dos objetos. Desta forma, se
+     * tem um parser para cada classe que o ObjectWrite escreve e este parser
+     * fica disponível em um mapa para ser usado pelo ObjectWriter.
+     * <p/>
+     * No caso do Sped, existem muitas classes que mapeiam seus registros, desta
+     * forma é interessante liberar os recursos dos parsers que não serão mais
+     * utilizados.
+     */
+    public void cleanParsers() {
+        beanWriter.getObjectParserFactory().getParsers().clear();
     }
 }

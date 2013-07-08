@@ -3,6 +3,27 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
+/*
+ * #%L
+ * coffeepot-br-sped-fiscal
+ * %%
+ * Copyright (C) 2013 Jeandeson O. Merelis
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
 import coffeepot.br.sped.fiscal.arquivo.EstruturaTest;
 import coffeepot.br.sped.fiscal.tipos.FinalidadeArquivo;
 import coffeepot.br.sped.fiscal.tipos.IdentificacaoMercadoria;
@@ -12,6 +33,8 @@ import coffeepot.br.sped.fiscal.tipos.NaturezaContaContabil;
 import coffeepot.br.sped.fiscal.tipos.Perfil;
 import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
 import coffeepot.br.sped.fiscal.tipos.TipoItem;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
+import coffeepot.br.sped.fiscal.util.Util;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -53,9 +76,17 @@ public class Bloco0Test {
             Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));
             SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
 
+            //Escreve todos registros do bloco0, exceto o registro 0990
             spedFiscalWriter.write(bloco0);
-
             spedFiscalWriter.writerFlush();
+            
+            // escreve registro 0990
+            long countRecords = Util.countRecords(file, 0);
+            Reg0990 reg0990 = new Reg0990(countRecords+1);
+            spedFiscalWriter.write(reg0990);
+            
+            
+            spedFiscalWriter.writerFlush();            
             spedFiscalWriter.writerClose();
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,7 +110,7 @@ public class Bloco0Test {
         bloco0.setReg0460List(createReg0460List());
         bloco0.setReg0500List(createReg0500List());
         bloco0.setReg0600List(createReg0600List());
-        bloco0.setReg0990(createReg0990());
+     //   bloco0.setReg0990(createReg0990());
         return bloco0;
     }
 
@@ -108,7 +139,7 @@ public class Bloco0Test {
         reg.setCnpj("12.123.123/0001-99");
         reg.setCodFin(FinalidadeArquivo.ARQUIVO_ORIGINAL);
         reg.setCodMun(555);
-        reg.setCodVer(6);
+        reg.setCodVer(VersaoLayout.getLastVersionImpl());
         reg.setDtFin(new Date());
         reg.setDtIni(new Date());
         reg.setIe("AA-1516BBB-16.5");
@@ -446,7 +477,7 @@ public class Bloco0Test {
         return list;
     }
 
-    private static Reg0990 createReg0990() {
-        return new Reg0990(60L);
-    }
+//    private static Reg0990 createReg0990() {
+//        return new Reg0990(60L);
+//    }
 }

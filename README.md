@@ -59,7 +59,3 @@ Exemplo escrevendo um bloco inteiro no arquivo:
  
 		spedFiscalWriter.writerFlush();
         spedFiscalWriter.writerClose();
-
-
-
-Jeandeson O. Merelis. <jean.merelis@gmail.com>

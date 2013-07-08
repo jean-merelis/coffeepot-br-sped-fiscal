@@ -3,6 +3,27 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+/*
+ * #%L
+ * coffeepot-br-sped-fiscal
+ * %%
+ * Copyright (C) 2013 Jeandeson O. Merelis
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
 import coffeepot.br.sped.fiscal.arquivo.EstruturaTest;
 import coffeepot.br.sped.fiscal.tipos.ApuracaoIpi;
 import coffeepot.br.sped.fiscal.tipos.CondicaoPagamento;
@@ -15,6 +36,7 @@ import coffeepot.br.sped.fiscal.tipos.Operacao;
 import coffeepot.br.sped.fiscal.tipos.SituacaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.TipoTituloCredito;
 import coffeepot.br.sped.fiscal.tipos.TipoTransporte;
+import coffeepot.br.sped.fiscal.util.RecordCounter;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -67,8 +89,12 @@ public class BlocoCTest {
         bloco.setRegC100List(createRegC100List());
         //TODO: completar testes bloco C
         //bloco.setRegC300List(createRegC300List());
-
-        bloco.setRegC990(createRegC990());
+       
+        
+        long sizeOf = RecordCounter.count(bloco);        
+        RegC990 regC990 = new RegC990(sizeOf + 1);
+        
+        bloco.setRegC990(regC990);
         return bloco;
     }
 
@@ -127,45 +153,6 @@ public class BlocoCTest {
         reg.setRegC170List(createRegC170List());
         reg.setRegC190List(createRegC190List());
         reg.setRegC195List(createRegC195List());
-
-        int i = 1; //c100
-        i++;  // reg 105
-        i += reg.getRegC110List().size();
-        for (RegC110 r : reg.getRegC110List()) {
-            i += r.getRegC111List().size();
-            i += r.getRegC112List().size();
-            i += r.getRegC113List().size();
-            i += r.getRegC114List().size();
-            i += r.getRegC115List().size();
-            i += r.getRegC116List().size();
-        }
-
-        i += reg.getRegC120List().size();
-        i++;// reg 130
-        i++;// reg 140
-        //141
-        i += reg.getRegC140().getRegC141List().size();
-        i++;// reg 160
-        i += reg.getRegC165List().size();
-        // total de registro 170...
-        i += reg.getRegC170List().size();
-        for (RegC170 r : reg.getRegC170List()) {
-            i += r.getRegC171List().size();
-            i += r.getRegC172List().size();
-            i += r.getRegC173List().size();
-            i += r.getRegC174List().size();
-            i += r.getRegC175List().size();
-            i += r.getRegC176List().size();
-            i++; //RegC177
-            i++; //RegC178
-            i++; //RegC179            
-        }
-
-        i += reg.getRegC190List().size();
-        i += reg.getRegC195List().size();
-        for (RegC195 r : reg.getRegC195List()) {
-            i += r.getRegC197List().size();
-        }
 
         return reg;
     }
@@ -652,7 +639,5 @@ public class BlocoCTest {
     }
     //</editor-fold>
 
-    public static RegC990 createRegC990(){
-        return new RegC990(762L);
-    }
+
 }

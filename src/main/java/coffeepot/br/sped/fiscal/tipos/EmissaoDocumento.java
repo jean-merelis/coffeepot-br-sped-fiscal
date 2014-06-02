@@ -23,7 +23,6 @@ package coffeepot.br.sped.fiscal.tipos;
  * #L%
  */
 
-
 /**
  * Indicador do emitente do documento fiscal, referenciado no registro C100 e
  * C140.

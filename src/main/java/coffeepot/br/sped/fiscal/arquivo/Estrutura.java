@@ -24,8 +24,8 @@ package coffeepot.br.sped.fiscal.arquivo;
  */
 
 
-import coffeepot.bean.wr.anotation.Field;
-import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.annotation.Field;
+import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
 import coffeepot.br.sped.fiscal.arquivo.bloco1.Bloco1;
 import coffeepot.br.sped.fiscal.arquivo.bloco9.Bloco9;

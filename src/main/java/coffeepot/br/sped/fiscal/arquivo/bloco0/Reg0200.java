@@ -24,11 +24,9 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
  */
 
 
-import coffeepot.bean.wr.anotation.Field;
-import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.annotation.Field;
+import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
-import coffeepot.bean.wr.types.Align;
-import coffeepot.br.sped.fiscal.tipos.TipoItem;
 import java.util.List;
 
 /**
@@ -59,7 +57,7 @@ public class Reg0200 {
     private String codBarra;
     private String codAntItem;
     private String unidInv;
-    private TipoItem tipoItem;
+    private String tipoItem;
     private String codNcm;
     private String exIpi;
     private String codGen;
@@ -109,11 +107,11 @@ public class Reg0200 {
         this.unidInv = unidInv;
     }
 
-    public TipoItem getTipoItem() {
+    public String getTipoItem() {
         return tipoItem;
     }
 
-    public void setTipoItem(TipoItem tipoItem) {
+    public void setTipoItem(String tipoItem) {
         this.tipoItem = tipoItem;
     }
 

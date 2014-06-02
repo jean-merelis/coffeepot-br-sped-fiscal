@@ -36,14 +36,8 @@ public class CustomDateHandler extends DefaultDateHandler{
     public CustomDateHandler() {
         patternForDate = "ddMMyyyy";
         patternForTime = "HHmmss";
-        dateFormat = new SimpleDateFormat(patternForDate);        
+        patternForDateTime="ddMMyyyyHHmmss";
+        patternDefault="ddMMyyyy";
+        dateFormat = new SimpleDateFormat(patternDefault);
     }
-
-    @Override
-    protected void setDefaultValues() {
-        dateFormat = new SimpleDateFormat(patternForDate);  
-    }
-    
-    
-    
 }

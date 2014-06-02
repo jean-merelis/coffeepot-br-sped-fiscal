@@ -24,8 +24,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoH;
  */
 
 
-import coffeepot.bean.wr.anotation.Field;
-import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.annotation.Field;
+import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.PropriedadeEPosseItem;
 import java.util.List;
 

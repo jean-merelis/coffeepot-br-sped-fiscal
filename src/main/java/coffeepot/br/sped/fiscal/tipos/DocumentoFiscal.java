@@ -24,6 +24,8 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 
 
+/*Tamanho máximo do nome deve ser 50 caracteres tam. campo no BD*/
+
 /**
  * Tipo de documento fiscal, referenciado no registro C100.
  *
@@ -123,7 +125,7 @@ public enum DocumentoFiscal  implements EnumCodificado{
             case "59":  return CUPOM_FISCAL_ELETRONICO;
             case "60":  return CUPOM_FISCAL_ELETRONICO_ECF;
             case "65":  return NOTA_FISCAL_ELETRONICA_CONSUMIDOR;
-                
+
             default:
                 throw new ParseException();
         }

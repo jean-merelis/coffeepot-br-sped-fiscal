@@ -32,7 +32,6 @@ import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 import coffeepot.br.sped.fiscal.tipos.NaturezaContaContabil;
 import coffeepot.br.sped.fiscal.tipos.Perfil;
 import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
-import coffeepot.br.sped.fiscal.tipos.TipoItem;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.util.Util;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
@@ -48,10 +47,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -307,7 +302,7 @@ public class Bloco0Test {
         reg.setCodNcm("NCM888888888");
         reg.setDescrItem("Descrição do item");
         reg.setExIpi("001");
-        reg.setTipoItem(TipoItem.MERCADORIA_REVENDA);
+        reg.setTipoItem("00");
         reg.setUnidInv("un");
 
         reg0205List = new ArrayList<>();

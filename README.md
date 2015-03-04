@@ -13,13 +13,9 @@ Documentação técnica e layout:
   http://www.fazenda.gov.br/confaz/confaz/Atos/Atos_Cotepe/2008/ac009_08.htm
 
 Dependência: coffeepot-bean-wr - 
-	https://github.com/jom76/coffeepot-bean-wr
+	https://github.com/jean-merelis/coffeepot-bean-wr
 
-Download jar file: 
-	https://sourceforge.net/projects/coffeepotbrsf/
 
-Download coffeepot-bean-wr jar file: 
-	https://sourceforge.net/projects/coffeepotbeanwr/  
 	
 Exemplo escrevendo registro a registro no arquivo:
 

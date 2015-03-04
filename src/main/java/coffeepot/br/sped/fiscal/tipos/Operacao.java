@@ -31,17 +31,21 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public enum Operacao implements EnumCodificado {
 
-    ENTRADA("0"),
-    SAIDA("1");
-    private String codigo;
+    ENTRADA(0),
+    SAIDA(1);
+    private final Integer codigo;
 
-    private Operacao(String codigo) {
+    private Operacao(int codigo) {
         this.codigo = codigo;
     }
 
     @Override
     public String getCodigo() {
-        return codigo;
+        return codigo.toString();
+    }
+    
+    public String getLabel(){
+        return getClass().getName() + "." + name();
     }
 
     @Override

@@ -24,11 +24,12 @@ package coffeepot.br.sped.fiscal.arquivo;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
+import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 
 @Record( accessorType = AccessorType.PROPERTY, fields = {
-    @Field(name = "reg", classType = String.class),
-    @Field(name = "indMov", classType = Enum.class)
+    @Field(name = "reg", id=true, classType = String.class),
+    @Field(name = "indMov")
 })
 public class RegAberturaBlocoGenerico extends RegAberturaBlocoBase {
 

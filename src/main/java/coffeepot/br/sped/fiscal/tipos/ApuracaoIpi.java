@@ -45,10 +45,14 @@ public enum ApuracaoIpi implements EnumCodificado{
     
     @Override
     public ApuracaoIpi parse(String codigo) throws ParseException{
-        if (codigo == null || codigo.length() != 1){
+        if (codigo == null){
             throw new ParseException("Não foi possível conveter para o tipo ApuracaoIpi");
         }
-        return parse(codigo.charAt(0));
+        
+        if (codigo.equals("0")) return MENSAL;
+        if (codigo.equals("1")) return DECENDIAL;
+        
+        throw new ParseException("Não foi possível conveter para o tipo ApuracaoIpi");
     }
     
     public static ApuracaoIpi parse(char codigo) throws ParseException{

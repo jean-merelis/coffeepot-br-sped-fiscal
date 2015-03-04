@@ -33,7 +33,7 @@ import coffeepot.bean.wr.types.Align;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C190"),
+    @Field(name = "", id=true, constantValue = "C190"),
     @Field(name = "cstIcms", length = 3, align = Align.RIGHT, padding = '0'),
     @Field(name = "cfop"),
     @Field(name = "aliqIcms"),

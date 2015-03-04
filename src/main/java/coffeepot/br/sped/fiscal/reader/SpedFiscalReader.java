@@ -1,7 +1,7 @@
 /*
  * Copyright 2013 - Jeandeson O. Merelis
  */
-package coffeepot.br.sped.fiscal.arquivo.bloco1;
+package coffeepot.br.sped.fiscal.reader;
 
 /*
  * #%L
@@ -24,29 +24,25 @@ package coffeepot.br.sped.fiscal.arquivo.bloco1;
  */
 
 
-import coffeepot.bean.wr.annotation.Field;
-import coffeepot.bean.wr.annotation.Record;
-import coffeepot.bean.wr.types.AccessorType;
-import coffeepot.br.sped.fiscal.arquivo.RegAberturaBlocoBase;
-import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
-import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
+import coffeepot.bean.wr.reader.ObjectReader;
+import coffeepot.br.sped.fiscal.arquivo.EstruturaSemBlocos;
+import java.io.InputStream;
+import java.io.Writer;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
-@Record(accessorType = AccessorType.PROPERTY, fields = {
-    @Field(name = "reg",  id=true, constantValue = "1001"),
-    @Field(name = "indMov")
-})
-public class Reg1001 extends RegAberturaBlocoBase {
+public class SpedFiscalReader {
 
-    public Reg1001() {
-        this.reg = "1001";
+    private ObjectReader reader;
+
+
+    public SpedFiscalReader() {
+        this.reader = ReaderFactory.createReader();
     }
 
-    public Reg1001(IndicadorMovimento indMov) {
-        this.reg = "1001";
-        this.indMov = indMov;
+    public EstruturaSemBlocos read(InputStream src){
+        return reader.read(src, EstruturaSemBlocos.class);
     }
 }

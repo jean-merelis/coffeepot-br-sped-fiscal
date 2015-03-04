@@ -39,7 +39,7 @@ import java.util.Date;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0000"),
+    @Field(name = "reg", id=true, constantValue = "0000"),
     @Field(name = "codVer", length = 3, align = Align.RIGHT, padding = '0'),
     @Field(name = "codFin"),
     @Field(name = "dtIni"),

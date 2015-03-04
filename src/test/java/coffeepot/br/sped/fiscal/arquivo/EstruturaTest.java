@@ -30,12 +30,8 @@ import coffeepot.br.sped.fiscal.arquivo.bloco1.Bloco1;
 import coffeepot.br.sped.fiscal.arquivo.bloco1.Reg1001;
 import coffeepot.br.sped.fiscal.arquivo.bloco1.Reg1990;
 import coffeepot.br.sped.fiscal.arquivo.bloco9.Bloco9;
-import coffeepot.br.sped.fiscal.arquivo.bloco9.Reg9001;
-import coffeepot.br.sped.fiscal.arquivo.bloco9.Reg9990;
-import coffeepot.br.sped.fiscal.arquivo.bloco9.Reg9999;
 import coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoC;
 import coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoCTest;
-import static coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoCTest.createBlocoC;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.RegD001;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.RegD990;
@@ -48,17 +44,20 @@ import coffeepot.br.sped.fiscal.arquivo.blocoG.RegG990;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.RegH001;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.RegH990;
+import coffeepot.br.sped.fiscal.reader.SpedFiscalReader;
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 import coffeepot.br.sped.fiscal.util.Util;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Assert;
 import org.junit.Test;
 
 //private [^+ ]+ regex util.
@@ -106,6 +105,12 @@ public class EstruturaTest {
         } catch (IOException ex) {
             Logger.getLogger(BlocoCTest.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        SpedFiscalReader reader = new SpedFiscalReader();
+        EstruturaSemBlocos sped = reader.read(new FileInputStream(file));
+        Assert.assertNotNull(sped);
+        
+        
     }
 
     private Bloco0 createBloco0() {

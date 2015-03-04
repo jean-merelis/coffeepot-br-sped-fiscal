@@ -35,7 +35,7 @@ import java.util.List;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C400"),
+    @Field(name = "", id=true, constantValue = "C400"),
     @Field(name = "codMod"),
     @Field(name = "ecfMod"),
     @Field(name = "ecfFab", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),

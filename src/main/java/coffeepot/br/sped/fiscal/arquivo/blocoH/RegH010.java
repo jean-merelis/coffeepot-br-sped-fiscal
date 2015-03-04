@@ -34,7 +34,7 @@ import java.util.List;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "H010"),
+    @Field(name = "", id=true, constantValue = "H010"),
     @Field(name = "codItem"),
     @Field(name = "unid"),
     @Field(name = "qtd"),

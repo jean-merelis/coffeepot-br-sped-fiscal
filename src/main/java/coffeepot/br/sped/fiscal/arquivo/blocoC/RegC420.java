@@ -33,7 +33,7 @@ import java.util.List;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C420"),
+    @Field(name = "", id=true, constantValue = "C420"),
     @Field(name = "codTotPar"),
     @Field(name = "vlrAcumTot"),
     @Field(name = "nrTot"),

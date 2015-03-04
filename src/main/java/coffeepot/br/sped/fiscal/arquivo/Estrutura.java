@@ -54,8 +54,8 @@ import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
  * @author Jeandeson O. Merelis
  * @deprecated Embora seja teoricamente possível gravarmos SPED FISCAL inteiro
  * utilizando apenas uma instancia desta classe e a passando para o ObjectWriter
- * escrevê-la, isto não seria nenhum pouco recomendado, pois sabemos que o
- * arquivo pode ser enorme (ultrapassando GB em alguns casos) e o uso da memória
+ * escrevê-la, isto não seria recomendado, pois sabemos que o
+ * arquivo pode ser enorme e o uso da memória
  * ficaria comprometido. A recomendação é gravar os registros sob demanda, e
  * liberando os recursos em seguida.
  * <p/>

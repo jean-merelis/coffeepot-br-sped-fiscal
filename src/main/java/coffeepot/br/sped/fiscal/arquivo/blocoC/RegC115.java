@@ -35,7 +35,7 @@ import coffeepot.br.sped.fiscal.tipos.TipoTransporte;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C115"),
+    @Field(name = "", id=true, constantValue = "C115"),
     @Field(name = "indCarga"),
     @Field(name = "cnpjCol", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "ieCol", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),

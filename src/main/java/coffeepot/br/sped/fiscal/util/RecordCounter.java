@@ -138,10 +138,7 @@ public class RecordCounter {
                 if (isARecord(o.getClass())) {
                     count += count(o, forFormatType);
                 } else {
-                    writesSomeField = true;
-                    if (f.beginNewRecord()) {
-                        count++;
-                    }
+                    writesSomeField = true;                   
                 }
 
             } catch (Exception ex) {

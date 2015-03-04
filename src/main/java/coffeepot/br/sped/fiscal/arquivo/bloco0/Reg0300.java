@@ -33,7 +33,7 @@ import coffeepot.br.sped.fiscal.tipos.IdentificacaoMercadoria;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0300"),
+    @Field(name = "reg", id=true, constantValue = "0300"),
     @Field(name = "codIndBem"),
     @Field(name = "identMerc"),
     @Field(name = "descrItem"),

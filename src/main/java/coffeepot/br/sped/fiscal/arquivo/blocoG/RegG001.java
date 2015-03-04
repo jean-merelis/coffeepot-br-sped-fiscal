@@ -28,6 +28,7 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.arquivo.RegAberturaBlocoBase;
+import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 
 /**
@@ -35,8 +36,8 @@ import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
  * @author Jeandeson O. Merelis
  */
 @Record(accessorType = AccessorType.PROPERTY, fields = {
-    @Field(name = "reg", classType = String.class),
-    @Field(name = "indMov", classType = Enum.class)
+    @Field(name = "reg", id = true, constantValue="G001"),
+    @Field(name = "indMov")
 })
 public class RegG001 extends RegAberturaBlocoBase {
 

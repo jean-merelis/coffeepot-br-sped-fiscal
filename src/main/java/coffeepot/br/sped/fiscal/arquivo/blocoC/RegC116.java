@@ -35,7 +35,7 @@ import java.util.Date;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C116"),
+    @Field(name = "", id=true, constantValue = "C116"),
     @Field(name = "codMod"),
     @Field(name = "nrSat", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "chvCfe", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),

@@ -35,7 +35,7 @@ import coffeepot.bean.wr.types.AccessorType;
  */
 @Record(accessorType = AccessorType.PROPERTY,
         fields = {
-    @Field(name = "reg", classType = String.class),
+    @Field(name = "reg", id = true, classType = String.class),
     @Field(name = "qtdLin", classType = Long.class)
 })
 public class RegEncerramentoBlocoGenerico extends RegEncerramentoBlocoBase {

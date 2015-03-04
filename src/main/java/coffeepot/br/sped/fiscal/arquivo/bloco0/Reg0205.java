@@ -33,7 +33,7 @@ import java.util.Date;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0205"),
+    @Field(name = "reg", id=true, constantValue = "0205"),
     @Field(name = "descrAntItem"),
     @Field(name = "dtIni"),
     @Field(name = "dtFim"),

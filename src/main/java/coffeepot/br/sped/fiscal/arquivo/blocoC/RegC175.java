@@ -33,7 +33,7 @@ import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C175"),
+    @Field(name = "", id=true, constantValue = "C175"),
     @Field(name = "indVeicOper"),
     @Field(name = "cnpj", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "uf"),

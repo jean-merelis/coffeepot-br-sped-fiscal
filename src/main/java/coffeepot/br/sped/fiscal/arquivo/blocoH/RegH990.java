@@ -35,7 +35,7 @@ import coffeepot.br.sped.fiscal.arquivo.RegEncerramentoBlocoBase;
  */
 @Record(accessorType = AccessorType.PROPERTY,
         fields = {
-    @Field(name = "reg", classType = String.class),
+    @Field(name = "reg", id = true, constantValue="H990"),
     @Field(name = "qtdLin", classType = Long.class)
 })
 public class RegH990 extends RegEncerramentoBlocoBase {

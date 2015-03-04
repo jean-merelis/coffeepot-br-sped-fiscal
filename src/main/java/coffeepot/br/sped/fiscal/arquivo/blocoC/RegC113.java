@@ -36,7 +36,7 @@ import java.util.Date;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C113"),
+    @Field(name = "", id=true, constantValue = "C113"),
     @Field(name = "indOper"),
     @Field(name = "indEmit"),
     @Field(name = "codPart"),

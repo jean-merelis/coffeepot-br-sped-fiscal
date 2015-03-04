@@ -32,7 +32,7 @@ import coffeepot.bean.wr.annotation.Record;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0305"),
+    @Field(name = "reg", id=true, constantValue = "0305"),
     @Field(name = "codCcus"),
     @Field(name = "func"),
     @Field(name = "vidaUtil")

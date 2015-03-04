@@ -22,27 +22,30 @@ package coffeepot.br.sped.fiscal.tipos;
  * limitations under the License.
  * #L%
  */
-
-
 /**
  * Indicador do tipo do frete, referenciado no registro C100.
  *
  * @author Jeandeson O. Merelis
  */
-public enum Frete implements EnumCodificado{
+public enum Frete implements EnumCodificado {
 
-    EMITENTE("0"),
-    DESTINATARIO_REMETENTE("1"),
-    TERCEIROS("2"),
-    SEM_FRETE("9");
-    private String codigo;
+    EMITENTE(0),
+    DESTINATARIO_REMETENTE(1),
+    TERCEIROS(2),
+    SEM_FRETE(9);
 
-    private Frete(String codigo) {
+    private final int codigo;
+
+    private Frete(int codigo) {
         this.codigo = codigo;
     }
 
     @Override
     public String getCodigo() {
+        return String.valueOf(codigo);
+    }
+
+    public int getCodigoAsInt() {
         return codigo;
     }
 
@@ -62,5 +65,9 @@ public enum Frete implements EnumCodificado{
         }
 
         throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo Frete");
+    }
+
+    public String getLabel() {
+        return getClass().getName() + "." + name();
     }
 }

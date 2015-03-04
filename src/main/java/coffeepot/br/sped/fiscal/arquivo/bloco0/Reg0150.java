@@ -31,7 +31,7 @@ import java.util.List;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0150"),
+    @Field(name = "reg", id=true, constantValue = "0150"),
     @Field(name = "codPart"),
     @Field(name = "nome", maxLength = 100),
     @Field(name = "codPais"),

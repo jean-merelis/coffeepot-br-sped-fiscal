@@ -22,8 +22,6 @@ package coffeepot.br.sped.fiscal.tipos;
  * limitations under the License.
  * #L%
  */
-
-
 /**
  *
  * @author Jeandeson O. Merelis
@@ -53,7 +51,21 @@ public enum VersaoLayout implements EnumCodificado {
 
     @Override
     public Enum parse(String codigo) throws ParseException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (codigo == null) {
+            return null;
+        }
+        switch (codigo) {
+            case "100":
+                return VERSAO_100;
+            case "101":
+                return VERSAO_101;
+            case "102":
+                return VERSAO_102;
+            case "103":
+                return VERSAO_103;
+            default:
+                throw new IllegalArgumentException("Tipo de versão não suportado");
+        }
     }
 
     public static VersaoLayout parseByDescription(String descricao) {
@@ -71,12 +83,13 @@ public enum VersaoLayout implements EnumCodificado {
         }
         return null;
     }
-    
+
     /**
      * Versão que este projeto implementa.
-     * @return 
+     *
+     * @return
      */
-    public static VersaoLayout getLastVersionImpl(){
+    public static VersaoLayout getLastVersionImpl() {
         return VERSAO_103;
     }
 }

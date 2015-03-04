@@ -34,7 +34,7 @@ import coffeepot.bean.wr.types.Align;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0100"),
+    @Field(name = "reg", id=true, constantValue = "0100"),
     @Field(name = "nome", maxLength = 100),
     @Field(name = "cpf", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "crc", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),

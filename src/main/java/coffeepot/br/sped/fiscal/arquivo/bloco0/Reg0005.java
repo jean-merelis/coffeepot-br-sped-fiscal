@@ -26,7 +26,7 @@ import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 
 @Record(fields = {
-    @Field(name = "reg", constantValue = "0005"),
+    @Field(name = "reg", id=true, constantValue = "0005"),
     @Field(name = "fantasia", maxLength = 60),
     @Field(name = "cep", length = 8, padding = '0', paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "end", maxLength = 60),

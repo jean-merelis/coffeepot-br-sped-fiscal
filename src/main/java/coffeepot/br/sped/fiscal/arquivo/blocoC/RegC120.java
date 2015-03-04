@@ -33,7 +33,7 @@ import coffeepot.br.sped.fiscal.tipos.DocumentoImportacao;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", constantValue = "C120"),
+    @Field(name = "", id=true, constantValue = "C120"),
     @Field( name = "codDocImp"),
     @Field( name = "numDocImp"),
     @Field( name = "pisImp"),

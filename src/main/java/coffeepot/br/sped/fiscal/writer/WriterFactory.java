@@ -25,7 +25,6 @@ package coffeepot.br.sped.fiscal.writer;
 
 
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
-import coffeepot.bean.wr.typeHandler.TypeHandler;
 import coffeepot.bean.wr.writer.DelimitedWriter;
 import coffeepot.bean.wr.writer.ObjectWriter;
 import coffeepot.br.sped.fiscal.typeHandler.CustomDateHandler;

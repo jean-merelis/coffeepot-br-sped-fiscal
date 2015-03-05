@@ -25,7 +25,6 @@ package coffeepot.br.sped.fiscal.reader;
 import coffeepot.bean.wr.reader.DelimitedReader;
 import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
-import coffeepot.bean.wr.typeHandler.TypeHandler;
 import coffeepot.br.sped.fiscal.typeHandler.CustomDateHandler;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
 import java.util.Date;

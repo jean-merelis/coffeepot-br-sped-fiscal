@@ -24,7 +24,6 @@ package coffeepot.br.sped.fiscal.writer;
  */
 
 
-import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
 import coffeepot.bean.wr.typeHandler.TypeHandler;
 import coffeepot.bean.wr.writer.DelimitedWriter;
@@ -44,21 +43,18 @@ public class WriterFactory {
         ObjectWriter beanWriter = DelimitedWriter.create(w)
                 .withDelimiter('|')
                 .withRecordInitializator("|")
-                .withRecordTerminator("|\r\n");
+                .withRecordTerminator("|\r\n")
+                .removeDelimiter(true);
+        
         
         beanWriter.getObjectParserFactory().getHandlerFactory().registerTypeHandlerClassFor(Date.class, CustomDateHandler.class);
         beanWriter.getObjectParserFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
 
-        beanWriter.getObjectParserFactory().getHandlerFactory().registerTypeHandlerInstanceAsDefaultFor(Double.class, WriterFactory.createDefaultDoubleHandler());
-
+        DefaultDoubleHandler.setPatternDefault("#0.##########");
+        DefaultDoubleHandler.setDecimalSeparatorDefault(',');
+        DefaultDoubleHandler.setGroupingSeparatorDefault('.');
+        
         return beanWriter;
-    }
-
-    private static TypeHandler createDefaultDoubleHandler() {
-        DefaultDoubleHandler handler = new DefaultDoubleHandler();
-        String[] params = new String[]{"pattern=#0.##########", "decimalSeparator=,", "groupingSeparator=."};
-        handler.setConfig(params);
-        return handler;
     }
 
 }

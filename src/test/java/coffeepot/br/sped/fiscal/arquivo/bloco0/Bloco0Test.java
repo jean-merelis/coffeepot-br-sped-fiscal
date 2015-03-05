@@ -67,7 +67,7 @@ public class Bloco0Test {
         Bloco0 bloco0 = createBloco0();
 
         try {
-            String file = EstruturaTest.TEST_BLOCO_OUT_DIR + "Bloco0Test.txt";
+            String file = EstruturaTest.TEST_BLOCO_OUT_DIR + "Bloco0Test.tmp";
             Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));
             SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
 

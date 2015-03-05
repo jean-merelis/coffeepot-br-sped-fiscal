@@ -75,7 +75,7 @@ public class EstruturaTest {
     public void testEstrutura() throws Exception {
 
         System.out.println("**** Teste de escrita do arquivo inteiro ***");
-        File file = new File(EstruturaTest.TEST_BLOCO_OUT_DIR + "SpedFiscalTest.txt");
+        File file = new File(EstruturaTest.TEST_BLOCO_OUT_DIR + "SpedFiscalTest.tmp");
 
         Estrutura estrutura = new Estrutura();
         estrutura.setBloco0(createBloco0());

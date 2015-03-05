@@ -22,9 +22,6 @@ package coffeepot.br.sped.fiscal.reader;
  * limitations under the License.
  * #L%
  */
-
-
-
 import coffeepot.bean.wr.reader.DelimitedReader;
 import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
@@ -40,24 +37,19 @@ import java.util.Date;
 public class ReaderFactory {
 
     public static ObjectReader createReader() {
-        DelimitedReader reader =  new DelimitedReader();
-                reader.setDelimiter('|');
-                reader.setRecordInitializator("|");
-                reader.setRemoveRecordInitializator(true);
-        
+        DelimitedReader reader = new DelimitedReader();
+        reader.setDelimiter('|');
+        reader.setRecordInitializator("|");
+        reader.setRemoveRecordInitializator(true);
+
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Date.class, CustomDateHandler.class);
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
 
-        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerInstanceAsDefaultFor(Double.class, ReaderFactory.createDefaultDoubleHandler());
+        DefaultDoubleHandler.setPatternDefault("#0.##########");
+        DefaultDoubleHandler.setDecimalSeparatorDefault(',');
+        DefaultDoubleHandler.setGroupingSeparatorDefault('.');
 
         return reader;
-    }
-
-    private static TypeHandler createDefaultDoubleHandler() {
-        DefaultDoubleHandler handler = new DefaultDoubleHandler();
-        String[] params = new String[]{"pattern=#0.##########", "decimalSeparator=,", "groupingSeparator=."};
-        handler.setConfig(params);
-        return handler;
     }
 
 }

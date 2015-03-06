@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.reader;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,10 +24,9 @@ package coffeepot.br.sped.fiscal.reader;
  */
 import coffeepot.bean.wr.reader.DelimitedReader;
 import coffeepot.bean.wr.reader.ObjectReader;
+import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
-import coffeepot.br.sped.fiscal.typeHandler.CustomDateHandler;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
-import java.util.Date;
 
 /**
  *
@@ -42,12 +41,16 @@ public class ReaderFactory {
         reader.setRemoveRecordInitializator(true);
         reader.setCharsetName("ISO-8859-1");
 
-        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Date.class, CustomDateHandler.class);
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
 
         DefaultDoubleHandler.setPatternDefault("#0.##########");
         DefaultDoubleHandler.setDecimalSeparatorDefault(',');
         DefaultDoubleHandler.setGroupingSeparatorDefault('.');
+
+        DefaultDateHandler.setPatternForDateDefault("ddMMyyyy");
+        DefaultDateHandler.setPatternForTimeDefault("HHmmss");
+        DefaultDateHandler.setPatternForDateTimeDefault("ddMMyyyyHHmmss");
+        DefaultDateHandler.setPatternDefault("ddMMyyyy");
 
         return reader;
     }

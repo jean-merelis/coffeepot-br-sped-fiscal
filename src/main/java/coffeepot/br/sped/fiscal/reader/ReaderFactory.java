@@ -40,6 +40,7 @@ public class ReaderFactory {
         reader.setDelimiter('|');
         reader.setRecordInitializator("|");
         reader.setRemoveRecordInitializator(true);
+        reader.setCharsetName("ISO-8859-1");
 
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Date.class, CustomDateHandler.class);
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);

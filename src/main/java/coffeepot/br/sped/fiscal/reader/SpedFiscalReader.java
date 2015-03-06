@@ -22,12 +22,17 @@ package coffeepot.br.sped.fiscal.reader;
  * limitations under the License.
  * #L%
  */
-
-
 import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.br.sped.fiscal.arquivo.EstruturaSemBlocos;
+import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
+import coffeepot.br.sped.fiscal.arquivo.bloco1.Bloco1;
+import coffeepot.br.sped.fiscal.arquivo.bloco9.Bloco9;
+import coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoC;
+import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
+import coffeepot.br.sped.fiscal.arquivo.blocoE.BlocoE;
+import coffeepot.br.sped.fiscal.arquivo.blocoG.BlocoG;
+import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
 import java.io.InputStream;
-import java.io.Writer;
 
 /**
  *
@@ -37,12 +42,43 @@ public class SpedFiscalReader {
 
     private ObjectReader reader;
 
-
     public SpedFiscalReader() {
         this.reader = ReaderFactory.createReader();
     }
 
-    public EstruturaSemBlocos read(InputStream src){
+    public EstruturaSemBlocos read(InputStream src) {
         return reader.read(src, EstruturaSemBlocos.class);
+    }
+
+    public Bloco0 readBloco0(InputStream src) {
+        return reader.read(src, Bloco0.class);
+    }
+
+    public Bloco1 readBloco1(InputStream src) {
+        return reader.read(src, Bloco1.class);
+    }
+
+    public Bloco9 readBloco9(InputStream src) {
+        return reader.read(src, Bloco9.class);
+    }
+
+    public BlocoC readBlocoC(InputStream src) {
+        return reader.read(src, BlocoC.class);
+    }
+
+    public BlocoD readBlocoD(InputStream src) {
+        return reader.read(src, BlocoD.class);
+    }
+
+    public BlocoE readBlocoE(InputStream src) {
+        return reader.read(src, BlocoE.class);
+    }
+
+    public BlocoG readBlocoG(InputStream src) {
+        return reader.read(src, BlocoG.class);
+    }
+
+    public BlocoH readBlocoH(InputStream src) {
+        return reader.read(src, BlocoH.class);
     }
 }

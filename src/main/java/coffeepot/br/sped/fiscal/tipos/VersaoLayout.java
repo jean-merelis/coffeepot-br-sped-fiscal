@@ -28,10 +28,15 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public enum VersaoLayout implements EnumCodificado {
 
-    VERSAO_100("100", "Versão 100 Ato COTEPE 01/01/2008"),
-    VERSAO_101("101", "Versão 101 Ato COTEPE 01/01/2009"),
-    VERSAO_102("102", "Versão 102 Ato COTEPE 01/01/2010"),
-    VERSAO_103("103", "Versão 103 Ato COTEPE 01/01/2011");
+    VERSAO_002("002", "Versão 1.01 Ato COTEPE 01/01/2009"),
+    VERSAO_003("003", "Versão 1.02 Ato COTEPE 01/01/2010"),
+    VERSAO_004("004", "Versão 1.03 Ato COTEPE 01/01/2011"),
+    VERSAO_005("005", "Versão 1.04 Ato COTEPE 01/01/2012"),
+    VERSAO_006("006", "Versão 1.05 Ato COTEPE 01/07/2012"),
+    VERSAO_007("007", "Versão 1.06 Ato COTEPE 01/01/2013"),
+    VERSAO_008("008", "Versão 1.07 Ato COTEPE 01/01/2014"),
+    VERSAO_009("009", "Versão 1.08 Ato COTEPE 01/01/2015"),
+    VERSAO_010("010", "Versão 1.09 Ato COTEPE 01/01/2016");
     private String codigo;
     private String descricao;
 
@@ -55,31 +60,56 @@ public enum VersaoLayout implements EnumCodificado {
             return null;
         }
         switch (codigo) {
-            case "100":
-                return VERSAO_100;
-            case "101":
-                return VERSAO_101;
-            case "102":
-                return VERSAO_102;
-            case "103":
-                return VERSAO_103;
+            case "002":
+                return VERSAO_002;
+            case "003":
+                return VERSAO_003;
+            case "004":
+                return VERSAO_004;
+            case "005":
+                return VERSAO_005;
+            case "006":
+                return VERSAO_006;
+            case "007":
+                return VERSAO_007;
+            case "008":
+                return VERSAO_008;
+            case "009":
+                return VERSAO_009;
+            case "010":
+                return VERSAO_010;
             default:
                 throw new IllegalArgumentException("Tipo de versão não suportado");
         }
     }
 
     public static VersaoLayout parseByDescription(String descricao) {
-        if (VERSAO_100.getDescricao().equals(descricao)) {
-            return VERSAO_100;
+        if (VERSAO_002.getDescricao().equals(descricao)) {
+            return VERSAO_002;
         }
-        if (VERSAO_101.getDescricao().equals(descricao)) {
-            return VERSAO_101;
+        if (VERSAO_003.getDescricao().equals(descricao)) {
+            return VERSAO_003;
         }
-        if (VERSAO_102.getDescricao().equals(descricao)) {
-            return VERSAO_102;
+        if (VERSAO_004.getDescricao().equals(descricao)) {
+            return VERSAO_004;
         }
-        if (VERSAO_103.getDescricao().equals(descricao)) {
-            return VERSAO_103;
+        if (VERSAO_005.getDescricao().equals(descricao)) {
+            return VERSAO_005;
+        }
+        if (VERSAO_006.getDescricao().equals(descricao)) {
+            return VERSAO_006;
+        }
+        if (VERSAO_007.getDescricao().equals(descricao)) {
+            return VERSAO_007;
+        }
+        if (VERSAO_008.getDescricao().equals(descricao)) {
+            return VERSAO_008;
+        }
+        if (VERSAO_009.getDescricao().equals(descricao)) {
+            return VERSAO_009;
+        }
+        if (VERSAO_010.getDescricao().equals(descricao)) {
+            return VERSAO_010;
         }
         return null;
     }
@@ -90,6 +120,6 @@ public enum VersaoLayout implements EnumCodificado {
      * @return
      */
     public static VersaoLayout getLastVersionImpl() {
-        return VERSAO_103;
+        return VERSAO_009;
     }
 }

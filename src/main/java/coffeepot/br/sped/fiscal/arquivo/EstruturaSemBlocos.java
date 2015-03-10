@@ -69,12 +69,14 @@ import coffeepot.br.sped.fiscal.arquivo.blocoC.RegC990;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.RegD001;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.RegD990;
 import coffeepot.br.sped.fiscal.arquivo.blocoE.RegE001;
+import coffeepot.br.sped.fiscal.arquivo.blocoE.RegE100;
 import coffeepot.br.sped.fiscal.arquivo.blocoE.RegE990;
 import coffeepot.br.sped.fiscal.arquivo.blocoG.RegG001;
 import coffeepot.br.sped.fiscal.arquivo.blocoG.RegG990;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.RegH001;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.RegH005;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.RegH990;
+
 import java.util.List;
 
 /**
@@ -127,8 +129,8 @@ import java.util.List;
     //
     //bloco E
     @Field(name = "regE001"),
+    @Field(name = "regE100List"),
     //TODO: Registros Bloco E ainda não implementados
-    //    @Field(name = "regE100List"),
     //    @Field(name = "regE200List"),
     //    @Field(name = "regE500List"),
     @Field(name = "regE990"),
@@ -238,8 +240,8 @@ public class EstruturaSemBlocos {
 
     //bloco E
     private RegE001 regE001;
+    private List<RegE100> regE100List;
     //TODO: Registros Bloco E ainda não implementados
-//    private List<RegE100> regE100List;
 //    private List<RegE200> regE200List;
 //    private List<RegE500> regE500List;
     private RegE990 regE990;
@@ -511,7 +513,15 @@ public class EstruturaSemBlocos {
         this.regE001 = regE001;
     }
 
-    public RegE990 getRegE990() {
+    public List<RegE100> getRegE100List() {
+		return regE100List;
+	}
+
+	public void setRegE100List(List<RegE100> regE100List) {
+		this.regE100List = regE100List;
+	}
+
+	public RegE990 getRegE990() {
         return regE990;
     }
 

@@ -35,8 +35,8 @@ import java.util.List;
  */
 @Record(fields = {
     @Field(name = "regE001"),
+    @Field(name = "regE100List"),
     //TODO: Registros Bloco E ainda não implementados
-    //    @Field(name = "regE100List"),
     //    @Field(name = "regE200List"),
     //    @Field(name = "regE500List"),
     @Field(name = "regE990")
@@ -44,8 +44,8 @@ import java.util.List;
 public class BlocoE {
 
     private RegE001 regE001;
+    private List<RegE100> regE100List;
     //TODO: Registros Bloco E ainda não implementados
-//    private List<RegE100> regE100List;
 //    private List<RegE200> regE200List;
 //    private List<RegE500> regE500List;
     private RegE990 regE990;
@@ -65,4 +65,13 @@ public class BlocoE {
     public void setRegE990(RegE990 regE990) {
         this.regE990 = regE990;
     }
+
+	public List<RegE100> getRegE100List() {
+		return regE100List;
+	}
+
+	public void setRegE100List(List<RegE100> regE100List) {
+		this.regE100List = regE100List;
+	}
+    
 }

@@ -22,8 +22,6 @@ package coffeepot.br.sped.fiscal.arquivo;
  * limitations under the License.
  * #L%
  */
-
-
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0Test;
 import coffeepot.br.sped.fiscal.arquivo.bloco1.Bloco1;
@@ -52,6 +50,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -61,7 +60,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 //private [^+ ]+ regex util.
-
 /**
  *
  * @author Jeandeson O. Merelis
@@ -105,12 +103,7 @@ public class EstruturaTest {
         } catch (IOException ex) {
             Logger.getLogger(BlocoCTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        SpedFiscalReader reader = new SpedFiscalReader();
-        EstruturaSemBlocos sped = reader.read(new FileInputStream(file));
-        Assert.assertNotNull(sped);
-        
-        
+
     }
 
     private Bloco0 createBloco0() {

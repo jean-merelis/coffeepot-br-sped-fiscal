@@ -23,6 +23,8 @@ package coffeepot.br.sped.fiscal.reader;
  * #L%
  */
 import coffeepot.bean.wr.reader.ObjectReader;
+import coffeepot.bean.wr.reader.UnknownRecordException;
+import coffeepot.bean.wr.typeHandler.HandlerParseException;
 import coffeepot.br.sped.fiscal.arquivo.EstruturaSemBlocos;
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
 import coffeepot.br.sped.fiscal.arquivo.bloco1.Bloco1;
@@ -32,7 +34,8 @@ import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
 import coffeepot.br.sped.fiscal.arquivo.blocoE.BlocoE;
 import coffeepot.br.sped.fiscal.arquivo.blocoG.BlocoG;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
-import java.io.InputStream;
+import java.io.IOException;
+import java.io.Reader;
 
 /**
  *
@@ -42,43 +45,59 @@ public class SpedFiscalReader {
 
     private ObjectReader reader;
 
-    public SpedFiscalReader() {
-        this.reader = ReaderFactory.createReader();
+    public SpedFiscalReader(Reader r) {
+        this.reader = ReaderFactory.createReader(r);
     }
 
-    public EstruturaSemBlocos read(InputStream src) {
-        return reader.read(src, EstruturaSemBlocos.class);
+    public EstruturaSemBlocos parseToEstruturaSemBlocos() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith(null);
+        return reader.parse(EstruturaSemBlocos.class);
     }
 
-    public Bloco0 readBloco0(InputStream src) {
-        return reader.read(src, Bloco0.class);
+    public Bloco0 parseToBloco0() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.processUpToTheLineStartsWith("|0990|");
+        return reader.parse(Bloco0.class);
     }
 
-    public Bloco1 readBloco1(InputStream src) {
-        return reader.read(src, Bloco1.class);
+    public Bloco1 parseToBloco1() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|1001|");
+        reader.processUpToTheLineStartsWith("|1990|");
+        return reader.parse(Bloco1.class);
     }
 
-    public Bloco9 readBloco9(InputStream src) {
-        return reader.read(src, Bloco9.class);
+    public Bloco9 parseToBloco9() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|9001|");
+        reader.processUpToTheLineStartsWith("|9990|");
+        return reader.parse(Bloco9.class);
     }
 
-    public BlocoC readBlocoC(InputStream src) {
-        return reader.read(src, BlocoC.class);
+    public BlocoC parseToBlocoC() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|C001|");
+        reader.processUpToTheLineStartsWith("|C990|");
+        return reader.parse(BlocoC.class);
     }
 
-    public BlocoD readBlocoD(InputStream src) {
-        return reader.read(src, BlocoD.class);
+    public BlocoD parseToBlocoD() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|D001|");
+        reader.processUpToTheLineStartsWith("|D990|");
+        return reader.parse(BlocoD.class);
     }
 
-    public BlocoE readBlocoE(InputStream src) {
-        return reader.read(src, BlocoE.class);
+    public BlocoE parseToBlocoE() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|E001|");
+        reader.processUpToTheLineStartsWith("|E990|");
+        return reader.parse(BlocoE.class);
     }
 
-    public BlocoG readBlocoG(InputStream src) {
-        return reader.read(src, BlocoG.class);
+    public BlocoG parseToBlocoG() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|G001|");
+        reader.processUpToTheLineStartsWith("|G990|");
+        return reader.parse(BlocoG.class);
     }
 
-    public BlocoH readBlocoH(InputStream src) {
-        return reader.read(src, BlocoH.class);
+    public BlocoH parseToBlocoH() throws UnknownRecordException, HandlerParseException, IOException, Exception {
+        reader.findLineStartsWith("|H001|");
+        reader.processUpToTheLineStartsWith("|H990|");
+        return reader.parse(BlocoH.class);
     }
 }

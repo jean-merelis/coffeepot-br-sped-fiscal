@@ -27,6 +27,7 @@ import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
+import java.io.Reader;
 
 /**
  *
@@ -34,12 +35,13 @@ import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
  */
 public class ReaderFactory {
 
-    public static ObjectReader createReader() {
-        DelimitedReader reader = new DelimitedReader();
+    public static ObjectReader createReader(Reader r) {
+        DelimitedReader reader = new DelimitedReader(r);
         reader.setDelimiter('|');
         reader.setRecordInitializator("|");
         reader.setRemoveRecordInitializator(true);
         reader.setCharsetName("ISO-8859-1");
+        reader.setIgnoreUnknownRecords(false);
 
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
 
@@ -54,5 +56,4 @@ public class ReaderFactory {
 
         return reader;
     }
-
 }

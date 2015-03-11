@@ -45,7 +45,7 @@ public class WriterFactory {
                 .removeDelimiter(true);
 
 
-        beanWriter.getObjectParserFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
+        beanWriter.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
 
         DefaultDoubleHandler.setPatternDefault("#0.##########");
         DefaultDoubleHandler.setDecimalSeparatorDefault(',');

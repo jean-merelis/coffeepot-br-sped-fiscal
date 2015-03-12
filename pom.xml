@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>coffeepot</groupId>
+    <groupId>com.github.jean-merelis</groupId>
     <artifactId>coffeepot-br-sped-fiscal</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>coffeepot-br-sped-fiscal</name>
-    <url>https://github.com/jom76</url>
+    <url>https://github.com/jean-merelis</url>
     <organization>
         <name>Jeandeson O. Merelis</name>
         <url>https://github.com/jean-merelis</url>

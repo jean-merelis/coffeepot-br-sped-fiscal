@@ -16,6 +16,7 @@ Dependência: coffeepot-bean-wr -
 	https://github.com/jean-merelis/coffeepot-bean-wr
 
 Download from Maven central
+
 ´´´xml
         <dependency>
             <groupId>com.github.jean-merelis</groupId>

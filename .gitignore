@@ -1,3 +1,6 @@
 /target/
 /*Test.txt
 *.tmp
+.classpath
+.project
+.settings

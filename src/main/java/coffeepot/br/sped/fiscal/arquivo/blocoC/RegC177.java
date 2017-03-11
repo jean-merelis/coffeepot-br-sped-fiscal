@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -36,24 +38,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "codSeloIpi"),
     @Field(name = "qtSeloIpi")
 })
+@Getter
+@Setter
 public class RegC177 {
 
     private String codSeloIpi;
     private Long qtSeloIpi;
 
-    public String getCodSeloIpi() {
-        return codSeloIpi;
-    }
-
-    public void setCodSeloIpi(String codSeloIpi) {
-        this.codSeloIpi = codSeloIpi;
-    }
-
-    public Long getQtSeloIpi() {
-        return qtSeloIpi;
-    }
-
-    public void setQtSeloIpi(Long qtSeloIpi) {
-        this.qtSeloIpi = qtSeloIpi;
-    }
 }

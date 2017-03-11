@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -48,6 +50,8 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "vlNt"),
     @Field(name = "vlIcmsSt")
 })
+@Getter
+@Setter
 public class RegC495 {
 
     private Double aliqIcms;
@@ -65,115 +69,4 @@ public class RegC495 {
     private Double vlNt;
     private Double vlIcmsSt;
 
-    public Double getAliqIcms() {
-        return aliqIcms;
-    }
-
-    public void setAliqIcms(Double aliqIcms) {
-        this.aliqIcms = aliqIcms;
-    }
-
-    public String getCodItem() {
-        return codItem;
-    }
-
-    public void setCodItem(String codItem) {
-        this.codItem = codItem;
-    }
-
-    public Double getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(Double qtd) {
-        this.qtd = qtd;
-    }
-
-    public Double getQtdCanc() {
-        return qtdCanc;
-    }
-
-    public void setQtdCanc(Double qtdCanc) {
-        this.qtdCanc = qtdCanc;
-    }
-
-    public String getUnid() {
-        return unid;
-    }
-
-    public void setUnid(String unid) {
-        this.unid = unid;
-    }
-
-    public Double getVlItem() {
-        return vlItem;
-    }
-
-    public void setVlItem(Double vlItem) {
-        this.vlItem = vlItem;
-    }
-
-    public Double getVlDesc() {
-        return vlDesc;
-    }
-
-    public void setVlDesc(Double vlDesc) {
-        this.vlDesc = vlDesc;
-    }
-
-    public Double getVlCanc() {
-        return vlCanc;
-    }
-
-    public void setVlCanc(Double vlCanc) {
-        this.vlCanc = vlCanc;
-    }
-
-    public Double getVlAcmo() {
-        return vlAcmo;
-    }
-
-    public void setVlAcmo(Double vlAcmo) {
-        this.vlAcmo = vlAcmo;
-    }
-
-    public Double getVlBcIcms() {
-        return vlBcIcms;
-    }
-
-    public void setVlBcIcms(Double vlBcIcms) {
-        this.vlBcIcms = vlBcIcms;
-    }
-
-    public Double getVlIcms() {
-        return vlIcms;
-    }
-
-    public void setVlIcms(Double vlIcms) {
-        this.vlIcms = vlIcms;
-    }
-
-    public Double getVlIsen() {
-        return vlIsen;
-    }
-
-    public void setVlIsen(Double vlIsen) {
-        this.vlIsen = vlIsen;
-    }
-
-    public Double getVlNt() {
-        return vlNt;
-    }
-
-    public void setVlNt(Double vlNt) {
-        this.vlNt = vlNt;
-    }
-
-    public Double getVlIcmsSt() {
-        return vlIcmsSt;
-    }
-
-    public void setVlIcmsSt(Double vlIcmsSt) {
-        this.vlIcmsSt = vlIcmsSt;
-    }
 }

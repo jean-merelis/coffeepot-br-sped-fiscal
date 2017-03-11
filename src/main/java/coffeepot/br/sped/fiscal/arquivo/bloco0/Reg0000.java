@@ -32,6 +32,9 @@ import coffeepot.br.sped.fiscal.tipos.FinalidadeArquivo;
 import coffeepot.br.sped.fiscal.tipos.IndicadorAtividade;
 import coffeepot.br.sped.fiscal.tipos.Perfil;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -55,6 +58,8 @@ import java.util.Date;
     @Field(name = "indPerfil"),
     @Field(name = "indAtiv")
 })
+@Getter
+@Setter
 public class Reg0000 {
 
     private VersaoLayout codVer;
@@ -72,115 +77,4 @@ public class Reg0000 {
     private Perfil indPerfil;
     private IndicadorAtividade indAtiv;
 
-    public VersaoLayout getCodVer() {
-        return codVer;
-    }
-
-    public void setCodVer(VersaoLayout codVer) {
-        this.codVer = codVer;
-    }
-
-    public FinalidadeArquivo getCodFin() {
-        return codFin;
-    }
-
-    public void setCodFin(FinalidadeArquivo codFin) {
-        this.codFin = codFin;
-    }
-
-    public Date getDtIni() {
-        return dtIni;
-    }
-
-    public void setDtIni(Date dtIni) {
-        this.dtIni = dtIni;
-    }
-
-    public Date getDtFin() {
-        return dtFin;
-    }
-
-    public void setDtFin(Date dtFin) {
-        this.dtFin = dtFin;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public String getIe() {
-        return ie;
-    }
-
-    public void setIe(String ie) {
-        this.ie = ie;
-    }
-
-    public Integer getCodMun() {
-        return codMun;
-    }
-
-    public void setCodMun(Integer codMun) {
-        this.codMun = codMun;
-    }
-
-    public String getIm() {
-        return im;
-    }
-
-    public void setIm(String im) {
-        this.im = im;
-    }
-
-    public String getSuframa() {
-        return suframa;
-    }
-
-    public void setSuframa(String suframa) {
-        this.suframa = suframa;
-    }
-
-    public Perfil getIndPerfil() {
-        return indPerfil;
-    }
-
-    public void setIndPerfil(Perfil indPerfil) {
-        this.indPerfil = indPerfil;
-    }
-
-    public IndicadorAtividade getIndAtiv() {
-        return indAtiv;
-    }
-
-    public void setIndAtiv(IndicadorAtividade indAtiv) {
-        this.indAtiv = indAtiv;
-    }
 }

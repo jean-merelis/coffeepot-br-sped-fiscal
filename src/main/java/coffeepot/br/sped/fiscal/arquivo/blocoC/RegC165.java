@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.Date;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,7 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import coffeepot.bean.wr.types.Align;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -49,6 +52,8 @@ import java.util.Date;
     @Field(name = "cpf", length = 11, padding = '0', align = Align.RIGHT, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "ufId")
 })
+@Getter
+@Setter
 public class RegC165 {
 
     private String codPart;
@@ -64,99 +69,4 @@ public class RegC165 {
     private String cpf;
     private String ufId;
     
-    public String getCodPart() {
-        return codPart;
-    }
-
-    public void setCodPart(String codPart) {
-        this.codPart = codPart;
-    }
-
-    public String getVeicId() {
-        return veicId;
-    }
-
-    public void setVeicId(String veicId) {
-        this.veicId = veicId;
-    }
-
-    public String getCodAut() {
-        return codAut;
-    }
-
-    public void setCodAut(String codAut) {
-        this.codAut = codAut;
-    }
-
-    public String getNrPasse() {
-        return nrPasse;
-    }
-
-    public void setNrPasse(String nrPasse) {
-        this.nrPasse = nrPasse;
-    }
-
-    public Date getHora() {
-        return hora;
-    }
-
-    public void setHora(Date hora) {
-        this.hora = hora;
-    }
-
-    public Double getTemper() {
-        return temper;
-    }
-
-    public void setTemper(Double temper) {
-        this.temper = temper;
-    }
-
-    public Integer getQtdVol() {
-        return qtdVol;
-    }
-
-    public void setQtdVol(Integer qtdVol) {
-        this.qtdVol = qtdVol;
-    }
-
-    public Double getPesoBrt() {
-        return pesoBrt;
-    }
-
-    public void setPesoBrt(Double pesoBrt) {
-        this.pesoBrt = pesoBrt;
-    }
-
-    public Double getPesoLiq() {
-        return pesoLiq;
-    }
-
-    public void setPesoLiq(Double pesoLiq) {
-        this.pesoLiq = pesoLiq;
-    }
-
-    public String getNomMot() {
-        return nomMot;
-    }
-
-    public void setNomMot(String nomMot) {
-        this.nomMot = nomMot;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getUfId() {
-        return ufId;
-    }
-
-    public void setUfId(String ufId) {
-        this.ufId = ufId;
-    }
 }

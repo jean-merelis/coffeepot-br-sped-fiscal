@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -41,6 +43,8 @@ import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
     @Field(name = "pesoLiq"),
     @Field(name = "ufId")
 })
+@Getter
+@Setter
 public class RegC160 {
 
     private String codPart;
@@ -50,51 +54,4 @@ public class RegC160 {
     private Double pesoLiq;
     private String ufId;
     
-    public String getCodPart() {
-        return codPart;
-    }
-
-    public void setCodPart(String codPart) {
-        this.codPart = codPart;
-    }
-
-    public String getVeicId() {
-        return veicId;
-    }
-
-    public void setVeicId(String veicId) {
-        this.veicId = veicId;
-    }
-
-    public Integer getQtdVol() {
-        return qtdVol;
-    }
-
-    public void setQtdVol(Integer qtdVol) {
-        this.qtdVol = qtdVol;
-    }
-
-    public Double getPesoBrt() {
-        return pesoBrt;
-    }
-
-    public void setPesoBrt(Double pesoBrt) {
-        this.pesoBrt = pesoBrt;
-    }
-
-    public Double getPesoLiq() {
-        return pesoLiq;
-    }
-
-    public void setPesoLiq(Double pesoLiq) {
-        this.pesoLiq = pesoLiq;
-    }
-
-    public String getUfId() {
-        return ufId;
-    }
-
-    public void setUfId(String ufId) {
-        this.ufId = ufId;
-    }
 }

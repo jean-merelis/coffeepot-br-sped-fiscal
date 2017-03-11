@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -36,27 +39,12 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "codInf"),
     @Field(name = "txt")
 })
+@Getter
+@Setter
+@NoArgsConstructor
 public class Reg0450 {
 
     private String codInf;
     private String txt;
 
-    public Reg0450() {
-    }
-
-    public String getCodInf() {
-        return codInf;
-    }
-
-    public void setCodInf(String codInf) {
-        this.codInf = codInf;
-    }
-
-    public String getTxt() {
-        return txt;
-    }
-
-    public void setTxt(String txt) {
-        this.txt = txt;
-    }
 }

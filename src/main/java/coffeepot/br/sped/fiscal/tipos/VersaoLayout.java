@@ -36,7 +36,9 @@ public enum VersaoLayout implements EnumCodificado {
     VERSAO_007("007", "Versão 1.06 Ato COTEPE 01/01/2013"),
     VERSAO_008("008", "Versão 1.07 Ato COTEPE 01/01/2014"),
     VERSAO_009("009", "Versão 1.08 Ato COTEPE 01/01/2015"),
-    VERSAO_010("010", "Versão 1.09 Ato COTEPE 01/01/2016");
+    VERSAO_010("010", "Versão 1.09 Ato COTEPE 01/01/2016"),
+	VERSAO_011("011", "Versão 1.10 Ato COTEPE 01/01/2017");
+	
     private String codigo;
     private String descricao;
 
@@ -55,7 +57,7 @@ public enum VersaoLayout implements EnumCodificado {
     }
 
     @Override
-    public Enum parse(String codigo) throws ParseException {
+    public VersaoLayout parse(String codigo) throws ParseException {
         if (codigo == null) {
             return null;
         }
@@ -84,33 +86,11 @@ public enum VersaoLayout implements EnumCodificado {
     }
 
     public static VersaoLayout parseByDescription(String descricao) {
-        if (VERSAO_002.getDescricao().equals(descricao)) {
-            return VERSAO_002;
-        }
-        if (VERSAO_003.getDescricao().equals(descricao)) {
-            return VERSAO_003;
-        }
-        if (VERSAO_004.getDescricao().equals(descricao)) {
-            return VERSAO_004;
-        }
-        if (VERSAO_005.getDescricao().equals(descricao)) {
-            return VERSAO_005;
-        }
-        if (VERSAO_006.getDescricao().equals(descricao)) {
-            return VERSAO_006;
-        }
-        if (VERSAO_007.getDescricao().equals(descricao)) {
-            return VERSAO_007;
-        }
-        if (VERSAO_008.getDescricao().equals(descricao)) {
-            return VERSAO_008;
-        }
-        if (VERSAO_009.getDescricao().equals(descricao)) {
-            return VERSAO_009;
-        }
-        if (VERSAO_010.getDescricao().equals(descricao)) {
-            return VERSAO_010;
-        }
+        for (VersaoLayout versao : VersaoLayout.values()) {
+			if(versao.getDescricao().equals(descricao)){
+				return versao;
+			}
+		}
         return null;
     }
 

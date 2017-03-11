@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.List;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,7 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.EmissaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.TipoTituloCredito;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -45,6 +48,8 @@ import java.util.List;
     //---
     @Field(name = "regC141List")
 })
+@Getter
+@Setter
 public class RegC140 {
 
     private EmissaoDocumento indEmit;
@@ -56,59 +61,4 @@ public class RegC140 {
     //---
     private List<RegC141> regC141List;
 
-    public EmissaoDocumento getIndEmit() {
-        return indEmit;
-    }
-
-    public void setIndEmit(EmissaoDocumento indEmit) {
-        this.indEmit = indEmit;
-    }
-
-    public TipoTituloCredito getIndTit() {
-        return indTit;
-    }
-
-    public void setIndTit(TipoTituloCredito indTit) {
-        this.indTit = indTit;
-    }
-
-    public String getDescTit() {
-        return descTit;
-    }
-
-    public void setDescTit(String descTit) {
-        this.descTit = descTit;
-    }
-
-    public String getNumTit() {
-        return numTit;
-    }
-
-    public void setNumTit(String numTit) {
-        this.numTit = numTit;
-    }
-
-    public Integer getQtdParc() {
-        return qtdParc;
-    }
-
-    public void setQtdParc(Integer qtdParc) {
-        this.qtdParc = qtdParc;
-    }
-
-    public Double getVlTit() {
-        return vlTit;
-    }
-
-    public void setVlTit(Double vlTit) {
-        this.vlTit = vlTit;
-    }
-
-    public List<RegC141> getRegC141List() {
-        return regC141List;
-    }
-
-    public void setRegC141List(List<RegC141> regC141List) {
-        this.regC141List = regC141List;
-    }
 }

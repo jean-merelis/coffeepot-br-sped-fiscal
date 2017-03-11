@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -36,24 +38,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "numTanque"),
     @Field(name = "qtde")
 })
+@Getter
+@Setter
 public class RegC171 {
 
     private String numTanque;
     private Double qtde;
 
-    public String getNumTanque() {
-        return numTanque;
-    }
-
-    public void setNumTanque(String numTanque) {
-        this.numTanque = numTanque;
-    }
-
-    public Double getQtde() {
-        return qtde;
-    }
-
-    public void setQtde(Double qtde) {
-        this.qtde = qtde;
-    }
 }

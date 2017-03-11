@@ -28,6 +28,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.ParseException;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -38,26 +40,11 @@ import coffeepot.br.sped.fiscal.tipos.ParseException;
     @Field(name = "numProc"),
     @Field(name = "indProc")
 })
+@Getter
+@Setter
 public class RegC111 {
     private String numProc;
     private OrigemProcesso indProc;
-    
-    public String getNumProc() {
-        return numProc;
-    }
-
-    public void setNumProc(String numProc) {
-        this.numProc = numProc;
-    }
-
-    public OrigemProcesso getIndProc() {
-        return indProc;
-    }
-
-    public void setIndProc(OrigemProcesso indProc) {
-        this.indProc = indProc;
-    }
-    
     
     public enum OrigemProcesso implements EnumCodificado{
 
@@ -66,6 +53,7 @@ public class RegC111 {
         JUSTICA_ESTADUAL("2"),
         SECEX_RFB("3"),
         OUTROS("9");
+    	
         private String codigo;
 
         private OrigemProcesso(String codigo) {

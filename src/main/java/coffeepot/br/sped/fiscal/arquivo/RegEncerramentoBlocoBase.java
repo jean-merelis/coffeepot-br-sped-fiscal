@@ -3,6 +3,9 @@
  */
 package coffeepot.br.sped.fiscal.arquivo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -29,24 +32,11 @@ package coffeepot.br.sped.fiscal.arquivo;
  *
  * @author Jeandeson O. Merelis
  */
+@Getter
+@Setter
 public class RegEncerramentoBlocoBase {
 
     protected String reg;
     protected Long qtdLin;
 
-    public String getReg() {
-        return reg;
-    }
-
-    protected void setReg(String reg) {
-        this.reg = reg;
-    }
-
-    public Long getQtdLin() {
-        return qtdLin;
-    }
-
-    public void setQtdLin(Long qtdLin) {
-        this.qtdLin = qtdLin;
-    }
 }

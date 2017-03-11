@@ -26,7 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco1;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Bloco 1 - Outras Informações.
@@ -51,6 +52,8 @@ import java.util.List;
     //    @Field(name = "reg1900List"),
     @Field(name = "reg1990")
 })
+@Getter
+@Setter
 public class Bloco1 {
 
     private Reg1001 reg1001;
@@ -69,27 +72,4 @@ public class Bloco1 {
 //    private List<Reg1900> reg1900List;
     private Reg1990 reg1990;
 
-    public Reg1001 getReg1001() {
-        return reg1001;
-    }
-
-    public void setReg1001(Reg1001 reg1001) {
-        this.reg1001 = reg1001;
-    }
-
-    public Reg1010 getReg1010() {
-        return reg1010;
-    }
-
-    public void setReg1010(Reg1010 reg1010) {
-        this.reg1010 = reg1010;
-    }
-
-    public Reg1990 getReg1990() {
-        return reg1990;
-    }
-
-    public void setReg1990(Reg1990 reg1990) {
-        this.reg1990 = reg1990;
-    }
 }

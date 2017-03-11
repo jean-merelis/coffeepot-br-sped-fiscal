@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -36,24 +38,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "oper"),
     @Field(name = "uf")
 })
+@Getter
+@Setter
 public class RegC105 {
 
     private Integer oper;
     private String uf;
 
-    public Integer getOper() {
-        return oper;
-    }
-
-    public void setOper(Integer oper) {
-        this.oper = oper;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
 }

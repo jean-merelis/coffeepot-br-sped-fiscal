@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -39,6 +41,8 @@ import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
     @Field(name = "uf"),
     @Field(name = "chassiVeic")
 })
+@Getter
+@Setter
 public class RegC175 {
 
     private String indVeicOper;
@@ -46,35 +50,4 @@ public class RegC175 {
     private String uf;
     private String chassiVeic;
 
-    public String getIndVeicOper() {
-        return indVeicOper;
-    }
-
-    public void setIndVeicOper(String indVeicOper) {
-        this.indVeicOper = indVeicOper;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public String getChassiVeic() {
-        return chassiVeic;
-    }
-
-    public void setChassiVeic(String chassiVeic) {
-        this.chassiVeic = chassiVeic;
-    }
 }

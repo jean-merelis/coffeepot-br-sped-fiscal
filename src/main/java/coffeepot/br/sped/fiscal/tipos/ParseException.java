@@ -30,7 +30,9 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public class ParseException extends Exception {
 
-    /**
+	private static final long serialVersionUID = 5457819261404871322L;
+
+	/**
      * Creates a new instance of
      * <code>ParseException</code> without detail message.
      */

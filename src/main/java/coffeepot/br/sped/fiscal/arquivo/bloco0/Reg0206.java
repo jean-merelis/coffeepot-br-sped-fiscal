@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -35,15 +37,10 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "", id=true, constantValue = "0206"),
     @Field(name = "codComb")
 })
+@Getter
+@Setter
 public class Reg0206 {
 
     private String codComb;
 
-    public String getCodComb() {
-        return codComb;
-    }
-
-    public void setCodComb(String codComb) {
-        this.codComb = codComb;
-    }
 }

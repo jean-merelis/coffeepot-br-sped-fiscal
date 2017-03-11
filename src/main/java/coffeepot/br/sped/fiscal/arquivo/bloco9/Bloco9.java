@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.bloco9;
 
+import java.util.List;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -26,7 +28,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco9;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Bloco 9 - Controle e Encerramento do Arquivo Digital.
@@ -39,6 +42,8 @@ import java.util.List;
     @Field(name = "reg9990"),
     @Field(name = "reg9999")
 })
+@Getter
+@Setter
 public class Bloco9 {
 
     private Reg9001 reg9001;
@@ -46,35 +51,4 @@ public class Bloco9 {
     private Reg9990 reg9990;
     private Reg9999 reg9999;
 
-    public Reg9001 getReg9001() {
-        return reg9001;
-    }
-
-    public void setReg9001(Reg9001 reg9001) {
-        this.reg9001 = reg9001;
-    }
-
-    public List<Reg9900> getReg9900List() {
-        return reg9900List;
-    }
-
-    public void setReg9900List(List<Reg9900> reg9900List) {
-        this.reg9900List = reg9900List;
-    }
-
-    public Reg9990 getReg9990() {
-        return reg9990;
-    }
-
-    public void setReg9990(Reg9990 reg9990) {
-        this.reg9990 = reg9990;
-    }
-
-    public Reg9999 getReg9999() {
-        return reg9999;
-    }
-
-    public void setReg9999(Reg9999 reg9999) {
-        this.reg9999 = reg9999;
-    }
 }

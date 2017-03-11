@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.Date;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -29,7 +31,8 @@ import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
 import coffeepot.br.sped.fiscal.tipos.EmissaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.Operacao;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -46,6 +49,8 @@ import java.util.Date;
     @Field(name = "numDoc"),
     @Field(name = "dtDoc")
 })
+@Getter
+@Setter
 public class RegC113 {
 
     private Operacao indOper;
@@ -57,67 +62,4 @@ public class RegC113 {
     private Long numDoc;
     private Date dtDoc;
 
-    public Operacao getIndOper() {
-        return indOper;
-    }
-
-    public void setIndOper(Operacao indOper) {
-        this.indOper = indOper;
-    }
-
-    public EmissaoDocumento getIndEmit() {
-        return indEmit;
-    }
-
-    public void setIndEmit(EmissaoDocumento indEmit) {
-        this.indEmit = indEmit;
-    }
-
-    public String getCodPart() {
-        return codPart;
-    }
-
-    public void setCodPart(String codPart) {
-        this.codPart = codPart;
-    }
-
-    public DocumentoFiscal getCodMod() {
-        return codMod;
-    }
-
-    public void setCodMod(DocumentoFiscal codMod) {
-        this.codMod = codMod;
-    }
-
-    public String getSer() {
-        return ser;
-    }
-
-    public void setSer(String ser) {
-        this.ser = ser;
-    }
-
-    public Integer getSub() {
-        return sub;
-    }
-
-    public void setSub(Integer sub) {
-        this.sub = sub;
-    }
-
-    public Long getNumDoc() {
-        return numDoc;
-    }
-
-    public void setNumDoc(Long numDoc) {
-        this.numDoc = numDoc;
-    }
-
-    public Date getDtDoc() {
-        return dtDoc;
-    }
-
-    public void setDtDoc(Date dtDoc) {
-        this.dtDoc = dtDoc;
-    }
 }

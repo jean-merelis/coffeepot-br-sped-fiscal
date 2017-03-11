@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -35,15 +37,10 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "", id=true, constantValue = "C310"),
     @Field(name = "numDocCanc")
 })
+@Getter
+@Setter
 public class RegC310 {
 
     private Integer numDocCanc;
 
-    public Integer getNumDocCanc() {
-        return numDocCanc;
-    }
-
-    public void setNumDocCanc(Integer numDocCanc) {
-        this.numDocCanc = numDocCanc;
-    }
 }

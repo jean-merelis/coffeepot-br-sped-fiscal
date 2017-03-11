@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.Date;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,7 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.ParseException;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -44,6 +47,8 @@ import java.util.Date;
     @Field(name = "dtVcto"),
     @Field(name = "dtPgto")
 })
+@Getter
+@Setter
 public class RegC112 {
 
     private DocumentoArrecadacao codDa;
@@ -54,66 +59,11 @@ public class RegC112 {
     private Date dtVcto;
     private Date dtPgto;
 
-    public DocumentoArrecadacao getCodDa() {
-        return codDa;
-    }
-
-    public void setCodDa(DocumentoArrecadacao codDa) {
-        this.codDa = codDa;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public String getNumDa() {
-        return numDa;
-    }
-
-    public void setNumDa(String numDa) {
-        this.numDa = numDa;
-    }
-
-    public String getCodAut() {
-        return codAut;
-    }
-
-    public void setCodAut(String codAut) {
-        this.codAut = codAut;
-    }
-
-    public Double getVlDa() {
-        return vlDa;
-    }
-
-    public void setVlDa(Double vlDa) {
-        this.vlDa = vlDa;
-    }
-
-    public Date getDtVcto() {
-        return dtVcto;
-    }
-
-    public void setDtVcto(Date dtVcto) {
-        this.dtVcto = dtVcto;
-    }
-
-    public Date getDtPgto() {
-        return dtPgto;
-    }
-
-    public void setDtPgto(Date dtPgto) {
-        this.dtPgto = dtPgto;
-    }
-
     public enum DocumentoArrecadacao implements EnumCodificado {
 
         ESTADUAL("0"),
         GNRE("1");
+    	
         private String codigo;
 
         private DocumentoArrecadacao(String codigo) {

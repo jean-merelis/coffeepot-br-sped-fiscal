@@ -30,6 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -46,7 +48,10 @@ import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
 	@Field(name = "codItem"),
 	@Field(name = "vlAjItem")
 })
+@Getter
+@Setter
 public class RegE113{
+	
 	private String codPart;
 	private DocumentoFiscal codMod;
 	private String ser;
@@ -56,52 +61,4 @@ public class RegE113{
 	private String codItem;
 	private Double vlAjItem;
 
-	public String getCodPart() {
-		return codPart;
-	}
-	public void setCodPart(String codPart) {
-		this.codPart = codPart;
-	}
-	public DocumentoFiscal getCodMod() {
-		return codMod;
-	}
-	public void setCodMod(DocumentoFiscal codMod) {
-		this.codMod = codMod;
-	}
-	public String getSer() {
-		return ser;
-	}
-	public void setSer(String ser) {
-		this.ser = ser;
-	}
-	public Integer getSub() {
-		return sub;
-	}
-	public void setSub(Integer sub) {
-		this.sub = sub;
-	}
-	public Long getNumDoc() {
-		return numDoc;
-	}
-	public void setNumDoc(Long numDoc) {
-		this.numDoc = numDoc;
-	}
-	public Date getDtDoc() {
-		return dtDoc;
-	}
-	public void setDtDoc(Date dtDoc) {
-		this.dtDoc = dtDoc;
-	}
-	public String getCodItem() {
-		return codItem;
-	}
-	public void setCodItem(String codItem) {
-		this.codItem = codItem;
-	}
-	public Double getVlAjItem() {
-		return vlAjItem;
-	}
-	public void setVlAjItem(Double vlAjItem) {
-		this.vlAjItem = vlAjItem;
-	}	
 }

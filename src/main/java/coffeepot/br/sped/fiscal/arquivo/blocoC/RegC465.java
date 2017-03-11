@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -37,24 +39,11 @@ import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
     @Field(name = "chvCfe", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "numCcf")
 })
+@Getter
+@Setter
 public class RegC465 {
 
     private String chvCfe;
     private Long numCcf;
 
-    public String getChvCfe() {
-        return chvCfe;
-    }
-
-    public void setChvCfe(String chvCfe) {
-        this.chvCfe = chvCfe;
-    }
-
-    public Long getNumCcf() {
-        return numCcf;
-    }
-
-    public void setNumCcf(Long numCcf) {
-        this.numCcf = numCcf;
-    }
 }

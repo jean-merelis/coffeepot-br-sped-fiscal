@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.Date;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,7 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -42,6 +45,8 @@ import java.util.Date;
     @Field(name = "numCfe"),
     @Field(name = "dtDoc")
 })
+@Getter
+@Setter
 public class RegC116 {
 
     private DocumentoFiscal codMod;
@@ -50,43 +55,4 @@ public class RegC116 {
     private Integer numCfe;
     private Date dtDoc;
 
-    public DocumentoFiscal getCodMod() {
-        return codMod;
-    }
-
-    public void setCodMod(DocumentoFiscal codMod) {
-        this.codMod = codMod;
-    }
-
-    public String getNrSat() {
-        return nrSat;
-    }
-
-    public void setNrSat(String nrSat) {
-        this.nrSat = nrSat;
-    }
-
-    public String getChvCfe() {
-        return chvCfe;
-    }
-
-    public void setChvCfe(String chvCfe) {
-        this.chvCfe = chvCfe;
-    }
-
-    public Integer getNumCfe() {
-        return numCfe;
-    }
-
-    public void setNumCfe(Integer numCfe) {
-        this.numCfe = numCfe;
-    }
-
-    public Date getDtDoc() {
-        return dtDoc;
-    }
-
-    public void setDtDoc(Date dtDoc) {
-        this.dtDoc = dtDoc;
-    }
 }

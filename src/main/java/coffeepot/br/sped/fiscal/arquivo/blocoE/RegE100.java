@@ -29,6 +29,8 @@ import java.util.Date;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -40,28 +42,11 @@ import coffeepot.bean.wr.types.AccessorType;
     @Field(name = "dtFin"),
     @Field(name = "regE110")
 })
+@Getter
+@Setter
 public class RegE100{
     private Date dtIni;
     private Date dtFin;
     private RegE110 regE110;
-    
-    public Date getDtIni(){
-    	return dtIni;
-    }
-    public void setDtIni(Date dtIni){
-    	this.dtIni = dtIni;
-    }
-    public Date getDtFin(){
-    	return dtFin;
-    }
-    public void setDtFin(Date dtFin){
-    	this.dtFin = dtFin;
-    }
-	public RegE110 getRegE110() {
-		return regE110;
-	}
-	public void setRegE110(RegE110 regE110) {
-		this.regE110 = regE110;
-	}
     
 }

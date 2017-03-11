@@ -3,6 +3,11 @@
  */
 package coffeepot.br.sped.fiscal.util;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.Collection;
+import java.util.Iterator;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,12 +33,6 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.annotation.Records;
 import coffeepot.bean.wr.types.FormatType;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

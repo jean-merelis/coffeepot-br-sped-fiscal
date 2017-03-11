@@ -27,6 +27,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +54,8 @@ import java.util.List;
     @Field(name = "regC370List"),
     @Field(name = "regC390List")
 })
+@Getter
+@Setter
 public class RegC350 {
 
     private String ser;
@@ -68,107 +73,4 @@ public class RegC350 {
     private List<RegC370> regC370List;
     private List<RegC390> regC390List;
 
-    public String getSer() {
-        return ser;
-    }
-
-    public void setSer(String ser) {
-        this.ser = ser;
-    }
-
-    public String getSubSer() {
-        return subSer;
-    }
-
-    public void setSubSer(String subSer) {
-        this.subSer = subSer;
-    }
-
-    public String getNumDoc() {
-        return numDoc;
-    }
-
-    public void setNumDoc(String numDoc) {
-        this.numDoc = numDoc;
-    }
-
-    public Date getDtDoc() {
-        return dtDoc;
-    }
-
-    public void setDtDoc(Date dtDoc) {
-        this.dtDoc = dtDoc;
-    }
-
-    public String getCnpjCpf() {
-        return cnpjCpf;
-    }
-
-    public void setCnpjCpf(String cnpjCpf) {
-        this.cnpjCpf = cnpjCpf;
-    }
-
-    public Double getVlMerc() {
-        return vlMerc;
-    }
-
-    public void setVlMerc(Double vlMerc) {
-        this.vlMerc = vlMerc;
-    }
-
-    public Double getVlDoc() {
-        return vlDoc;
-    }
-
-    public void setVlDoc(Double vlDoc) {
-        this.vlDoc = vlDoc;
-    }
-
-    public Double getVlDesc() {
-        return vlDesc;
-    }
-
-    public void setVlDesc(Double vlDesc) {
-        this.vlDesc = vlDesc;
-    }
-
-    public Double getVlPis() {
-        return vlPis;
-    }
-
-    public void setVlPis(Double vlPis) {
-        this.vlPis = vlPis;
-    }
-
-    public Double getVlCofins() {
-        return vlCofins;
-    }
-
-    public void setVlCofins(Double vlCofins) {
-        this.vlCofins = vlCofins;
-    }
-
-    public String getCodCta() {
-        return codCta;
-    }
-
-    public void setCodCta(String codCta) {
-        this.codCta = codCta;
-    }
-
-    public List<RegC370> getRegC370List() {
-        return regC370List;
-    }
-
-    public void setRegC370List(List<RegC370> regC370List) {
-        this.regC370List = regC370List;
-    }
-
-    public List<RegC390> getRegC390List() {
-        return regC390List;
-    }
-
-    public void setRegC390List(List<RegC390> regC390List) {
-        this.regC390List = regC390List;
-    }
 }

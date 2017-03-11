@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.util.Date;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -26,7 +28,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -38,33 +41,12 @@ import java.util.Date;
     @Field(name = "dtVcto"),
     @Field(name = "vlParc")
 })
+@Getter
+@Setter
 public class RegC141 {
 
     private Integer numParc;
     private Date dtVcto;
     private Double vlParc;
 
-    public Integer getNumParc() {
-        return numParc;
-    }
-
-    public void setNumParc(Integer numParc) {
-        this.numParc = numParc;
-    }
-
-    public Date getDtVcto() {
-        return dtVcto;
-    }
-
-    public void setDtVcto(Date dtVcto) {
-        this.dtVcto = dtVcto;
-    }
-
-    public Double getVlParc() {
-        return vlParc;
-    }
-
-    public void setVlParc(Double vlParc) {
-        this.vlParc = vlParc;
-    }
 }

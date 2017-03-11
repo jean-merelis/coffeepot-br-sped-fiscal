@@ -3,6 +3,19 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.junit.Test;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -38,22 +51,6 @@ import coffeepot.br.sped.fiscal.tipos.TipoTituloCredito;
 import coffeepot.br.sped.fiscal.tipos.TipoTransporte;
 import coffeepot.br.sped.fiscal.util.RecordCounter;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *

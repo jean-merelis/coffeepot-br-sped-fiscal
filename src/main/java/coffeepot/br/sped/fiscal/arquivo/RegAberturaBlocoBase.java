@@ -25,30 +25,19 @@ package coffeepot.br.sped.fiscal.arquivo;
 
 
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Registro de abertura de bloco.
  *
  * @author Jeandeson O. Merelis
  */
+@Getter
+@Setter
 public class RegAberturaBlocoBase {
 
     protected String reg;
     protected IndicadorMovimento indMov;
 
-    public String getReg() {
-        return reg;
-    }
-
-    protected void setReg(String reg) {
-        this.reg = reg;
-    }
-
-    public IndicadorMovimento getIndMov() {
-        return indMov;
-    }
-
-    public void setIndMov(IndicadorMovimento indMov) {
-        this.indMov = indMov;
-    }
 }

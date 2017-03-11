@@ -23,40 +23,27 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
  * #L%
  */
 
-
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
-@Record(fields = {
-    @Field(name = "reg", id=true, constantValue = "0190"),
-    @Field(name = "unid"),
-    @Field(name = "descr")
+@Record(fields = { 
+		@Field(name = "reg", id = true, constantValue = "0190"), 
+		@Field(name = "unid"),
+		@Field(name = "descr") 
 })
+@Getter
+@Setter
+@NoArgsConstructor
 public class Reg0190 {
 
-    private String unid;
-    private String descr;
+	private String unid;
+	private String descr;
 
-    public Reg0190() {
-    }
-
-    public String getUnid() {
-        return unid;
-    }
-
-    public void setUnid(String unid) {
-        this.unid = unid;
-    }
-
-    public String getDescr() {
-        return descr;
-    }
-
-    public void setDescr(String descr) {
-        this.descr = descr;
-    }
 }

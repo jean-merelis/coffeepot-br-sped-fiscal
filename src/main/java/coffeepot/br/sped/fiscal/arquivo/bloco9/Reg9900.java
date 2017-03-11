@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco9;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -36,24 +38,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "regBlc"),
     @Field(name = "qtdRegBlc")
 })
+@Getter
+@Setter
 public class Reg9900 {
 
     private String regBlc;
     private Long qtdRegBlc;
 
-    public String getRegBlc() {
-        return regBlc;
-    }
-
-    public void setRegBlc(String regBlc) {
-        this.regBlc = regBlc;
-    }
-
-    public Long getQtdRegBlc() {
-        return qtdRegBlc;
-    }
-
-    public void setQtdRegBlc(Long qtdRegBlc) {
-        this.qtdRegBlc = qtdRegBlc;
-    }
 }

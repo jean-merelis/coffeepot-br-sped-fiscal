@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoD;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Bloco D - Documentos Fiscais II - Serviços (ICMS).
@@ -44,6 +46,8 @@ import coffeepot.bean.wr.annotation.Record;
     //    @Field(name = "regD695List"),
     @Field(name = "regD990")
 })
+@Getter
+@Setter
 public class BlocoD {
 
     private RegD001 regD001;
@@ -57,19 +61,4 @@ public class BlocoD {
 //    private List<RegD695> regD695List;        
     private RegD990 regD990;
 
-    public RegD001 getRegD001() {
-        return regD001;
-    }
-
-    public void setRegD001(RegD001 regD001) {
-        this.regD001 = regD001;
-    }
-
-    public RegD990 getRegD990() {
-        return regD990;
-    }
-
-    public void setRegD990(RegD990 regD990) {
-        this.regD990 = regD990;
-    }
 }

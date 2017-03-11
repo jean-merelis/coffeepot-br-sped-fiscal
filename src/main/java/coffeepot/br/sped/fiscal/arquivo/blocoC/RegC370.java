@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -40,6 +42,8 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "vlItem"),
     @Field(name = "vlDesc")
 })
+@Getter
+@Setter
 public class RegC370 {
 
     private Integer numItem;
@@ -49,51 +53,4 @@ public class RegC370 {
     private Double vlItem;
     private Double vlDesc;
 
-    public Integer getNumItem() {
-        return numItem;
-    }
-
-    public void setNumItem(Integer numItem) {
-        this.numItem = numItem;
-    }
-
-    public String getCodItem() {
-        return codItem;
-    }
-
-    public void setCodItem(String codItem) {
-        this.codItem = codItem;
-    }
-
-    public Double getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(Double qtd) {
-        this.qtd = qtd;
-    }
-
-    public String getUnid() {
-        return unid;
-    }
-
-    public void setUnid(String unid) {
-        this.unid = unid;
-    }
-
-    public Double getVlItem() {
-        return vlItem;
-    }
-
-    public void setVlItem(Double vlItem) {
-        this.vlItem = vlItem;
-    }
-
-    public Double getVlDesc() {
-        return vlDesc;
-    }
-
-    public void setVlDesc(Double vlDesc) {
-        this.vlDesc = vlDesc;
-    }
 }

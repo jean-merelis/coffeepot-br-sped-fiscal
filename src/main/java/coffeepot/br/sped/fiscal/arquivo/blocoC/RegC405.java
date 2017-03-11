@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
@@ -47,6 +50,8 @@ import java.util.List;
     @Field(name = "regC460List"),
     @Field(name = "regC490List")
 })
+@Getter
+@Setter
 public class RegC405 {
 
     private Date dtDoc;
@@ -61,83 +66,4 @@ public class RegC405 {
     private List<RegC460> regC460List;
     private List<RegC490> regC490List;
     
-    public Date getDtDoc() {
-        return dtDoc;
-    }
-
-    public void setDtDoc(Date dtDoc) {
-        this.dtDoc = dtDoc;
-    }
-
-    public Integer getCro() {
-        return cro;
-    }
-
-    public void setCro(Integer cro) {
-        this.cro = cro;
-    }
-
-    public Integer getCrz() {
-        return crz;
-    }
-
-    public void setCrz(Integer crz) {
-        this.crz = crz;
-    }
-
-    public Integer getNumCooFin() {
-        return numCooFin;
-    }
-
-    public void setNumCooFin(Integer numCooFin) {
-        this.numCooFin = numCooFin;
-    }
-
-    public Double getGtFin() {
-        return gtFin;
-    }
-
-    public void setGtFin(Double gtFin) {
-        this.gtFin = gtFin;
-    }
-
-    public Double getVlBrt() {
-        return vlBrt;
-    }
-
-    public void setVlBrt(Double vlBrt) {
-        this.vlBrt = vlBrt;
-    }
-
-    public RegC410 getRegC410() {
-        return regC410;
-    }
-
-    public void setRegC410(RegC410 regC410) {
-        this.regC410 = regC410;
-    }
-
-    public List<RegC420> getRegC420List() {
-        return regC420List;
-    }
-
-    public void setRegC420List(List<RegC420> regC420List) {
-        this.regC420List = regC420List;
-    }
-
-    public List<RegC460> getRegC460List() {
-        return regC460List;
-    }
-
-    public void setRegC460List(List<RegC460> regC460List) {
-        this.regC460List = regC460List;
-    }
-
-    public List<RegC490> getRegC490List() {
-        return regC490List;
-    }
-
-    public void setRegC490List(List<RegC490> regC490List) {
-        this.regC490List = regC490List;
-    }
 }

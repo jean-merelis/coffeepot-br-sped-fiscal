@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoE;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -38,27 +40,11 @@ import coffeepot.bean.wr.types.AccessorType;
 	@Field(name = "vlInfAdic"),
 	@Field(name = "descrComplAj")
 })
+@Getter
+@Setter
 public class RegE115{
 	private String codInfAdic;
 	private Double vlInfAdic;
 	private String descrComplAj;
 	
-	public String getCodInfAdic() {
-		return codInfAdic;
-	}
-	public void setCodInfAdic(String codInfAdic) {
-		this.codInfAdic = codInfAdic;
-	}
-	public Double getVlInfAdic() {
-		return vlInfAdic;
-	}
-	public void setVlInfAdic(Double vlInfAdic) {
-		this.vlInfAdic = vlInfAdic;
-	}
-	public String getDescrComplAj() {
-		return descrComplAj;
-	}
-	public void setDescrComplAj(String descrComplAj) {
-		this.descrComplAj = descrComplAj;
-	}
 }

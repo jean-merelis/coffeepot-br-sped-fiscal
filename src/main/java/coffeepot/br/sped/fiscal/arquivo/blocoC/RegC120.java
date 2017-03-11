@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoImportacao;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -40,6 +42,8 @@ import coffeepot.br.sped.fiscal.tipos.DocumentoImportacao;
     @Field( name = "cofinsImp"),
     @Field( name = "numAcdraw")
 })
+@Getter
+@Setter
 public class RegC120 {
 
     private DocumentoImportacao codDocImp;
@@ -48,43 +52,4 @@ public class RegC120 {
     private Double cofinsImp;
     private String numAcdraw;
 
-    public DocumentoImportacao getCodDocImp() {
-        return codDocImp;
-    }
-
-    public void setCodDocImp(DocumentoImportacao codDocImp) {
-        this.codDocImp = codDocImp;
-    }
-
-    public String getNumDocImp() {
-        return numDocImp;
-    }
-
-    public void setNumDocImp(String numDocImp) {
-        this.numDocImp = numDocImp;
-    }
-
-    public Double getPisImp() {
-        return pisImp;
-    }
-
-    public void setPisImp(Double pisImp) {
-        this.pisImp = pisImp;
-    }
-
-    public Double getCofinsImp() {
-        return cofinsImp;
-    }
-
-    public void setCofinsImp(Double cofinsImp) {
-        this.cofinsImp = cofinsImp;
-    }
-
-    public String getNumAcdraw() {
-        return numAcdraw;
-    }
-
-    public void setNumAcdraw(String numAcdraw) {
-        this.numAcdraw = numAcdraw;
-    }       
 }

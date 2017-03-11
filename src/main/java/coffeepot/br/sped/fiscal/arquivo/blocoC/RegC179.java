@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -39,6 +41,8 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "bcRet"),
     @Field(name = "icmsRet")
 })
+@Getter
+@Setter
 public class RegC179 {
 
     private Double bcStOrigDest;
@@ -47,43 +51,4 @@ public class RegC179 {
     private Double bcRet;
     private Double icmsRet;
 
-    public Double getBcStOrigDest() {
-        return bcStOrigDest;
-    }
-
-    public void setBcStOrigDest(Double bcStOrigDest) {
-        this.bcStOrigDest = bcStOrigDest;
-    }
-
-    public Double getIcmsStRep() {
-        return icmsStRep;
-    }
-
-    public void setIcmsStRep(Double icmsStRep) {
-        this.icmsStRep = icmsStRep;
-    }
-
-    public Double getIcmsStCompl() {
-        return icmsStCompl;
-    }
-
-    public void setIcmsStCompl(Double icmsStCompl) {
-        this.icmsStCompl = icmsStCompl;
-    }
-
-    public Double getBcRet() {
-        return bcRet;
-    }
-
-    public void setBcRet(Double bcRet) {
-        this.bcRet = bcRet;
-    }
-
-    public Double getIcmsRet() {
-        return icmsRet;
-    }
-
-    public void setIcmsRet(Double icmsRet) {
-        this.icmsRet = icmsRet;
-    }
 }

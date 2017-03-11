@@ -28,6 +28,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.IndicadorOrigemProcesso;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -41,42 +43,13 @@ import coffeepot.br.sped.fiscal.tipos.IndicadorOrigemProcesso;
 	@Field(name = "proc"),
 	@Field(name = "txtCompl")
 })
+@Getter
+@Setter
 public class RegE112{
 	private String numDA;
 	private String numProc;
 	private IndicadorOrigemProcesso indProc;
 	private String proc;
 	private String txtCompl;
-	
-	public String getNumDA() {
-		return numDA;
-	}
-	public void setNumDA(String numDA) {
-		this.numDA = numDA;
-	}
-	public String getNumProc() {
-		return numProc;
-	}
-	public void setNumProc(String numProc) {
-		this.numProc = numProc;
-	}
-	public IndicadorOrigemProcesso getIndProc() {
-		return indProc;
-	}
-	public void setIndProc(IndicadorOrigemProcesso indProc) {
-		this.indProc = indProc;
-	}
-	public String getProc() {
-		return proc;
-	}
-	public void setProc(String proc) {
-		this.proc = proc;
-	}
-	public String getTxtCompl() {
-		return txtCompl;
-	}
-	public void setTxtCompl(String txtCompl) {
-		this.txtCompl = txtCompl;
-	}
 	
 }

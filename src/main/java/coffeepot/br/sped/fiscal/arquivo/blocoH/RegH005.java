@@ -27,6 +27,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoH;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.MotivoInventario;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +44,8 @@ import java.util.List;
     @Field(name = "motInv"),
     @Field(name = "regH010List")
 })
+@Getter
+@Setter
 public class RegH005 {
 
     private Date dtInv;
@@ -48,35 +53,4 @@ public class RegH005 {
     private MotivoInventario motInv;
     private List<RegH010> regH010List;
 
-    public Date getDtInv() {
-        return dtInv;
-    }
-
-    public void setDtInv(Date dtInv) {
-        this.dtInv = dtInv;
-    }
-
-    public Double getVlInv() {
-        return vlInv;
-    }
-
-    public void setVlInv(Double vlInv) {
-        this.vlInv = vlInv;
-    }
-
-    public MotivoInventario getMotInv() {
-        return motInv;
-    }
-
-    public void setMotInv(MotivoInventario motInv) {
-        this.motInv = motInv;
-    }
-
-    public List<RegH010> getRegH010List() {
-        return regH010List;
-    }
-
-    public void setRegH010List(List<RegH010> regH010List) {
-        this.regH010List = regH010List;
-    }
 }

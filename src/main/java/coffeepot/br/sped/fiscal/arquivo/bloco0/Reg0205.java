@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -39,6 +42,8 @@ import java.util.Date;
     @Field(name = "dtFim"),
     @Field(name = "codAntItem")
 })
+@Getter
+@Setter
 public class Reg0205 {
 
     private String descrAntItem;
@@ -46,35 +51,4 @@ public class Reg0205 {
     private Date dtFim;
     private String codAntItem;
 
-    public String getDescrAntItem() {
-        return descrAntItem;
-    }
-
-    public void setDescrAntItem(String descrAntItem) {
-        this.descrAntItem = descrAntItem;
-    }
-
-    public Date getDtIni() {
-        return dtIni;
-    }
-
-    public void setDtIni(Date dtIni) {
-        this.dtIni = dtIni;
-    }
-
-    public Date getDtFim() {
-        return dtFim;
-    }
-
-    public void setDtFim(Date dtFim) {
-        this.dtFim = dtFim;
-    }
-
-    public String getCodAntItem() {
-        return codAntItem;
-    }
-
-    public void setCodAntItem(String codAntItem) {
-        this.codAntItem = codAntItem;
-    }
 }

@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoG;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Bloco G - Controle do Crédito de ICMS do Ativo Permanente - CIAP - modelos
@@ -39,6 +41,8 @@ import coffeepot.bean.wr.annotation.Record;
     //    @Field(name = "regG110List"),
     @Field(name = "regG990")
 })
+@Getter
+@Setter
 public class BlocoG {
 
     private RegG001 regG001;
@@ -46,19 +50,4 @@ public class BlocoG {
 //    private List<RegG110> regG110List;
     private RegG990 regG990;
 
-    public RegG001 getRegG001() {
-        return regG001;
-    }
-
-    public void setRegG001(RegG001 regG001) {
-        this.regG001 = regG001;
-    }
-
-    public RegG990 getRegG990() {
-        return regG990;
-    }
-
-    public void setRegG990(RegG990 regG990) {
-        this.regG990 = regG990;
-    }
 }

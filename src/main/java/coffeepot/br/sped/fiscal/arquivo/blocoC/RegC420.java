@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -41,6 +44,8 @@ import java.util.List;
     //--
     @Field(name = "regC425List")
 })
+@Getter
+@Setter
 public class RegC420 {
 
     private String codTotPar;
@@ -50,43 +55,4 @@ public class RegC420 {
     //--
     private List<RegC425> regC425List;
 
-    public String getCodTotPar() {
-        return codTotPar;
-    }
-
-    public void setCodTotPar(String codTotPar) {
-        this.codTotPar = codTotPar;
-    }
-
-    public Double getVlrAcumTot() {
-        return vlrAcumTot;
-    }
-
-    public void setVlrAcumTot(Double vlrAcumTot) {
-        this.vlrAcumTot = vlrAcumTot;
-    }
-
-    public Integer getNrTot() {
-        return nrTot;
-    }
-
-    public void setNrTot(Integer nrTot) {
-        this.nrTot = nrTot;
-    }
-
-    public String getDescrNrTot() {
-        return descrNrTot;
-    }
-
-    public void setDescrNrTot(String descrNrTot) {
-        this.descrNrTot = descrNrTot;
-    }
-
-    public List<RegC425> getRegC425List() {
-        return regC425List;
-    }
-
-    public void setRegC425List(List<RegC425> regC425List) {
-        this.regC425List = regC425List;
-    }
 }

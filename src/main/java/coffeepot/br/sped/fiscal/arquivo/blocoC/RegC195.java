@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -39,6 +42,8 @@ import java.util.List;
     //---
     @Field(name = "regC197List")
 })
+@Getter
+@Setter
 public class RegC195 {
 
     private String codObs;
@@ -46,27 +51,4 @@ public class RegC195 {
     //---
     private List<RegC197> regC197List;
 
-    public String getCodObs() {
-        return codObs;
-    }
-
-    public void setCodObs(String codObs) {
-        this.codObs = codObs;
-    }
-
-    public String getTxtCompl() {
-        return txtCompl;
-    }
-
-    public void setTxtCompl(String txtCompl) {
-        this.txtCompl = txtCompl;
-    }
-
-    public List<RegC197> getRegC197List() {
-        return regC197List;
-    }
-
-    public void setRegC197List(List<RegC197> regC197List) {
-        this.regC197List = regC197List;
-    }
 }

@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -33,37 +36,17 @@ import java.util.Date;
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "reg", id=true, constantValue = "0175"),
+    @Field(name = "reg", id = true, constantValue = "0175"),
     @Field(name = "dtAlt"),
     @Field(name = "nrCamp"),
     @Field(name = "contAnt")
 })
+@Getter
+@Setter
 public class Reg0175 {
+	
     private Date dtAlt;
     private int nrCamp;
     private String contAnt;
 
-    public Date getDtAlt() {
-        return dtAlt;
-    }
-
-    public void setDtAlt(Date dtAlt) {
-        this.dtAlt = dtAlt;
-    }
-
-    public int getNrCamp() {
-        return nrCamp;
-    }
-
-    public void setNrCamp(int nrCamp) {
-        this.nrCamp = nrCamp;
-    }
-
-    public String getContAnt() {
-        return contAnt;
-    }
-
-    public void setContAnt(String contAnt) {
-        this.contAnt = contAnt;
-    }        
 }

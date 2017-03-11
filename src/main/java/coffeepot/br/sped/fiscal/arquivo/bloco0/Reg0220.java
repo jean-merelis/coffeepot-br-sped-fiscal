@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 
 /**
@@ -37,25 +39,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "unidConv"),
     @Field(name = "fatConv")
 })
+@Getter
+@Setter
 public class Reg0220 {
 
     private String unidConv;
     private Double fatConv;
-
-    public String getUnidConv() {
-        return unidConv;
-    }
-
-    public void setUnidConv(String unidConv) {
-        this.unidConv = unidConv;
-    }
-
-    public Double getFatConv() {
-        return fatConv;
-    }
-
-    public void setFatConv(Double fatConv) {
-        this.fatConv = fatConv;
-    }
 
 }

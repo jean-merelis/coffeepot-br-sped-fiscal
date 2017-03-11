@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoE;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -41,6 +44,8 @@ import java.util.List;
     //    @Field(name = "regE500List"),
     @Field(name = "regE990")
 })
+@Getter
+@Setter
 public class BlocoE {
 
     private RegE001 regE001;
@@ -50,28 +55,4 @@ public class BlocoE {
 //    private List<RegE500> regE500List;
     private RegE990 regE990;
 
-    public RegE001 getRegE001() {
-        return regE001;
-    }
-
-    public void setRegE001(RegE001 regE001) {
-        this.regE001 = regE001;
-    }
-
-    public RegE990 getRegE990() {
-        return regE990;
-    }
-
-    public void setRegE990(RegE990 regE990) {
-        this.regE990 = regE990;
-    }
-
-	public List<RegE100> getRegE100List() {
-		return regE100List;
-	}
-
-	public void setRegE100List(List<RegE100> regE100List) {
-		this.regE100List = regE100List;
-	}
-    
 }

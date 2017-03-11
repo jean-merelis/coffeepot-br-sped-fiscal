@@ -28,6 +28,9 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
 import coffeepot.br.sped.fiscal.tipos.SituacaoDocumento;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
@@ -50,6 +53,8 @@ import java.util.List;
     @Field(name = "regC465"),
     @Field(name = "regC470List")
 })
+@Getter
+@Setter
 public class RegC460 {
 
     private DocumentoFiscal codMod;
@@ -65,91 +70,4 @@ public class RegC460 {
     private RegC465 regC465;
     private List<RegC470> regC470List;
 
-    public DocumentoFiscal getCodMod() {
-        return codMod;
-    }
-
-    public void setCodMod(DocumentoFiscal codMod) {
-        this.codMod = codMod;
-    }
-
-    public SituacaoDocumento getCodSit() {
-        return codSit;
-    }
-
-    public void setCodSit(SituacaoDocumento codSit) {
-        this.codSit = codSit;
-    }
-
-    public Integer getNumDoc() {
-        return numDoc;
-    }
-
-    public void setNumDoc(Integer numDoc) {
-        this.numDoc = numDoc;
-    }
-
-    public Date getDtDoc() {
-        return dtDoc;
-    }
-
-    public void setDtDoc(Date dtDoc) {
-        this.dtDoc = dtDoc;
-    }
-
-    public Double getVlDoc() {
-        return vlDoc;
-    }
-
-    public void setVlDoc(Double vlDoc) {
-        this.vlDoc = vlDoc;
-    }
-
-    public Double getVlPis() {
-        return vlPis;
-    }
-
-    public void setVlPis(Double vlPis) {
-        this.vlPis = vlPis;
-    }
-
-    public Double getVlCofins() {
-        return vlCofins;
-    }
-
-    public void setVlCofins(Double vlCofins) {
-        this.vlCofins = vlCofins;
-    }
-
-    public String getCpfCnpj() {
-        return cpfCnpj;
-    }
-
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
-    }
-
-    public String getNomAdq() {
-        return nomAdq;
-    }
-
-    public void setNomAdq(String nomAdq) {
-        this.nomAdq = nomAdq;
-    }
-
-    public RegC465 getRegC465() {
-        return regC465;
-    }
-
-    public void setRegC465(RegC465 regC465) {
-        this.regC465 = regC465;
-    }
-
-    public List<RegC470> getRegC470List() {
-        return regC470List;
-    }
-
-    public void setRegC470List(List<RegC470> regC470List) {
-        this.regC470List = regC470List;
-    }
 }

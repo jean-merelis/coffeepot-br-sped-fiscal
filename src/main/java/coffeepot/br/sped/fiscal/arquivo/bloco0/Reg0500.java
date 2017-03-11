@@ -28,6 +28,9 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.NaturezaContaContabil;
 import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -43,6 +46,8 @@ import java.util.Date;
     @Field(name = "codCta"),
     @Field(name = "nomeCta")
 })
+@Getter
+@Setter
 public class Reg0500 {
 
     private Date dtAlt;
@@ -52,51 +57,4 @@ public class Reg0500 {
     private String codCta;
     private String nomeCta;
 
-    public Date getDtAlt() {
-        return dtAlt;
-    }
-
-    public void setDtAlt(Date dtAlt) {
-        this.dtAlt = dtAlt;
-    }
-
-    public NaturezaContaContabil getCodNatCc() {
-        return codNatCc;
-    }
-
-    public void setCodNatCc(NaturezaContaContabil codNatCc) {
-        this.codNatCc = codNatCc;
-    }
-
-    public TipoContaContabil getIndCta() {
-        return indCta;
-    }
-
-    public void setIndCta(TipoContaContabil indCta) {
-        this.indCta = indCta;
-    }
-
-    public Integer getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Integer nivel) {
-        this.nivel = nivel;
-    }
-
-    public String getCodCta() {
-        return codCta;
-    }
-
-    public void setCodCta(String codCta) {
-        this.codCta = codCta;
-    }
-
-    public String getNomeCta() {
-        return nomeCta;
-    }
-
-    public void setNomeCta(String nomeCta) {
-        this.nomeCta = nomeCta;
-    }
 }

@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -37,33 +39,12 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "aliqIssqn"),
     @Field(name = "vlIssqn")
 })
+@Getter
+@Setter
 public class RegC172 {
 
     private Double vlBcIssqn;
     private Double aliqIssqn;
     private Double vlIssqn;
     
-    public Double getVlBcIssqn() {
-        return vlBcIssqn;
-    }
-
-    public void setVlBcIssqn(Double vlBcIssqn) {
-        this.vlBcIssqn = vlBcIssqn;
-    }
-
-    public Double getAliqIssqn() {
-        return aliqIssqn;
-    }
-
-    public void setAliqIssqn(Double aliqIssqn) {
-        this.aliqIssqn = aliqIssqn;
-    }
-
-    public Double getVlIssqn() {
-        return vlIssqn;
-    }
-
-    public void setVlIssqn(Double vlIssqn) {
-        this.vlIssqn = vlIssqn;
-    }
 }

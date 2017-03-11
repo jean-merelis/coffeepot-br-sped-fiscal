@@ -31,6 +31,8 @@ import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.IndicadorOrigemProcesso;
 import coffeepot.br.sped.fiscal.tipos.ObrigacaoIcmsRecolher;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -48,6 +50,8 @@ import coffeepot.br.sped.fiscal.tipos.ObrigacaoIcmsRecolher;
 	@Field(name = "txtCompl"),
 	@Field(name = "mesRef")
 })
+@Getter
+@Setter
 public class RegE116{
 	private ObrigacaoIcmsRecolher codOr;
 	private Double vlOr;
@@ -59,58 +63,4 @@ public class RegE116{
 	private String txtCompl;
 	private String mesRef;
 	
-	public ObrigacaoIcmsRecolher getCodOr() {
-		return codOr;
-	}
-	public void setCodOr(ObrigacaoIcmsRecolher codOr) {
-		this.codOr = codOr;
-	}
-	public Double getVlOr() {
-		return vlOr;
-	}
-	public void setVlOr(Double vlOr) {
-		this.vlOr = vlOr;
-	}
-	public Date getDtVcto() {
-		return dtVcto;
-	}
-	public void setDtVcto(Date dtVcto) {
-		this.dtVcto = dtVcto;
-	}
-	public String getCodRec() {
-		return codRec;
-	}
-	public void setCodRec(String codRec) {
-		this.codRec = codRec;
-	}
-	public String getNumProc() {
-		return numProc;
-	}
-	public void setNumProc(String numProc) {
-		this.numProc = numProc;
-	}
-	public IndicadorOrigemProcesso getIndProc() {
-		return indProc;
-	}
-	public void setIndProc(IndicadorOrigemProcesso indProc) {
-		this.indProc = indProc;
-	}
-	public String getProc() {
-		return proc;
-	}
-	public void setProc(String proc) {
-		this.proc = proc;
-	}
-	public String getTxtCompl() {
-		return txtCompl;
-	}
-	public void setTxtCompl(String txtCompl) {
-		this.txtCompl = txtCompl;
-	}
-	public String getMesRef() {
-		return mesRef;
-	}
-	public void setMesRef(String mesRef) {
-		this.mesRef = mesRef;
-	}
 }

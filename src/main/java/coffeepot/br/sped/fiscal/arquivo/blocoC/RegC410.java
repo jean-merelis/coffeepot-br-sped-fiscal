@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -36,24 +38,11 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "vlPis"),
     @Field(name = "vlCofins")
 })
+@Getter
+@Setter
 public class RegC410 {
 
     private Double vlPis;
     private Double vlCofins;
 
-    public Double getVlPis() {
-        return vlPis;
-    }
-
-    public void setVlPis(Double vlPis) {
-        this.vlPis = vlPis;
-    }
-
-    public Double getVlCofins() {
-        return vlCofins;
-    }
-
-    public void setVlCofins(Double vlCofins) {
-        this.vlCofins = vlCofins;
-    }
 }

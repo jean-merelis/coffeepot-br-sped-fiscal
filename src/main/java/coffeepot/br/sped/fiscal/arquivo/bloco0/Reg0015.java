@@ -27,6 +27,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -37,24 +39,11 @@ import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
     @Field(name = "ufSt"),
     @Field(name = "ieSt", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY})
 })
+@Getter
+@Setter
 public class Reg0015 {
 
     private String ufSt;
     private String ieSt;
 
-    public String getUfSt() {
-        return ufSt;
-    }
-
-    public void setUfSt(String ufSt) {
-        this.ufSt = ufSt;
-    }
-
-    public String getIeSt() {
-        return ieSt;
-    }
-
-    public void setIeSt(String ieSt) {
-        this.ieSt = ieSt;
-    }
 }

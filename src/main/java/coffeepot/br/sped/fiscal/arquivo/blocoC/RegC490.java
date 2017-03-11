@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -41,6 +43,8 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "vlIcms"),
     @Field(name = "codObs")
 })
+@Getter
+@Setter
 public class RegC490 {
 
     private String cstIcms;
@@ -51,59 +55,4 @@ public class RegC490 {
     private Double vlIcms;
     private String codObs;
 
-    public String getCstIcms() {
-        return cstIcms;
-    }
-
-    public void setCstIcms(String cstIcms) {
-        this.cstIcms = cstIcms;
-    }
-
-    public Integer getCfop() {
-        return cfop;
-    }
-
-    public void setCfop(Integer cfop) {
-        this.cfop = cfop;
-    }
-
-    public Double getAliqIcms() {
-        return aliqIcms;
-    }
-
-    public void setAliqIcms(Double aliqIcms) {
-        this.aliqIcms = aliqIcms;
-    }
-
-    public Double getVlOpr() {
-        return vlOpr;
-    }
-
-    public void setVlOpr(Double vlOpr) {
-        this.vlOpr = vlOpr;
-    }
-
-    public Double getVlBcIcms() {
-        return vlBcIcms;
-    }
-
-    public void setVlBcIcms(Double vlBcIcms) {
-        this.vlBcIcms = vlBcIcms;
-    }
-
-    public Double getVlIcms() {
-        return vlIcms;
-    }
-
-    public void setVlIcms(Double vlIcms) {
-        this.vlIcms = vlIcms;
-    }
-
-    public String getCodObs() {
-        return codObs;
-    }
-
-    public void setCodObs(String codObs) {
-        this.codObs = codObs;
-    }
 }

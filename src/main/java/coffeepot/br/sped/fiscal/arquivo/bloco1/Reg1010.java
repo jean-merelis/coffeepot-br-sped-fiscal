@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.bloco1;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -43,6 +45,8 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "indForm", params = "S;N"),
     @Field(name = "indAer", params = "S;N")
 })
+@Getter
+@Setter
 public class Reg1010 {
 
     private Boolean indExp;
@@ -55,75 +59,4 @@ public class Reg1010 {
     private Boolean indForm;
     private Boolean indAer;
 
-    public Boolean getIndExp() {
-        return indExp;
-    }
-
-    public void setIndExp(Boolean indExp) {
-        this.indExp = indExp;
-    }
-
-    public Boolean getIndCcrf() {
-        return indCcrf;
-    }
-
-    public void setIndCcrf(Boolean indCcrf) {
-        this.indCcrf = indCcrf;
-    }
-
-    public Boolean getIndComb() {
-        return indComb;
-    }
-
-    public void setIndComb(Boolean indComb) {
-        this.indComb = indComb;
-    }
-
-    public Boolean getIndUsina() {
-        return indUsina;
-    }
-
-    public void setIndUsina(Boolean indUsina) {
-        this.indUsina = indUsina;
-    }
-
-    public Boolean getIndVa() {
-        return indVa;
-    }
-
-    public void setIndVa(Boolean indVa) {
-        this.indVa = indVa;
-    }
-
-    public Boolean getIndEe() {
-        return indEe;
-    }
-
-    public void setIndEe(Boolean indEe) {
-        this.indEe = indEe;
-    }
-
-    public Boolean getIndCart() {
-        return indCart;
-    }
-
-    public void setIndCart(Boolean indCart) {
-        this.indCart = indCart;
-    }
-
-    public Boolean getIndForm() {
-        return indForm;
-    }
-
-    public void setIndForm(Boolean indForm) {
-        this.indForm = indForm;
-    }
-
-    public Boolean getIndAer() {
-        return indAer;
-    }
-
-    public void setIndAer(Boolean indAer) {
-        this.indAer = indAer;
-    }    
 }

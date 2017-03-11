@@ -26,6 +26,8 @@ package coffeepot.br.sped.fiscal.arquivo.blocoH;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -37,33 +39,12 @@ import coffeepot.bean.wr.annotation.Record;
     @Field(name = "bcIcms"),
     @Field(name = "vlIcms")
 })
+@Getter
+@Setter
 public class RegH020 {
 
     private String cstIcms;
     private Double bcIcms;
     private Double vlIcms;
 
-    public String getCstIcms() {
-        return cstIcms;
-    }
-
-    public void setCstIcms(String cstIcms) {
-        this.cstIcms = cstIcms;
-    }
-
-    public Double getBcIcms() {
-        return bcIcms;
-    }
-
-    public void setBcIcms(Double bcIcms) {
-        this.bcIcms = bcIcms;
-    }
-
-    public Double getVlIcms() {
-        return vlIcms;
-    }
-
-    public void setVlIcms(Double vlIcms) {
-        this.vlIcms = vlIcms;
-    }
 }

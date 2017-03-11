@@ -26,6 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoH;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -38,33 +41,12 @@ import java.util.List;
     @Field(name = "regH005List"),
     @Field(name = "regH990")
 })
+@Getter
+@Setter
 public class BlocoH {
 
     private RegH001 regH001;
     private List<RegH005> regH005List;
     private RegH990 regH990;
 
-    public RegH001 getRegH001() {
-        return regH001;
-    }
-
-    public void setRegH001(RegH001 regH001) {
-        this.regH001 = regH001;
-    }
-
-    public List<RegH005> getRegH005List() {
-        return regH005List;
-    }
-
-    public void setRegH005List(List<RegH005> regH005List) {
-        this.regH005List = regH005List;
-    }
-
-    public RegH990 getRegH990() {
-        return regH990;
-    }
-
-    public void setRegH990(RegH990 regH990) {
-        this.regH990 = regH990;
-    }
 }

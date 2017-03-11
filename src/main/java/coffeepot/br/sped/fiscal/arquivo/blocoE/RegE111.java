@@ -30,6 +30,8 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.CodigoAjusteApuracaoIcms;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
@@ -43,43 +45,13 @@ import coffeepot.br.sped.fiscal.tipos.CodigoAjusteApuracaoIcms;
 	@Field(name = "regE112List"),
 	@Field(name = "regE113List")
 })
+@Getter
+@Setter
 public class RegE111{
 	private CodigoAjusteApuracaoIcms codAjApur;
 	private String descrComplAj;
 	private Double vlAjApur;
 	private List<RegE112> regE112List;
 	private List<RegE113> regE113List;
-	
-	public CodigoAjusteApuracaoIcms getCodAjApur() {
-		return codAjApur;
-	}
-	public void setCodAjApur(CodigoAjusteApuracaoIcms codAjApur) {
-		this.codAjApur = codAjApur;
-	}
-	public String getDescrComplAj() {
-		return descrComplAj;
-	}
-	public void setDescrComplAj(String descrComplAj) {
-		this.descrComplAj = descrComplAj;
-	}
-	public Double getVlAjApur() {
-		return vlAjApur;
-	}
-	public void setVlAjApur(Double vlAjApur) {
-		this.vlAjApur = vlAjApur;
-	}
-	public List<RegE112> getRegE112List() {
-		return regE112List;
-	}
-	public void setRegE112List(List<RegE112> regE112List) {
-		this.regE112List = regE112List;
-	}
-	public List<RegE113> getRegE113List() {
-		return regE113List;
-	}
-	public void setRegE113List(List<RegE113> regE113List) {
-		this.regE113List = regE113List;
-	}
-
 	
 }

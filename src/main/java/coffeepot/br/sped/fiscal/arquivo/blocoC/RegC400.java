@@ -28,6 +28,9 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -43,6 +46,8 @@ import java.util.List;
     //--
     @Field(name = "regC405List")
 })
+@Getter
+@Setter
 public class RegC400 {
 
     private DocumentoFiscal codMod;
@@ -52,43 +57,4 @@ public class RegC400 {
     //--
     private List<RegC405> regC405List;
 
-    public DocumentoFiscal getCodMod() {
-        return codMod;
-    }
-
-    public void setCodMod(DocumentoFiscal codMod) {
-        this.codMod = codMod;
-    }
-
-    public String getEcfMod() {
-        return ecfMod;
-    }
-
-    public void setEcfMod(String ecfMod) {
-        this.ecfMod = ecfMod;
-    }
-
-    public String getEcfFab() {
-        return ecfFab;
-    }
-
-    public void setEcfFab(String ecfFab) {
-        this.ecfFab = ecfFab;
-    }
-
-    public Integer getEcfCx() {
-        return ecfCx;
-    }
-
-    public void setEcfCx(Integer ecfCx) {
-        this.ecfCx = ecfCx;
-    }
-
-    public List<RegC405> getRegC405List() {
-        return regC405List;
-    }
-
-    public void setRegC405List(List<RegC405> regC405List) {
-        this.regC405List = regC405List;
-    }
 }

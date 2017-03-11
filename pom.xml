@@ -4,7 +4,7 @@
 
 	<groupId>com.github.jean-merelis</groupId>
 	<artifactId>coffeepot-br-sped-fiscal</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.0.0-Beta.0</version>
 	<packaging>jar</packaging>
 
 	<name>coffeepot-br-sped-fiscal</name>
@@ -22,6 +22,26 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+        <developers>
+                <developer>
+                        <id>jean-merelis</id>
+                        <name>Jeandeson O. Merelis</name>
+                        <email>jeanmerelis@hotmail.com</email>
+                        <roles>
+                                <role>architect</role>
+                                <role>developer</role>
+                        </roles>
+                </developer>
+                <developer>
+                        <id>djeisonselzlein</id>
+                        <name>Djeison Aguir Selzlein</name>
+                        <email>djeisonaguir@gmail.com</email>
+                        <roles>
+                                <role>developer</role>
+                        </roles>
+                </developer>
+        </developers>
 
 	<build>
 		<plugins>

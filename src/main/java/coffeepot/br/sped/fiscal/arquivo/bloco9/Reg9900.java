@@ -44,5 +44,5 @@ public class Reg9900 {
 
     private String regBlc;
     private Long qtdRegBlc;
-
+    
 }

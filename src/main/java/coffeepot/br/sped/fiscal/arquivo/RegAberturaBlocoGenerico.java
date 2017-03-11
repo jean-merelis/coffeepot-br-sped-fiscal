@@ -24,7 +24,6 @@ package coffeepot.br.sped.fiscal.arquivo;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
-import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 
 @Record( accessorType = AccessorType.PROPERTY, fields = {

@@ -55,7 +55,7 @@ public enum VersaoLayout implements EnumCodificado {
     }
 
     @Override
-    public Enum parse(String codigo) throws ParseException {
+    public VersaoLayout parse(String codigo) throws ParseException {
         if (codigo == null) {
             return null;
         }

@@ -26,7 +26,6 @@ package coffeepot.br.sped.fiscal.arquivo.blocoG;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.List;
 
 /**
  * Bloco G - Controle do Crédito de ICMS do Ativo Permanente - CIAP - modelos

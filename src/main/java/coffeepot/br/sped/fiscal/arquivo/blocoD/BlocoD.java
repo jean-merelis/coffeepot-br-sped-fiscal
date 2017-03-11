@@ -26,7 +26,6 @@ package coffeepot.br.sped.fiscal.arquivo.blocoD;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.List;
 
 /**
  * Bloco D - Documentos Fiscais II - Serviços (ICMS).

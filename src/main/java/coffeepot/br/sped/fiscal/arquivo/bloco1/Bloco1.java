@@ -26,7 +26,6 @@ package coffeepot.br.sped.fiscal.arquivo.bloco1;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
-import java.util.List;
 
 /**
  * Bloco 1 - Outras Informações.

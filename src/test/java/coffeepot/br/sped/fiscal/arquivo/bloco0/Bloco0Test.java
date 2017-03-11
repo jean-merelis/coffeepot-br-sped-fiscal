@@ -73,7 +73,7 @@ public class Bloco0Test {
 
             //Escreve todos registros do bloco0, exceto o registro 0990
             spedFiscalWriter.write(bloco0);
-            spedFiscalWriter.writerFlush();
+            spedFiscalWriter.flush();
             
             // escreve registro 0990
             long countRecords = Util.countRecords(file, 0);
@@ -81,8 +81,8 @@ public class Bloco0Test {
             spedFiscalWriter.write(reg0990);
             
             
-            spedFiscalWriter.writerFlush();            
-            spedFiscalWriter.writerClose();
+            spedFiscalWriter.flush();            
+            spedFiscalWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -121,8 +121,8 @@ public class Bloco0Test {
 
             spedFiscalWriter.write(reg);
 
-            spedFiscalWriter.writerFlush();
-            spedFiscalWriter.writerClose();
+            spedFiscalWriter.flush();
+            spedFiscalWriter.close();
             assertTrue(true);
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);

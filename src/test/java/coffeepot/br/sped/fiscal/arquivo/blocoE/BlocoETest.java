@@ -59,8 +59,8 @@ public class BlocoETest {
 
             spedFiscalWriter.write(bloco);
 
-            spedFiscalWriter.writerFlush();
-            spedFiscalWriter.writerClose();
+            spedFiscalWriter.flush();
+            spedFiscalWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(BlocoETest.class.getName()).log(Level.SEVERE, null, ex);
         }

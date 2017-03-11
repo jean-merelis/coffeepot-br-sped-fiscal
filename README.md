@@ -15,7 +15,14 @@ Documentação técnica e layout:
 Dependência: coffeepot-bean-wr -
 	https://github.com/jean-merelis/coffeepot-bean-wr
 
-
+Download from Maven central
+´´´xml
+        <dependency>
+            <groupId>com.github.jean-merelis</groupId>
+            <artifactId>coffeepot-br-sped-fiscal</artifactId>
+            <version>1.0.0-Beta.0</version>            
+        </dependency> 
+´´´
 
 Exemplo escrevendo registro a registro no arquivo:
 

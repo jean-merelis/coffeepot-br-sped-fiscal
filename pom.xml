@@ -91,7 +91,7 @@
 		<dependency>
 			<groupId>com.github.jean-merelis</groupId>
 			<artifactId>coffeepot-bean-wr</artifactId>
-			<version>1.2.0-FINAL</version>
+			<version>1.2.3-FINAL</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

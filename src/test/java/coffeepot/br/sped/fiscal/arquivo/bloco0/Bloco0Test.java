@@ -247,7 +247,7 @@ public class Bloco0Test {
     }
 
     public static List<Reg0190> createReg0190List() {
-        List<Reg0190> list = new LinkedList();
+        List<Reg0190> list = new LinkedList<>();
 
         Reg0190 reg = new Reg0190();
         reg.setUnid("un");

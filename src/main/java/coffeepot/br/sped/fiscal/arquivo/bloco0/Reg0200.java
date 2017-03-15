@@ -49,6 +49,7 @@ import java.util.List;
     @Field(name = "codGen", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "codLst"),
     @Field(name = "aliqIcms"),
+    @Field(name = "cest"),
     @Field(name = "reg0205List"),
     @Field(name = "reg0206"),
     @Field(name = "reg0220List")
@@ -66,8 +67,9 @@ public class Reg0200 {
     private String codNcm;
     private String exIpi;
     private String codGen;
-    private Integer codLst;
+    private String codLst;
     private Double aliqIcms;
+    private String cest;
     private List<Reg0205> reg0205List;
     private Reg0206 reg0206;
     private List<Reg0220> reg0220List;

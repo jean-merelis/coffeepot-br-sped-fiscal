@@ -49,7 +49,7 @@ import java.util.List;
     @Field(name = "codGen", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "codLst"),
     @Field(name = "aliqIcms"),
-    @Field(name = "cest"),
+    @Field(name = "cest", minVersion = 11),
     @Field(name = "reg0205List"),
     @Field(name = "reg0206"),
     @Field(name = "reg0220List")

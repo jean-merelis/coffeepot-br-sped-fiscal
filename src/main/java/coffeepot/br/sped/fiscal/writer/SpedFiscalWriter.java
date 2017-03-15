@@ -38,7 +38,7 @@ import java.io.Writer;
  */
 public class SpedFiscalWriter {
 
-    private ObjectWriter beanWriter;
+    private final ObjectWriter beanWriter;
 
     /**
      * Este construtor utiliza o objeto Writer que você fornece.
@@ -74,8 +74,8 @@ public class SpedFiscalWriter {
      * classe.
      *
      * @param obj Objeto a ser analizado e escrito no arquivo. Este objeto deve
-     * ser mapeado com as anotações {@link coffeepot.bean.wr.anotation.Record} e
-     * {@link coffeepot.bean.wr.anotation.Field}
+     * ser mapeado com as anotações {@link coffeepot.bean.wr.annotation.Record} e
+     * {@link coffeepot.bean.wr.annotation.Field}
      * @throws IOException
      */
     public void write(Object obj) throws IOException {
@@ -87,7 +87,7 @@ public class SpedFiscalWriter {
      *
      * @throws IOException
      */
-    public void writerFlush() throws IOException {
+    public void flush() throws IOException {
         beanWriter.flush();
     }
 
@@ -96,19 +96,19 @@ public class SpedFiscalWriter {
      *
      * @throws IOException
      */
-    public void writerClose() throws IOException {
+    public void close() throws IOException {
         beanWriter.getWriter().close();
     }
 
     /**
      * Libera os parsers (analisadores) do mapa.
-     * <p/>
+     * <br>
      * Todo objeto que é escrito precisa de um parser, para analisar suas
      * informações e formatar seu conteúdo. Estes parsers são construídos usando
      * as anotações que foram feitas nas classes dos objetos. Desta forma, se
      * tem um parser para cada classe que o ObjectWrite escreve e este parser
      * fica disponível em um mapa para ser usado pelo ObjectWriter.
-     * <p/>
+     * <br>
      * No caso do Sped, existem muitas classes que mapeiam seus registros, desta
      * forma é interessante liberar os recursos dos parsers que não serão mais
      * utilizados.

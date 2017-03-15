@@ -37,8 +37,8 @@ import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
 
 /**
  * Estrutura do Sped Fiscal.
- * <p/>
- * Tabela de blocos: <br/>
+ * <br>
+ * Tabela de blocos: <br>
  * <ul>
  * <li> 0 - Abertura, Identificação e Referências</li>
  * <li> C - Documentos Fiscais I  - Mercadorias (ICMS/IPI)</li>
@@ -52,13 +52,13 @@ import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
  * </ul>
  *
  * @author Jeandeson O. Merelis
- * @deprecated Embora seja teoricamente possível gravarmos SPED FISCAL inteiro
+ * @deprecated Embora seja possível gravarmos SPED FISCAL inteiro
  * utilizando apenas uma instancia desta classe e a passando para o ObjectWriter
- * escrevê-la, isto não seria recomendado, pois sabemos que o
+ * escrevê-la, isto não seria recomendado, pois o
  * arquivo pode ser enorme e o uso da memória
  * ficaria comprometido. A recomendação é gravar os registros sob demanda, e
  * liberando os recursos em seguida.
- * <p/>
+ * <br>
  * <strong>
  * Desta forma, a finalidade desta classe é mais para entendermos a estrutura do
  * Arquivo SPED FISCAL.</strong>

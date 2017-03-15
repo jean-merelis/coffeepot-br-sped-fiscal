@@ -89,15 +89,15 @@ public class EstruturaTest {
 
             //Grava todos blocos, exceto o Bloco9
             spedFiscalWriter.write(estrutura);
-            spedFiscalWriter.writerFlush();
+            spedFiscalWriter.flush();
 
             //Gera o bloco9 apartir do arquivo, e o grava no arquivo.
             Bloco9 bloco9 = Util.createBloco9(file);
             //estrutura.setBloco9(bloco9);
             spedFiscalWriter.write(bloco9);
-            spedFiscalWriter.writerFlush();
+            spedFiscalWriter.flush();
 
-            spedFiscalWriter.writerClose();
+            spedFiscalWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(BlocoCTest.class.getName()).log(Level.SEVERE, null, ex);
         }

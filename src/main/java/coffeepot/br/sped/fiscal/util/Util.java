@@ -52,7 +52,7 @@ public class Util {
      * Conta a quantidade de registros no arquivo. Considerando que um registro
      * é o mesmo que uma linha terminada com LF.
      *
-     * <p/>
+     * <br>
      *
      * Este recurso é util para se obter a quantidade de registros que foram
      * escritos no ultimo bloco como o exemplo a seguir:
@@ -108,6 +108,8 @@ public class Util {
      * @param beginIndex Indice de onde se deve começar a contagem, baseado em
      * zero.
      * @return
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public static long countRecords(String file, long beginIndex) throws FileNotFoundException, IOException {
         return countRecords(new File(file), beginIndex);
@@ -117,7 +119,7 @@ public class Util {
      * Conta a quantidade de registros no arquivo. Considerando que um registro
      * é o mesmo que uma linha terminada com LF.
      *
-     * <p/>
+     * <br>
      *
      * Este recurso é util para se obter a quantidade de registros que foram
      * escritos no ultimo bloco como o exemplo a seguir:
@@ -173,11 +175,13 @@ public class Util {
      * @param beginIndex Indice de onde se deve começar a contagem, baseado em
      * zero.
      * @return
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public static long countRecords(File file, long beginIndex) throws FileNotFoundException, IOException {
         long totalLines = 0l;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {       
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             while (reader.readLine() != null) {
                 if (beginIndex > 0) {
                     beginIndex--;
@@ -194,6 +198,8 @@ public class Util {
      *
      * @param file Arquivo do SPED Fiscal.
      * @return
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public static Bloco9 createBloco9(String file) throws FileNotFoundException, IOException {
         return createBloco9(new File(file));
@@ -204,6 +210,8 @@ public class Util {
      *
      * @param file Arquivo do SPED Fiscal.
      * @return
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public static Bloco9 createBloco9(File file) throws FileNotFoundException, IOException {
         Bloco9 bloco = new Bloco9();

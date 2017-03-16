@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,8 +31,8 @@ package coffeepot.br.sped.fiscal.tipos;
 public enum ApuracaoIpi implements EnumCodificado{
     MENSAL('0'),
     DECENDIAL('1');
-    
-    private char codigo;
+
+    private final char codigo;
 
     private ApuracaoIpi(char codigo) {
         this.codigo = codigo;
@@ -42,19 +42,19 @@ public enum ApuracaoIpi implements EnumCodificado{
     public String getCodigo() {
         return String.valueOf(codigo);
     }
-    
+
     @Override
     public ApuracaoIpi parse(String codigo) throws ParseException{
         if (codigo == null){
             throw new ParseException("Não foi possível conveter para o tipo ApuracaoIpi");
         }
-        
+
         if (codigo.equals("0")) return MENSAL;
         if (codigo.equals("1")) return DECENDIAL;
-        
+
         throw new ParseException("Não foi possível conveter para o tipo ApuracaoIpi");
     }
-    
+
     public static ApuracaoIpi parse(char codigo) throws ParseException{
         switch (codigo){
             case '0': return MENSAL;

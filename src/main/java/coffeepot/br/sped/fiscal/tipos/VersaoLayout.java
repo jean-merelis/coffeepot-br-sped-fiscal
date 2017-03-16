@@ -61,28 +61,7 @@ public enum VersaoLayout implements EnumCodificado {
         if (codigo == null) {
             return null;
         }
-        switch (codigo) {
-            case "002":
-                return VERSAO_002;
-            case "003":
-                return VERSAO_003;
-            case "004":
-                return VERSAO_004;
-            case "005":
-                return VERSAO_005;
-            case "006":
-                return VERSAO_006;
-            case "007":
-                return VERSAO_007;
-            case "008":
-                return VERSAO_008;
-            case "009":
-                return VERSAO_009;
-            case "010":
-                return VERSAO_010;
-            default:
-                throw new IllegalArgumentException("Tipo de versão não suportado");
-        }
+        return VersaoLayout.valueOf( "VERSAO_" + codigo );
     }
 
     public static VersaoLayout parseByDescription(String descricao) {
@@ -95,11 +74,11 @@ public enum VersaoLayout implements EnumCodificado {
     }
 
     /**
-     * Versão que este projeto implementa.
+     * Obtém a última versão do layout que este projeto implementa.
      *
-     * @return ultima versão implementada.
+     * @return última versão implementada.
      */
     public static VersaoLayout getLastVersionImpl() {
-        return VERSAO_010;
+        return VersaoLayout.values()[VersaoLayout.values().length -1];
     }
 }

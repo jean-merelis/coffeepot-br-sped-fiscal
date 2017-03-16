@@ -21,8 +21,8 @@ Download from Maven central
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.0</version>            
-        </dependency> 
+            <version>1.0.0-Beta.1</version>
+        </dependency>
 ```
 
 Exemplo escrevendo registro a registro no arquivo:
@@ -60,6 +60,6 @@ Exemplo escrevendo um bloco inteiro no arquivo:
 
 		//Escreve o bloco no arquivo
         spedFiscalWriter.write(bloco0);
- 
+
 		spedFiscalWriter.flush();
         spedFiscalWriter.close();

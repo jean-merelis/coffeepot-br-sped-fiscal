@@ -58,7 +58,7 @@ public class BlocoD {
 //    private List<RegD400> regD400List;
 //    private List<RegD500> regD500List;
 //    private List<RegD600> regD600List;
-//    private List<RegD695> regD695List;        
+//    private List<RegD695> regD695List;
     private RegD990 regD990;
 
 }

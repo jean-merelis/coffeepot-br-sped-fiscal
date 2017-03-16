@@ -48,5 +48,4 @@ public class Reg0001 extends RegAberturaBlocoBase{
         this.reg = "0001";
         this.indMov = indMov;
     }
-    
 }

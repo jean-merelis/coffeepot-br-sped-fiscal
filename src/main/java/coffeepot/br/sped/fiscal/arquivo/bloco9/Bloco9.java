@@ -34,7 +34,7 @@ import lombok.Setter;
 /**
  * Bloco 9 - Controle e Encerramento do Arquivo Digital.
  *
- * @author Jeandeson O. Merelis 
+ * @author Jeandeson O. Merelis
  */
 @Record(fields = {
     @Field(name = "reg9001"),

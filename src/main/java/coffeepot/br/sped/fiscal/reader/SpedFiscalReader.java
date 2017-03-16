@@ -34,6 +34,7 @@ import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
 import coffeepot.br.sped.fiscal.arquivo.blocoE.BlocoE;
 import coffeepot.br.sped.fiscal.arquivo.blocoG.BlocoG;
 import coffeepot.br.sped.fiscal.arquivo.blocoH.BlocoH;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import java.io.IOException;
 import java.io.Reader;
 
@@ -43,10 +44,14 @@ import java.io.Reader;
  */
 public class SpedFiscalReader {
 
-    private ObjectReader reader;
+    private final ObjectReader reader;
 
     public SpedFiscalReader(Reader r) {
         this.reader = ReaderFactory.createReader(r);
+    }
+
+    public SpedFiscalReader(Reader r, VersaoLayout versaoLayout) {
+        this.reader = ReaderFactory.createReader(r, versaoLayout);
     }
 
     public EstruturaSemBlocos parseToEstruturaSemBlocos() throws UnknownRecordException, HandlerParseException, IOException, Exception {

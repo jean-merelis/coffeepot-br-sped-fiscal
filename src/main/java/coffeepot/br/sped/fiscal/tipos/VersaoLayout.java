@@ -37,10 +37,10 @@ public enum VersaoLayout implements EnumCodificado {
     VERSAO_008("008", "Versão 1.07 Ato COTEPE 01/01/2014"),
     VERSAO_009("009", "Versão 1.08 Ato COTEPE 01/01/2015"),
     VERSAO_010("010", "Versão 1.09 Ato COTEPE 01/01/2016"),
-	VERSAO_011("011", "Versão 1.10 Ato COTEPE 01/01/2017");
-	
-    private String codigo;
-    private String descricao;
+    VERSAO_011("011", "Versão 1.10 Ato COTEPE 01/01/2017");
+
+    private final String codigo;
+    private final String descricao;
 
     private VersaoLayout(String codigo, String descricao) {
         this.codigo = codigo;
@@ -97,9 +97,9 @@ public enum VersaoLayout implements EnumCodificado {
     /**
      * Versão que este projeto implementa.
      *
-     * @return
+     * @return ultima versão implementada.
      */
     public static VersaoLayout getLastVersionImpl() {
-        return VERSAO_009;
+        return VERSAO_010;
     }
 }

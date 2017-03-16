@@ -31,7 +31,7 @@ import coffeepot.br.sped.fiscal.arquivo.RegEncerramentoBlocoBase;
 
 /**
  *
- * @author Djeison A. Selzlein & Anderson A. Mallmann
+ * @author Djeison A. Selzlein &amp; Anderson A. Mallmann
  */
 @Record(accessorType = AccessorType.PROPERTY,
         fields = {

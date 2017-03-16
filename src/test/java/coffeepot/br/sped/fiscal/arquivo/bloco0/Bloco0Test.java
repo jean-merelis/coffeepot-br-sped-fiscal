@@ -3,12 +3,10 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringReader;
@@ -67,12 +65,12 @@ import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
  */
 public class Bloco0Test {
     /* alguns registros só podem conter uma ocorrência no arquivo ou no bloco...
-     verifique a documentação do Sped Fiscal para maiores detalhes, 
-     * você também pode conferir a classe do bloco que também tem o mapeamento e as cardinalidades.        
+     verifique a documentação do Sped Fiscal para maiores detalhes,
+     * você também pode conferir a classe do bloco que também tem o mapeamento e as cardinalidades.
      */
 
     @Test
-    public void testBloco0() throws Exception {        
+    public void testBloco0() throws Exception {
         System.out.println("*** Teste de escrita do BLOCO 0 inteiro ***");
     	Bloco0 bloco0 = createBloco0();
 
@@ -83,21 +81,21 @@ public class Bloco0Test {
 
             spedFiscalWriter.write(bloco0);
             spedFiscalWriter.flush();
-            
+
             // escreve registro 0990
             long countRecords = Util.countRecords(file, 0);
             Reg0990 reg0990 = new Reg0990(countRecords+1);
             spedFiscalWriter.write(reg0990);
-            
-            
-            spedFiscalWriter.flush();            
+
+
+            spedFiscalWriter.flush();
             spedFiscalWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-    
+
     @Test
     public void Bloco0Version10Test() throws UnknownRecordException, HandlerParseException, Exception {
     	try {
@@ -109,24 +107,24 @@ public class Bloco0Test {
             Reg0200 registro = new Reg0200();
             registro.setCest("123124");
             Reg0990 registroFechamento = new Reg0990(3L);
-            
+
             spedFiscalWriter.write(registroAbertura);
             spedFiscalWriter.write(registro);
             spedFiscalWriter.write(registroFechamento);
-            spedFiscalWriter.flush();            
+            spedFiscalWriter.flush();
             spedFiscalWriter.close();
-            
+
             try (StringReader sr = new StringReader(sw.toString())) {
-            	SpedFiscalReader reader = new SpedFiscalReader(sr);
+            	SpedFiscalReader reader = new SpedFiscalReader(sr, VersaoLayout.VERSAO_010);
             	Bloco0 bloco0 = reader.parseToBloco0();
-            	assertEquals("", bloco0.getReg0200List().get(0).getCest());
+            	assertNull( bloco0.getReg0200List().get(0).getCest());
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Test
     public void Bloco0Version11Test() throws UnknownRecordException, HandlerParseException, Exception {
     	try {
@@ -138,19 +136,19 @@ public class Bloco0Test {
             Reg0200 registro = new Reg0200();
             registro.setCest("123124");
             Reg0990 registroFechamento = new Reg0990(3L);
-            
+
             spedFiscalWriter.write(registroAbertura);
             spedFiscalWriter.write(registro);
             spedFiscalWriter.write(registroFechamento);
-            spedFiscalWriter.flush();            
+            spedFiscalWriter.flush();
             spedFiscalWriter.close();
-            
+
             try (StringReader sr = new StringReader(sw.toString())) {
-            	SpedFiscalReader reader = new SpedFiscalReader(sr);
+            	SpedFiscalReader reader = new SpedFiscalReader(sr, VersaoLayout.VERSAO_011);
             	Bloco0 bloco0 = reader.parseToBloco0();
             	assertEquals("123124", bloco0.getReg0200List().get(0).getCest());
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -418,11 +416,11 @@ public class Bloco0Test {
         for (int i = 0; i < 3; i++) {
             list.add(createReg0300());
         }
-        return list;        
+        return list;
     }
 
     public static Reg0300 createReg0300() {
-        
+
         Reg0300 reg = new Reg0300();
         reg.setCodCta("COD CONTA CONTABIL");
         reg.setCodIndBem("Cod ind bem");
@@ -443,7 +441,7 @@ public class Bloco0Test {
 
     public static List<Reg0400> createReg0400List(){
         List<Reg0400> list = new LinkedList<>();
-     
+
         Reg0400 reg = new Reg0400();
         reg.setCodNat("1");
         reg.setDescrNat("Vendas");
@@ -453,18 +451,18 @@ public class Bloco0Test {
         reg.setCodNat("2");
         reg.setDescrNat("Industrialização");
         list.add(reg);
-        
+
         reg = new Reg0400();
         reg.setCodNat("3");
         reg.setDescrNat("Devolução");
         list.add(reg);
-        
+
         return list;
     }
 
     public static List<Reg0450> createReg0450List()  {
         List<Reg0450> list = new LinkedList<>();
-        
+
         Reg0450 reg = new Reg0450();
         reg.setCodInf("COD1");
         reg.setTxt("Texto da informação complementar  ");
@@ -474,13 +472,13 @@ public class Bloco0Test {
         reg.setCodInf("COD2");
         reg.setTxt("Texto da informação complementar 2");
         list.add(reg);
-        
+
         return list;
     }
 
     public static List<Reg0460> createReg0460List(){
         List<Reg0460> list = new LinkedList<>();
-        
+
         Reg0460 reg = new Reg0460();
         reg.setCodObs("COD1");
         reg.setTxt("Texto da observação");
@@ -490,7 +488,7 @@ public class Bloco0Test {
         reg.setCodObs("COD2");
         reg.setTxt("Texto da observação 2");
         list.add(reg);
-        
+
         return list;
     }
 
@@ -515,7 +513,7 @@ public class Bloco0Test {
         reg.setNivel(1);
         reg.setNomeCta("Nome da conta 2");
         list.add(reg);
-        
+
         return list;
 
     }

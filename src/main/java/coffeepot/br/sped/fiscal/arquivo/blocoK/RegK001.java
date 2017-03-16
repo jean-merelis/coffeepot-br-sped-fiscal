@@ -32,7 +32,7 @@ import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 
 /**
  *
- * @author Djeison A. Selzlein & Anderson A. Mallmann
+ * @author Djeison A. Selzlein &amp; Anderson A. Mallmann
  */
 @Record(accessorType = AccessorType.PROPERTY, fields = {
     @Field(name = "reg", id=true, constantValue = "K001"),

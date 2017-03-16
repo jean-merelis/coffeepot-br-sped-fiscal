@@ -30,7 +30,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author Djeison A. Selzlein & Anderson A. Mallmann
+ * @author Djeison A. Selzlein &amp; Anderson A. Mallmann
  */
 @Record(fields = {
     @Field(name = "regK001"),

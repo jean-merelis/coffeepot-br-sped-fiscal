@@ -26,8 +26,12 @@ import coffeepot.bean.wr.reader.DelimitedReader;
 import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
+import coffeepot.bean.wr.writer.ObjectWriter;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
+import static coffeepot.br.sped.fiscal.writer.WriterFactory.createObjectWriter;
 import java.io.Reader;
+import java.io.Writer;
 
 /**
  *
@@ -35,23 +39,32 @@ import java.io.Reader;
  */
 public class ReaderFactory {
 
-    public static ObjectReader createReader(Reader r) {
-        DelimitedReader reader = new DelimitedReader(r);
-        reader.setDelimiter('|');
-        reader.setRecordInitializator("|");
-        reader.setRemoveRecordInitializator(true);        
-        reader.setIgnoreUnknownRecords(false);
+    public static ObjectReader createReader( Reader w ) {
+        return createReader( w, Integer.valueOf( VersaoLayout.getLastVersionImpl().getCodigo() ) );
+    }
 
-        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
+    public static ObjectReader createReader( Reader w, VersaoLayout versaoLayout ) {
+        return createReader( w, Integer.valueOf( versaoLayout.getCodigo() ) );
+    }
 
-        DefaultDoubleHandler.setPatternDefault("#0.##########");
-        DefaultDoubleHandler.setDecimalSeparatorDefault(',');
-        DefaultDoubleHandler.setGroupingSeparatorDefault('.');
+    public static ObjectReader createReader( Reader r, int version ) {
+        DelimitedReader reader = new DelimitedReader( r );
+        reader.setVersion( version );
+        reader.setDelimiter( '|' );
+        reader.setRecordInitializator( "|" );
+        reader.setRemoveRecordInitializator( true );
+        reader.setIgnoreUnknownRecords( false );
 
-        DefaultDateHandler.setPatternDefaultForDate("ddMMyyyy");
-        DefaultDateHandler.setPatternDefaultForTime("HHmmss");
-        DefaultDateHandler.setPatternDefaultForDateTime("ddMMyyyyHHmmss");
-        DefaultDateHandler.setPatternDefault("ddMMyyyy");
+        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor( Enum.class, CustomEnumHandler.class );
+
+        DefaultDoubleHandler.setPatternDefault( "#0.##########" );
+        DefaultDoubleHandler.setDecimalSeparatorDefault( ',' );
+        DefaultDoubleHandler.setGroupingSeparatorDefault( '.' );
+
+        DefaultDateHandler.setPatternDefaultForDate( "ddMMyyyy" );
+        DefaultDateHandler.setPatternDefaultForTime( "HHmmss" );
+        DefaultDateHandler.setPatternDefaultForDateTime( "ddMMyyyyHHmmss" );
+        DefaultDateHandler.setPatternDefault( "ddMMyyyy" );
 
         return reader;
     }

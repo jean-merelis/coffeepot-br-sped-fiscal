@@ -21,7 +21,7 @@ Download from Maven central
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.2</version>
+            <version>1.0.0-Beta.3</version>
         </dependency>
 ```
 

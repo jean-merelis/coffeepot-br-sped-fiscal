@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,7 +26,7 @@ package coffeepot.br.sped.fiscal.tipos;
 
 /**
  * Situação do Documento, referenciado no registro C100.
- * 
+ *
  * @author Jeandeson O. Merelis
  */
 public enum SituacaoDocumento  implements EnumCodificado{
@@ -40,8 +40,8 @@ public enum SituacaoDocumento  implements EnumCodificado{
     EXTEMPORANEA_COMPLEMENTAR("07","Escrituração extemporânea de documento complementar"),
     ESPECIAL("08","Documento Fiscal emitido com base em Regime Especial ou Norma Específica");
 
-    private String codigo;
-    private String descricao;
+    private final String codigo;
+    private final String descricao;
 
     private SituacaoDocumento(String codigo, String descricao) {
         this.codigo = codigo;
@@ -56,7 +56,7 @@ public enum SituacaoDocumento  implements EnumCodificado{
     public String getDescricao() {
         return descricao;
     }
-    
+
     @Override
     public SituacaoDocumento parse(String codigo) throws ParseException{
         if ("00".equals(codigo)) return REGULAR;
@@ -68,7 +68,7 @@ public enum SituacaoDocumento  implements EnumCodificado{
         if ("06".equals(codigo)) return COMPLEMENTAR;
         if ("07".equals(codigo)) return EXTEMPORANEA_COMPLEMENTAR;
         if ("08".equals(codigo)) return ESPECIAL;
-        
+
         throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo SituacaoDocumento");
     }
 }

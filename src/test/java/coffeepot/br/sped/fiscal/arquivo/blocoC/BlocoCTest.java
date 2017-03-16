@@ -112,7 +112,7 @@ public class BlocoCTest {
 
         RegC100 reg = new RegC100();
         reg.setChvNfe("1234567890 1234567890 1234567890 1234567890 1234");
-        reg.setCodMod(DocumentoFiscal.NOTA_FISCAL_ELETRONICA);
+        reg.setCodMod(DocumentoFiscal.M55);
         reg.setCodPart("0001");
         reg.setCodSit(SituacaoDocumento.REGULAR);
         reg.setDtDoc(new Date());
@@ -224,7 +224,7 @@ public class BlocoCTest {
 
     public static RegC113 createRegC113() {
         RegC113 reg = new RegC113();
-        reg.setCodMod(DocumentoFiscal.BILHETE_PASSAGEM_FERROVIARIO);
+        reg.setCodMod(DocumentoFiscal.M16);
         reg.setCodPart("0001");
         reg.setDtDoc(new Date());
         reg.setIndEmit(EmissaoDocumento.TERCEIROS);
@@ -245,7 +245,7 @@ public class BlocoCTest {
 
     public static RegC114 createRegC114() {
         RegC114 reg = new RegC114();
-        reg.setCodMod(DocumentoFiscal.BILHETE_PASSAGEM_FERROVIARIO);
+        reg.setCodMod(DocumentoFiscal.M16);
         reg.setDtDoc(new Date());
         reg.setEcfCx(1);
         reg.setEcfFab("FAB000000000000000000001");
@@ -284,7 +284,7 @@ public class BlocoCTest {
     public static RegC116 createRegC116() {
         RegC116 reg = new RegC116();
         reg.setChvCfe("1234567890 1234567890 1234564567890 1234567890 1234");
-        reg.setCodMod(DocumentoFiscal.NOTA_FISCAL_ELETRONICA_CONSUMIDOR);
+        reg.setCodMod(DocumentoFiscal.M65);
         reg.setDtDoc(new Date());
         reg.setNrSat("000000001");
         reg.setNumCfe(123);

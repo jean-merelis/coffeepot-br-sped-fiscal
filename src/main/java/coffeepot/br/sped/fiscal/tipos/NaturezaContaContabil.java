@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,7 +26,7 @@ package coffeepot.br.sped.fiscal.tipos;
 
 /**
  * Natureza da conta/grupo de contas do plano de contas contábil.
- * 
+ *
  * @author Jeandeson O. Merelis
  */
 public enum NaturezaContaContabil implements EnumCodificado{
@@ -54,9 +54,9 @@ public enum NaturezaContaContabil implements EnumCodificado{
      * Outras.
      */
     OUTRAS("09","Outras");
-    
-    private String codigo;
-    private String descricao;
+
+    private final String codigo;
+    private final String descricao;
 
     private NaturezaContaContabil(String codigo, String descricao) {
         this.codigo = codigo;
@@ -71,9 +71,9 @@ public enum NaturezaContaContabil implements EnumCodificado{
     public String getDescricao() {
         return descricao;
     }
-    
+
     @Override
-    public NaturezaContaContabil parse(String codigo) throws ParseException{        
+    public NaturezaContaContabil parse(String codigo) throws ParseException{
         switch (codigo){
             case "01": return ATIVO;
             case "02": return PASSIVO;

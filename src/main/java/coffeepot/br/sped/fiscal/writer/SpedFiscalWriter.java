@@ -25,6 +25,8 @@ package coffeepot.br.sped.fiscal.writer;
 
 
 import coffeepot.bean.wr.writer.ObjectWriter;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,6 +49,10 @@ public class SpedFiscalWriter {
      */
     public SpedFiscalWriter(Writer w) {
         this.beanWriter = WriterFactory.createObjectWriter(w);
+    }
+    
+    public SpedFiscalWriter(Writer w, VersaoLayout versaoLayout){
+    	this.beanWriter = WriterFactory.createObjectWriter(w, versaoLayout);
     }
 
     /**

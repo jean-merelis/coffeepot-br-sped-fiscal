@@ -28,6 +28,7 @@ import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
 import coffeepot.bean.wr.writer.DelimitedWriter;
 import coffeepot.bean.wr.writer.ObjectWriter;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
 import java.io.Writer;
 
@@ -37,11 +38,20 @@ import java.io.Writer;
  */
 public class WriterFactory {
 
-    public static ObjectWriter createObjectWriter(Writer w) {
+	public static ObjectWriter createObjectWriter(Writer w){
+		return createObjectWriter(w, Integer.valueOf(VersaoLayout.getLastVersionImpl().getCodigo()));
+	}
+	
+	public static ObjectWriter createObjectWriter(Writer w, VersaoLayout versaoLayout){
+		return createObjectWriter(w, Integer.valueOf(versaoLayout.getCodigo()));
+	}
+	
+    public static ObjectWriter createObjectWriter(Writer w, int version) {
         ObjectWriter beanWriter = DelimitedWriter.create(w)
                 .withDelimiter('|')
                 .withRecordInitializator("|")
                 .withRecordTerminator("|\r\n")
+                .withVersion(version)
                 .removeDelimiter(true);
 
 

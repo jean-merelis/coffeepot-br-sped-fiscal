@@ -3,6 +3,30 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.junit.Test;
+
+import coffeepot.bean.wr.reader.UnknownRecordException;
+import coffeepot.bean.wr.typeHandler.HandlerParseException;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -25,6 +49,7 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 
 import coffeepot.br.sped.fiscal.arquivo.EstruturaTest;
+import coffeepot.br.sped.fiscal.reader.SpedFiscalReader;
 import coffeepot.br.sped.fiscal.tipos.FinalidadeArquivo;
 import coffeepot.br.sped.fiscal.tipos.IdentificacaoMercadoria;
 import coffeepot.br.sped.fiscal.tipos.IndicadorAtividade;
@@ -35,20 +60,6 @@ import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.util.Util;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -63,15 +74,13 @@ public class Bloco0Test {
     @Test
     public void testBloco0() throws Exception {        
         System.out.println("*** Teste de escrita do BLOCO 0 inteiro ***");
-        
-        Bloco0 bloco0 = createBloco0();
+    	Bloco0 bloco0 = createBloco0();
 
         try {
             String file = EstruturaTest.TEST_BLOCO_OUT_DIR + "Bloco0Test.tmp";
             Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));
             SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
 
-            //Escreve todos registros do bloco0, exceto o registro 0990
             spedFiscalWriter.write(bloco0);
             spedFiscalWriter.flush();
             
@@ -87,6 +96,64 @@ public class Bloco0Test {
             Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    
+    @Test
+    public void Bloco0Version10Test() throws UnknownRecordException, HandlerParseException, Exception {
+    	try {
+            StringWriter sw = new StringWriter();
+            SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(sw, VersaoLayout.VERSAO_010);
+
+
+            Reg0001 registroAbertura = new Reg0001(IndicadorMovimento.COM_DADOS);
+            Reg0200 registro = new Reg0200();
+            registro.setCest("123124");
+            Reg0990 registroFechamento = new Reg0990(3L);
+            
+            spedFiscalWriter.write(registroAbertura);
+            spedFiscalWriter.write(registro);
+            spedFiscalWriter.write(registroFechamento);
+            spedFiscalWriter.flush();            
+            spedFiscalWriter.close();
+            
+            try (StringReader sr = new StringReader(sw.toString())) {
+            	SpedFiscalReader reader = new SpedFiscalReader(sr);
+            	Bloco0 bloco0 = reader.parseToBloco0();
+            	assertEquals("", bloco0.getReg0200List().get(0).getCest());
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @Test
+    public void Bloco0Version11Test() throws UnknownRecordException, HandlerParseException, Exception {
+    	try {
+            StringWriter sw = new StringWriter();
+            SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(sw, VersaoLayout.VERSAO_011);
+
+
+            Reg0001 registroAbertura = new Reg0001(IndicadorMovimento.COM_DADOS);
+            Reg0200 registro = new Reg0200();
+            registro.setCest("123124");
+            Reg0990 registroFechamento = new Reg0990(3L);
+            
+            spedFiscalWriter.write(registroAbertura);
+            spedFiscalWriter.write(registro);
+            spedFiscalWriter.write(registroFechamento);
+            spedFiscalWriter.flush();            
+            spedFiscalWriter.close();
+            
+            try (StringReader sr = new StringReader(sw.toString())) {
+            	SpedFiscalReader reader = new SpedFiscalReader(sr);
+            	Bloco0 bloco0 = reader.parseToBloco0();
+            	assertEquals("123124", bloco0.getReg0200List().get(0).getCest());
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Bloco0Test.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static Bloco0 createBloco0() {
@@ -105,7 +172,6 @@ public class Bloco0Test {
         bloco0.setReg0460List(createReg0460List());
         bloco0.setReg0500List(createReg0500List());
         bloco0.setReg0600List(createReg0600List());
-     //   bloco0.setReg0990(createReg0990());
         return bloco0;
     }
 

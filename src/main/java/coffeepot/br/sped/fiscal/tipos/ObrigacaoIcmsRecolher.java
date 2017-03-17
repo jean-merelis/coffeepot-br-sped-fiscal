@@ -25,35 +25,56 @@ package coffeepot.br.sped.fiscal.tipos;
 
 
 /**
- * Codigo do Ajuste de apuração do ICMS, referenciado no registro E111.
+ * Codigo do Ajuste de apuração do ICMS, referenciado no registro E116.
  * @author Mauricio R. Morais
  */
 public enum ObrigacaoIcmsRecolher implements EnumCodificado{
-    ICMS_RECOLHER("000","ICMS a recolher"),
-    ICMS_SUBSTITUICAO_ENTRADAS("001","ICMS da substituicao tributaria pelas entradas"),
-    ICMS_SUBSTITUICAO_SAIDAS_ESTADO("002","ICMS da substituicao pelas saidas para o Estado"),
-    ANTECIPACAO_DIFERENCIAL_ALIQUOTAS("003","Antecipacao do diferencial de aliquotas do ICMS"),
-    ANTECIPACAO_ICMS_IMPORTACAO("004","Antecipacao do ICMS da importacao"),
-    ANTECIPACAO_TRIBUTARIA("005","Antecipacao tributaria"),
-    ALIQUOTA_ADICIONAL_FUNDO_POBREZA("006","ICMS resultante da aliquota adicional dos itens incluidos no Fundo de Combate a Pobreza"),
-    OUTRAS_OBRIGACOES_ICMS("090","Outras obrigacoes do ICMS"),
-    ICMS_SUBSTITUICAO_SAIDAS_OUTROS_ESTADOS("999","ICMS da sustituicao tributaria pelas saidas para outro Estado");
+    /**
+     * ICMS a recolher.
+     */
+    ICMS_RECOLHER( "000" ),
+    /**
+     * ICMS da substituicao tributaria pelas entradas.
+     */
+    ICMS_SUBSTITUICAO_ENTRADAS( "001" ),
+    /**
+     * ICMS da substituicao pelas saidas para o Estado.
+     */
+    ICMS_SUBSTITUICAO_SAIDAS_ESTADO( "002" ),
+    /**
+     * Antecipacao do diferencial de aliquotas do ICMS.
+     */
+    ANTECIPACAO_DIFERENCIAL_ALIQUOTAS( "003" ),
+    /**
+     * Antecipacao do ICMS da importacao.
+     */
+    ANTECIPACAO_ICMS_IMPORTACAO( "004" ),
+    /**
+     * Antecipacao tributaria.
+     */
+    ANTECIPACAO_TRIBUTARIA( "005" ),
+    /**
+     * ICMS resultante da aliquota adicional dos itens incluidos no Fundo de
+     * Combate a Pobreza.
+     */
+    ALIQUOTA_ADICIONAL_FUNDO_POBREZA( "006" ),
+    /**
+     * Outras obrigacoes do ICMS
+     */
+    OUTRAS_OBRIGACOES_ICMS( "090" ),
+    /**
+     * ICMS da sustituicao tributaria pelas saidas para outro Estado.
+     */
+    ICMS_SUBSTITUICAO_SAIDAS_OUTROS_ESTADOS( "999" );
 
     private final String codigo;
-    private final String descricao;
 
-    private ObrigacaoIcmsRecolher(String codigo, String descricao) {
+    private ObrigacaoIcmsRecolher( String codigo ) {
         this.codigo = codigo;
-        this.descricao = descricao;
     }
 
     @Override
     public String getCodigo() {
         return codigo;
     }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
  }

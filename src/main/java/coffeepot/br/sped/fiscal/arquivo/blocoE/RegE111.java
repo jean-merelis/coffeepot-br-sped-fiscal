@@ -29,7 +29,6 @@ import java.util.List;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
-import coffeepot.br.sped.fiscal.tipos.CodigoAjusteApuracaoIcms;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,10 +47,26 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RegE111{
-	private CodigoAjusteApuracaoIcms codAjApur;
-	private String descrComplAj;
-	private Double vlAjApur;
-	private List<RegE112> regE112List;
-	private List<RegE113> regE113List;
-	
+    /**
+     * O valor informado no campo deve existir na tabela de código do ajuste da
+     * apuração e dedução de cada Secretaria de Fazenda, conforme a UF do
+     * declarante, campo UF do registro 0000 ou, não havendo esta tabela, o
+     * valor informado no campo deve existir na tabela de código do ajuste da
+     * apuração e dedução, constante da observação do Item 5.1.1. do Ato
+     * COTEPE/ICMS no 09, de 18 de abril de 2008. O código do ajuste utilizado
+     * deve ter seu terceiro caractere como “0” (zero), indicando ajuste de
+     * ICMS, não incluindo ajustes de ICMS-ST. O quarto caractere deve ser
+     * preenchido, conforme item 5.1.1. do Ato COTEPE/ICMS no 09, de 18 de abril
+     * de 2008, com um dos códigos abaixo: 0 – Outros débitos; 1 – Estorno de
+     * créditos; 2 – Outros créditos; 3 – Estorno de débitos; 4 – Deduções do
+     * imposto apurado; 5 – Débitos Especiais. Obs.: Na existência de mais de um
+     * tipo de crédito que se enquadre no mesmo código de ajuste, deverão ser
+     * apresentados tantos registros E111 quantos forem os tipos de créditos.
+     */
+    private String codAjApur;
+    private String descrComplAj;
+    private Double vlAjApur;
+    private List<RegE112> regE112List;
+    private List<RegE113> regE113List;
+
 }

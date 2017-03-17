@@ -50,7 +50,7 @@ public class EnumParser {
      *
      * @throws ParseException
      */
-    public static <E extends Enum<E>> E parseEnumCodificado( Class<E> enumClass, String codigo )  {
+    public static <E extends Enum<E>> E parseEnumCodificado( Class<E> enumClass, String codigo ) {
         if (!EnumCodificado.class.isAssignableFrom( enumClass )) {
             throw new IllegalArgumentException( enumClass.getName() + " não implementa a interface EnumCodificado" );
         }
@@ -59,16 +59,14 @@ public class EnumParser {
             return null;
         }
 
-
-            Enum[] enumConstants = enumClass.getEnumConstants();
-            for (Enum enumValue : enumConstants) {
-                String enumCod = ( (EnumCodificado) enumValue ).getCodigo();
-                if (codigo.equals( enumCod )) {
-                    return (E) enumValue;
-                }
+        Enum[] enumConstants = enumClass.getEnumConstants();
+        for (Enum enumValue : enumConstants) {
+            String enumCod = ( (EnumCodificado) enumValue ).getCodigo();
+            if (codigo.equals( enumCod )) {
+                return (E) enumValue;
             }
+        }
 
-
-        throw new ParseException( "Não foi possível conveter o código '" + codigo + "' para o tipo " + enumClass.getName() );
+        throw new ParseException( "Não foi possível converter o código '" + codigo + "' para o tipo " + enumClass.getName() );
     }
 }

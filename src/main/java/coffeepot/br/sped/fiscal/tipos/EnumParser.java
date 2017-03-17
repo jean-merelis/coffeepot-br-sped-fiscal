@@ -24,9 +24,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,15 +51,15 @@ public class EnumParser {
      * @throws ParseException
      */
     public static <E extends Enum<E>> E parseEnumCodificado( Class<E> enumClass, String codigo )  {
-        if (enumClass.isAssignableFrom( EnumCodificado.class )) {
-            throw new ParseException( enumClass.getName() + " não implementa a interface EnumCodificado" );
+        if (!EnumCodificado.class.isAssignableFrom( enumClass )) {
+            throw new IllegalArgumentException( enumClass.getName() + " não implementa a interface EnumCodificado" );
         }
 
         if (codigo == null) {
             return null;
         }
 
-        if (EnumCodificado.class.isAssignableFrom( enumClass )) {
+
             Enum[] enumConstants = enumClass.getEnumConstants();
             for (Enum enumValue : enumConstants) {
                 String enumCod = ( (EnumCodificado) enumValue ).getCodigo();
@@ -67,8 +67,8 @@ public class EnumParser {
                     return (E) enumValue;
                 }
             }
-        }
 
-        throw new ParseException( "Nao foi possivel conveter o código '" + codigo + "' para o tipo " + enumClass.getName() );
+
+        throw new ParseException( "Não foi possível conveter o código '" + codigo + "' para o tipo " + enumClass.getName() );
     }
 }

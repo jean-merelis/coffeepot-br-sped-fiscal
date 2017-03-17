@@ -43,19 +43,5 @@ public enum Operacao implements EnumCodificado {
     public String getCodigo() {
         return codigo.toString();
     }
-    
-    public String getLabel(){
-        return getClass().getName() + "." + name();
-    }
-
-    @Override
-    public Operacao parse(String codigo) throws ParseException {
-        if ("0".equals(codigo)) {
-            return ENTRADA;
-        }
-        if ("1".equals(codigo)) {
-            return SAIDA;
-        }
-        throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo Operacao");
-    }
+   
 }

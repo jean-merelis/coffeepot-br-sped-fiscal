@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,45 +31,24 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public enum IndicadorAtividade implements EnumCodificado{
 
-    INDUSTRIAL("0", "Industrial ou equiparado a industrial"),
-    OUTROS("1", "Outros");
+    /**
+     * Industrial ou equiparado a industrial.
+     */
+    INDUSTRIAL("0"),
+
+    /**
+     * Outros.
+     */
+    OUTROS("1");
 
     private final String codigo;
-    private final String descricao;
 
-    private IndicadorAtividade(String codigo, String descricao) {
+    private IndicadorAtividade(String codigo) {
         this.codigo = codigo;
-        this.descricao = descricao;
     }
 
     @Override
     public String getCodigo() {
         return codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-
-    public static IndicadorAtividade parseEnum(String codigo) throws ParseException {
-        if ("0".equals(codigo)) {
-            return INDUSTRIAL;
-        }
-        if ("1".equals(codigo)) {
-            return OUTROS;
-        }
-        throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo IndicadorAtividade");
-    }
-
-    @Override
-    public IndicadorAtividade parse(String codigo) throws ParseException {
-        if ("0".equals(codigo)) {
-            return INDUSTRIAL;
-        }
-        if ("1".equals(codigo)) {
-            return OUTROS;
-        }
-        throw new ParseException("Não foi possível converter o código \""+codigo+"\" para o tipo IndicadorAtividade");
     }
 }

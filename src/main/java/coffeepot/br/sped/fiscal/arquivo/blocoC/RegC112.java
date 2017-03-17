@@ -29,7 +29,6 @@ import java.util.Date;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
-import coffeepot.br.sped.fiscal.tipos.ParseException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -63,8 +62,8 @@ public class RegC112 {
 
         ESTADUAL("0"),
         GNRE("1");
-    	
-        private String codigo;
+
+        private final String codigo;
 
         private DocumentoArrecadacao(String codigo) {
             this.codigo = codigo;
@@ -73,17 +72,6 @@ public class RegC112 {
         @Override
         public String getCodigo() {
             return codigo;
-        }
-
-        @Override
-        public DocumentoArrecadacao parse(String codigo) throws ParseException {
-            if ("0".equals(codigo)) {
-                return ESTADUAL;
-            }
-            if ("1".equals(codigo)) {
-                return GNRE;
-            }
-            throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo RegC112.DocumentoArrecadacao");
         }
     }
 }

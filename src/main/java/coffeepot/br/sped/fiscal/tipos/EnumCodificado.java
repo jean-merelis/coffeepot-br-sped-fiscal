@@ -30,5 +30,4 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public interface EnumCodificado {
     String getCodigo();
-    Enum<?> parse(String codigo) throws ParseException;
 }

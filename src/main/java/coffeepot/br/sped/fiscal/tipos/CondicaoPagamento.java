@@ -12,9 +12,9 @@ package coffeepot.br.sped.fiscal.tipos;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,19 +43,5 @@ public enum CondicaoPagamento  implements EnumCodificado{
     @Override
     public String getCodigo() {
         return codigo;
-    }
-
-    @Override
-    public CondicaoPagamento parse(String codigo) throws ParseException {
-        if ("0".equals(codigo)) {
-            return A_VISTA;
-        }
-        if ("1".equals(codigo)) {
-            return A_PRAZO;
-        }
-        if ("2".equals(codigo)) {
-            return OUTROS;
-        }
-        throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo CondicaoPagamento");
     }
 }

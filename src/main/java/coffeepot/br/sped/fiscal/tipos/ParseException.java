@@ -28,24 +28,24 @@ package coffeepot.br.sped.fiscal.tipos;
  *
  * @author Jeandeson O. Merelis
  */
-public class ParseException extends Exception {
+public class ParseException extends RuntimeException {
 
-	private static final long serialVersionUID = 5457819261404871322L;
+    private static final long serialVersionUID = 5457819261404871322L;
 
-	/**
-     * Creates a new instance of
-     * <code>ParseException</code> without detail message.
+    /**
+     * Creates a new instance of <code>ParseException</code> without detail
+     * message.
      */
     public ParseException() {
     }
 
     /**
-     * Constructs an instance of
-     * <code>ParseException</code> with the specified detail message.
+     * Constructs an instance of <code>ParseException</code> with the specified
+     * detail message.
      *
      * @param msg the detail message.
      */
-    public ParseException(String msg) {
-        super(msg);
+    public ParseException( String msg ) {
+        super( msg );
     }
 }

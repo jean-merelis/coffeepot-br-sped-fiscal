@@ -48,26 +48,4 @@ public enum Frete implements EnumCodificado {
     public int getCodigoAsInt() {
         return codigo;
     }
-
-    @Override
-    public Frete parse(String codigo) throws ParseException {
-        if ("0".equals(codigo)) {
-            return EMITENTE;
-        }
-        if ("1".equals(codigo)) {
-            return DESTINATARIO_REMETENTE;
-        }
-        if ("2".equals(codigo)) {
-            return TERCEIROS;
-        }
-        if ("9".equals(codigo)) {
-            return SEM_FRETE;
-        }
-
-        throw new ParseException("Não foi possível converter o código \"" + codigo + "\" para o tipo Frete");
-    }
-
-    public String getLabel() {
-        return getClass().getName() + "." + name();
-    }
 }

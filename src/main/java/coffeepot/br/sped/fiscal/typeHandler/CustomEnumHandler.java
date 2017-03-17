@@ -27,7 +27,7 @@ package coffeepot.br.sped.fiscal.typeHandler;
 import coffeepot.bean.wr.typeHandler.DefaultEnumHandler;
 import coffeepot.bean.wr.typeHandler.HandlerParseException;
 import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
-import coffeepot.br.sped.fiscal.tipos.ParseException;
+import coffeepot.br.sped.fiscal.tipos.EnumParser;
 
 /**
  *
@@ -41,12 +41,11 @@ public class CustomEnumHandler extends DefaultEnumHandler {
             return null;
         }
 
-        if (EnumCodificado.class.isAssignableFrom(type)) {
-            Enum[] enumConstants = type.getEnumConstants();
-            try {
-                return ((EnumCodificado) enumConstants[0]).parse(text);
-            } catch (ParseException ex) {
-                throw new HandlerParseException(ex.getMessage());
+        if (EnumCodificado.class.isAssignableFrom( type )) {
+            try{
+               return EnumParser.parseEnumCodificado( type, text );
+            }catch(Exception ex){
+               throw new HandlerParseException( ex.getMessage() );
             }
         }
 

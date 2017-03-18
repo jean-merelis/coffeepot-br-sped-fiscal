@@ -54,6 +54,10 @@ public class SpedFiscalReader {
         this.reader = ReaderFactory.createReader(r, versaoLayout);
     }
 
+    public int getVersion(){
+        return reader.getVersion();
+    }
+
     public EstruturaSemBlocos parseToEstruturaSemBlocos() throws UnknownRecordException, HandlerParseException, IOException, Exception {
         reader.findLineStartsWith(null);
         return reader.parse(EstruturaSemBlocos.class);

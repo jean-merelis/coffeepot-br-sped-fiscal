@@ -37,6 +37,7 @@ package coffeepot.br.sped.fiscal.reader;
 import coffeepot.br.sped.fiscal.arquivo.EstruturaSemBlocos;
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
 import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0Test;
+import coffeepot.br.sped.fiscal.arquivo.bloco0.Reg0200;
 import coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoC;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
@@ -86,6 +87,22 @@ public class SpedFiscalReaderTest {
         Bloco0 b = Bloco0Test.createBloco0();
         b.getReg0000().setCodVer( VersaoLayout.VERSAO_002 );
 
+
+        Reg0200 reg = new Reg0200();
+        reg.setAliqIcms( 17d );
+        reg.setCodAntItem( "CODIGO ANTERIOR" );
+        reg.setCodBarra( "CODIGO DE BARRAS" );
+        reg.setCodGen( "80" );
+        reg.setCodItem( "CODIGO ITEM" );
+        reg.setCodNcm( "12345678" );
+        reg.setDescrItem( "Descrição do item" );
+        reg.setExIpi( "001" );
+        reg.setTipoItem( "00" );
+        reg.setUnidInv( "un" );
+        reg.setCest( "123456" );
+
+        b.getReg0200List().add( 0, reg );
+
         StringWriter sw = new StringWriter();
         SpedFiscalWriter w = new SpedFiscalWriter( sw, VersaoLayout.VERSAO_002 );
 
@@ -97,13 +114,31 @@ public class SpedFiscalReaderTest {
 
         SpedFiscalReader r = new SpedFiscalReader( sr );
         Bloco0 b0 = r.parseToBloco0();
+
+        assertEquals( 2 , r.getVersion());
         assertEquals( VersaoLayout.VERSAO_002, b0.getReg0000().getCodVer() );
+        assertNull( b0.getReg0200List().get( 0 ).getCest() );
     }
 
     @Test
     public void read_semInformarVersao_temQueAutodetectarVersaoComoVersao010() throws Exception {
         Bloco0 b = Bloco0Test.createBloco0();
         b.getReg0000().setCodVer( VersaoLayout.VERSAO_010 );
+
+        Reg0200 reg = new Reg0200();
+        reg.setAliqIcms( 17d );
+        reg.setCodAntItem( "CODIGO ANTERIOR" );
+        reg.setCodBarra( "CODIGO DE BARRAS" );
+        reg.setCodGen( "80" );
+        reg.setCodItem( "CODIGO ITEM" );
+        reg.setCodNcm( "12345678" );
+        reg.setDescrItem( "Descrição do item" );
+        reg.setExIpi( "001" );
+        reg.setTipoItem( "00" );
+        reg.setUnidInv( "un" );
+        reg.setCest( "123456" );
+
+        b.getReg0200List().add( 0, reg );
 
         StringWriter sw = new StringWriter();
         SpedFiscalWriter w = new SpedFiscalWriter( sw, VersaoLayout.VERSAO_010 );
@@ -116,7 +151,47 @@ public class SpedFiscalReaderTest {
 
         SpedFiscalReader r = new SpedFiscalReader( sr );
         Bloco0 b0 = r.parseToBloco0();
+
+        assertEquals( 10 , r.getVersion());
         assertEquals( VersaoLayout.VERSAO_010, b0.getReg0000().getCodVer() );
+        assertNull( b0.getReg0200List().get( 0 ).getCest() );
+    }
+
+    @Test
+    public void read_semInformarVersao_temQueAutodetectarVersaoComoVersao011() throws Exception {
+        Bloco0 b = Bloco0Test.createBloco0();
+        b.getReg0000().setCodVer( VersaoLayout.VERSAO_011 );
+
+        Reg0200 reg = new Reg0200();
+        reg.setAliqIcms( 17d );
+        reg.setCodAntItem( "CODIGO ANTERIOR" );
+        reg.setCodBarra( "CODIGO DE BARRAS" );
+        reg.setCodGen( "80" );
+        reg.setCodItem( "CODIGO ITEM" );
+        reg.setCodNcm( "12345678" );
+        reg.setDescrItem( "Descrição do item" );
+        reg.setExIpi( "001" );
+        reg.setTipoItem( "00" );
+        reg.setUnidInv( "un" );
+        reg.setCest( "123456" );
+
+        b.getReg0200List().add( 0, reg );
+
+        StringWriter sw = new StringWriter();
+        SpedFiscalWriter w = new SpedFiscalWriter( sw, VersaoLayout.VERSAO_011 );
+
+        w.write( b );
+        w.flush();
+        w.close();
+
+        StringReader sr = new StringReader( sw.toString() );
+
+        SpedFiscalReader r = new SpedFiscalReader( sr );
+        Bloco0 b0 = r.parseToBloco0();
+
+        assertEquals( 11 , r.getVersion());
+        assertEquals( VersaoLayout.VERSAO_011, b0.getReg0000().getCodVer() );
+        assertEquals( "123456", b0.getReg0200List().get( 0 ).getCest() );
     }
 
 

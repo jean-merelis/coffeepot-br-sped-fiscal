@@ -28,6 +28,10 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public enum VersaoLayout implements EnumCodificado {
 
+	/**
+	 * Versão 1.00 Ato COTEPE 01/01/2008.
+	 */
+	VERSAO_001( "001" ),
     /**
      * Versão 1.01 Ato COTEPE 01/01/2009.
      */

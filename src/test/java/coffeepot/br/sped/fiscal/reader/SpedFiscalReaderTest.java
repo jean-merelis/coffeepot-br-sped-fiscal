@@ -35,10 +35,16 @@ package coffeepot.br.sped.fiscal.reader;
  * #L%
  */
 import coffeepot.br.sped.fiscal.arquivo.EstruturaSemBlocos;
+import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0;
+import coffeepot.br.sped.fiscal.arquivo.bloco0.Bloco0Test;
 import coffeepot.br.sped.fiscal.arquivo.blocoC.BlocoC;
 import coffeepot.br.sped.fiscal.arquivo.blocoD.BlocoD;
+import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
+import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.StringReader;
+import java.io.StringWriter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -72,6 +78,47 @@ public class SpedFiscalReaderTest {
     @After
     public void tearDown() {
     }
+
+
+
+    @Test
+    public void read_semInformarVersao_temQueAutodetectarVersaoComoVersao002() throws Exception {
+        Bloco0 b = Bloco0Test.createBloco0();
+        b.getReg0000().setCodVer( VersaoLayout.VERSAO_002 );
+
+        StringWriter sw = new StringWriter();
+        SpedFiscalWriter w = new SpedFiscalWriter( sw, VersaoLayout.VERSAO_002 );
+
+        w.write( b );
+        w.flush();
+        w.close();
+
+        StringReader sr = new StringReader( sw.toString() );
+
+        SpedFiscalReader r = new SpedFiscalReader( sr );
+        Bloco0 b0 = r.parseToBloco0();
+        assertEquals( VersaoLayout.VERSAO_002, b0.getReg0000().getCodVer() );
+    }
+
+    @Test
+    public void read_semInformarVersao_temQueAutodetectarVersaoComoVersao010() throws Exception {
+        Bloco0 b = Bloco0Test.createBloco0();
+        b.getReg0000().setCodVer( VersaoLayout.VERSAO_010 );
+
+        StringWriter sw = new StringWriter();
+        SpedFiscalWriter w = new SpedFiscalWriter( sw, VersaoLayout.VERSAO_010 );
+
+        w.write( b );
+        w.flush();
+        w.close();
+
+        StringReader sr = new StringReader( sw.toString() );
+
+        SpedFiscalReader r = new SpedFiscalReader( sr );
+        Bloco0 b0 = r.parseToBloco0();
+        assertEquals( VersaoLayout.VERSAO_010, b0.getReg0000().getCodVer() );
+    }
+
 
     @Test
     public void temQueLerSomenteOBlocoC() throws Exception {

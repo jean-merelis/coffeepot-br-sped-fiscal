@@ -22,16 +22,14 @@ package coffeepot.br.sped.fiscal.reader;
  * limitations under the License.
  * #L%
  */
+import coffeepot.bean.wr.mapper.Callback;
 import coffeepot.bean.wr.reader.DelimitedReader;
 import coffeepot.bean.wr.reader.ObjectReader;
 import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
-import coffeepot.bean.wr.writer.ObjectWriter;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
-import static coffeepot.br.sped.fiscal.writer.WriterFactory.createObjectWriter;
 import java.io.Reader;
-import java.io.Writer;
 
 /**
  *
@@ -40,20 +38,27 @@ import java.io.Writer;
 public class ReaderFactory {
 
     public static ObjectReader createReader( Reader w ) {
-        return createReader( w, Integer.valueOf( VersaoLayout.getLastVersionImpl().getCodigo() ) );
+        return createReader( w, (Integer) null );
     }
 
     public static ObjectReader createReader( Reader w, VersaoLayout versaoLayout ) {
         return createReader( w, Integer.valueOf( versaoLayout.getCodigo() ) );
     }
 
-    public static ObjectReader createReader( Reader r, int version ) {
+    public static ObjectReader createReader( Reader r, Integer version ) {
         DelimitedReader reader = new DelimitedReader( r );
-        reader.setVersion( version );
         reader.setDelimiter( '|' );
         reader.setRecordInitializator( "|" );
         reader.setRemoveRecordInitializator( true );
         reader.setIgnoreUnknownRecords( false );
+
+        // auto-detect version
+        if (version == null){
+            reader.setIdResolver(new CallbackImpl(reader));
+        } else {
+            reader.setVersion( version );
+        }
+
 
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor( Enum.class, CustomEnumHandler.class );
 
@@ -67,5 +72,22 @@ public class ReaderFactory {
         DefaultDateHandler.setPatternDefault( "ddMMyyyy" );
 
         return reader;
+    }
+
+    private static class CallbackImpl implements Callback<String, String> {
+
+        private final DelimitedReader reader;
+
+        public CallbackImpl( DelimitedReader reader ) {
+            this.reader = reader;
+        }
+
+        @Override
+        public String call( String line ) {
+            String[] fields = line.split( "\\|");
+            reader.setVersion( Integer.parseInt(fields[1]) );
+            reader.setIdResolver( null );
+            return fields[0];
+        }
     }
 }

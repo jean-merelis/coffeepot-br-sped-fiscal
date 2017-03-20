@@ -23,25 +23,31 @@ package coffeepot.br.sped.fiscal.tipos;
  * #L%
  */
 
-
 /**
  * Indicador do tipo de pagamento, referenciado no registro C0100.
  *
  * @author Jeandeson O. Merelis
  */
-public enum CondicaoPagamento  implements EnumCodificado{
+public enum CondicaoPagamento implements EnumCodificado {
 
-    A_VISTA("0"),
-    A_PRAZO("1"),
-    OUTROS("2");
-    private final String codigo;
+	A_VISTA("0"), A_PRAZO("1"), OUTROS("2");
+	private final String codigo;
 
-    private CondicaoPagamento(String codigo) {
-        this.codigo = codigo;
-    }
+	private CondicaoPagamento(String codigo) {
+		this.codigo = codigo;
+	}
 
-    @Override
-    public String getCodigo() {
-        return codigo;
-    }
+	@Override
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public static CondicaoPagamento getByCodigo(String codigo) {
+		for (CondicaoPagamento condicao : CondicaoPagamento.values()) {
+			if (condicao.getCodigo().equals(codigo)) {
+				return condicao;
+			}
+		}
+		return null;
+	}
 }

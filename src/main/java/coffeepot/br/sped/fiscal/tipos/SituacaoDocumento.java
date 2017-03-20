@@ -23,58 +23,66 @@ package coffeepot.br.sped.fiscal.tipos;
  * #L%
  */
 
-
 /**
  * Situação do Documento, referenciado no registro C100.
  *
  * @author Jeandeson O. Merelis
  */
-public enum SituacaoDocumento  implements EnumCodificado{
-    /**
-     * Documento regular.
-     */
-    REGULAR( "00" ),
-    /**
-     * Escrituração extemporânea de documento regular.
-     */
-    EXTEMPORANEA_REGULAR( "01" ),
-    /**
-     * Documento cancelado.
-     */
-    CANCELADO( "02" ),
-    /**
-     * Escrituração extemporânea de documento cancelado.
-     */
-    EXTEMPORANEA_CANCELADO( "03" ),
-    /**
-     * NF-e, NFC-e ou CT-e denegado.
-     */
-    DENEGADO( "04" ),
-    /**
-     * Numeração inutilizada.
-     */
-    NUM_INUTILIZADO( "05" ),
-    /**
-     * Documento Fiscal Complementar.
-     */
-    COMPLEMENTAR( "06" ),
-    /**
-     * Escrituração extemporânea de documento complementar.
-     */
-    EXTEMPORANEA_COMPLEMENTAR( "07" ),
-    /**
-     * Documento Fiscal emitido com base em Regime Especial ou Norma Específica.
-     */
-    ESPECIAL( "08" );
+public enum SituacaoDocumento implements EnumCodificado {
+	/**
+	 * Documento regular.
+	 */
+	REGULAR("00"),
+	/**
+	 * Escrituração extemporânea de documento regular.
+	 */
+	EXTEMPORANEA_REGULAR("01"),
+	/**
+	 * Documento cancelado.
+	 */
+	CANCELADO("02"),
+	/**
+	 * Escrituração extemporânea de documento cancelado.
+	 */
+	EXTEMPORANEA_CANCELADO("03"),
+	/**
+	 * NF-e, NFC-e ou CT-e denegado.
+	 */
+	DENEGADO("04"),
+	/**
+	 * Numeração inutilizada.
+	 */
+	NUM_INUTILIZADO("05"),
+	/**
+	 * Documento Fiscal Complementar.
+	 */
+	COMPLEMENTAR("06"),
+	/**
+	 * Escrituração extemporânea de documento complementar.
+	 */
+	EXTEMPORANEA_COMPLEMENTAR("07"),
+	/**
+	 * Documento Fiscal emitido com base em Regime Especial ou Norma Específica.
+	 */
+	ESPECIAL("08");
 
-    private final String codigo;
+	private final String codigo;
 
-    private SituacaoDocumento( String codigo ) {
-        this.codigo = codigo;
-    }
+	private SituacaoDocumento(String codigo) {
+		this.codigo = codigo;
+	}
 
-    @Override
-    public String getCodigo() {
-        return codigo;
-    }
+	@Override
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public static SituacaoDocumento getByCodigo(String codigo) {
+		for (SituacaoDocumento situacao : SituacaoDocumento.values()) {
+			if (situacao.getCodigo().equals(codigo)) {
+				return situacao;
+			}
+		}
+		return null;
+	}
 }

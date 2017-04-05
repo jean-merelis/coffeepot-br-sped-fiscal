@@ -36,8 +36,8 @@ import lombok.Setter;
     @Field(name = "num", maxLength = 10),
     @Field(name = "compl", maxLength = 60),
     @Field(name = "bairro", maxLength = 60),
-    @Field(name = "fone", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
-    @Field(name = "fax", length = 11, paddingIfNullOrEmpty = true, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "fone", maxLength = 11, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
+    @Field(name = "fax", maxLength = 11, params = {DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY}),
     @Field(name = "email")
 })
 @Getter

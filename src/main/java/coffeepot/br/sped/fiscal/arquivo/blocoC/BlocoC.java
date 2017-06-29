@@ -43,12 +43,12 @@ import lombok.Setter;
     @Field(name = "regC350List"),
     @Field(name = "regC400List"),
     @Field(name = "regC495List"),
+    @Field(name = "regC860List"),
     //TODO: Registros Bloco C ainda não implementados
     //    @Field(name = "regC500List"),
     //    @Field(name = "regC600List"),
     //    @Field(name = "regC700List"),
     //    @Field(name = "regC800List"),
-    //    @Field(name = "regC860List"),              
     @Field(name = "regC990")
 })
 @Getter
@@ -61,12 +61,12 @@ public class BlocoC {
     private List<RegC350> regC350List;
     private List<RegC400> regC400List;
     private List<RegC495> regC495List;
+    private List<RegC860> regC860List;
     //TODO: Registros Bloco C ainda não implementados
 //    private List<RegC500> regC500List;
 //    private List<RegC600> regC600List;
 //    private List<RegC700> regC700List;
 //    private List<RegC800> regC800List;
-//    private List<RegC860> regC860List;              
     private RegC990 regC990;
     
 }

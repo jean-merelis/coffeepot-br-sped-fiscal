@@ -21,15 +21,14 @@ Download from Maven central
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.5</version>
+            <version>1.0.0-Beta.7</version>
         </dependency>
 ```
 
 Exemplo escrevendo registro a registro no arquivo:
 ```java
 //Criando o escritor do Sped Fiscal
-Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));
-SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
+SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(file);
 
 Reg0000 reg = new Reg0000();
 //atribui os dados do registro
@@ -53,8 +52,7 @@ Exemplo escrevendo um bloco inteiro no arquivo:
 
 ```java
 //Criando o escritor do Sped Fiscal
-Writer fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "ISO-8859-1"));
-SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(fw);
+SpedFiscalWriter spedFiscalWriter = new SpedFiscalWriter(file);
 
 Bloco0 bloco0 = new Bloco0();
 //atribui os registros do bloco

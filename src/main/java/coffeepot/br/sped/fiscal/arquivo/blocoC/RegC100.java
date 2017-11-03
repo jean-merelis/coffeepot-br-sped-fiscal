@@ -74,6 +74,7 @@ import lombok.Setter;
     @Field(name = "vlPisSt"),
     @Field(name = "vlCofinsSt"),
     //--- detalhes ---
+    @Field(name = "regC101"),
     @Field(name = "regC105"),
     @Field(name = "regC110List"),
     @Field(name = "regC120List"),
@@ -117,6 +118,7 @@ public class RegC100 {
     private Double vlPisSt;
     private Double vlCofinsSt;
     //--- detalhes ---
+    private RegC101 regC101;
     private RegC105 regC105;
     private List<RegC110> regC110List;
     private List<RegC120> regC120List;

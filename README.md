@@ -10,7 +10,7 @@ Para manter uma relação com a documentação oficial do Sped e facilitar o ent
 Projeto baseado em Maven. Utilizando JDK 1.7
 
 Documentação técnica e layout:
-  http://www.fazenda.gov.br/confaz/confaz/Atos/Atos_Cotepe/2008/ac009_08.htm
+  http://sped.rfb.gov.br/estatico/55/84F292AA956E838ED01DB91A8D4C6ECD9E53C8/GUIA%20PR%C3%81TICO%20DA%20EFD%20-%20Vers%C3%A3o%202.0.20.pdf
 
 Dependência: coffeepot-bean-wr -
 	https://github.com/jean-merelis/coffeepot-bean-wr
@@ -21,7 +21,7 @@ Download from Maven central
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.7</version>
+            <version>1.0.0-Beta.8</version>
         </dependency>
 ```
 

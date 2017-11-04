@@ -3,8 +3,6 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
-import java.util.Date;
-import java.util.List;
 
 /*
  * #%L
@@ -36,8 +34,10 @@ import coffeepot.br.sped.fiscal.tipos.EmissaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.Frete;
 import coffeepot.br.sped.fiscal.tipos.Operacao;
 import coffeepot.br.sped.fiscal.tipos.SituacaoDocumento;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 /**
  *
@@ -97,8 +97,8 @@ public class RegC100 {
     private String ser;
     private Long numDoc;
     private String chvNfe;
-    private Date dtDoc;
-    private Date dtES;
+    private LocalDate dtDoc;
+    private LocalDate dtES;
     private Double vlDoc;
     private CondicaoPagamento indPgto;
     private Double vlDesc;

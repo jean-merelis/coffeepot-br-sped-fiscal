@@ -30,7 +30,13 @@ import coffeepot.bean.wr.writer.DelimitedWriter;
 import coffeepot.bean.wr.writer.ObjectWriter;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalDateHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalDateTimeHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalTimeHandler;
 import java.io.Writer;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  *
@@ -41,11 +47,11 @@ public class WriterFactory {
 	public static ObjectWriter createObjectWriter(Writer w){
 		return createObjectWriter(w, Integer.valueOf(VersaoLayout.getLastVersionImpl().getCodigo()));
 	}
-	
+
 	public static ObjectWriter createObjectWriter(Writer w, VersaoLayout versaoLayout){
 		return createObjectWriter(w, Integer.valueOf(versaoLayout.getCodigo()));
 	}
-	
+
     public static ObjectWriter createObjectWriter(Writer w, int version) {
         ObjectWriter beanWriter = DelimitedWriter.create(w)
                 .withDelimiter('|')
@@ -56,15 +62,13 @@ public class WriterFactory {
 
 
         beanWriter.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(Enum.class, CustomEnumHandler.class);
+        beanWriter.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalDate.class, LocalDateHandler.class);
+        beanWriter.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalDateTime.class, LocalDateTimeHandler.class);
+        beanWriter.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalTime.class, LocalTimeHandler.class);
 
         DefaultDoubleHandler.setPatternDefault("#0.##########");
         DefaultDoubleHandler.setDecimalSeparatorDefault(',');
         DefaultDoubleHandler.setGroupingSeparatorDefault('.');
-
-        DefaultDateHandler.setPatternDefaultForDate("ddMMyyyy");
-        DefaultDateHandler.setPatternDefaultForTime("HHmmss");
-        DefaultDateHandler.setPatternDefaultForDateTime("ddMMyyyyHHmmss");
-        DefaultDateHandler.setPatternDefault("ddMMyyyy");
 
         return beanWriter;
     }

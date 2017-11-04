@@ -3,8 +3,6 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
-import java.util.Date;
-
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -29,6 +27,7 @@ import java.util.Date;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.EnumCodificado;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -55,8 +54,8 @@ public class RegC112 {
     private String numDa;
     private String codAut;
     private Double vlDa;
-    private Date dtVcto;
-    private Date dtPgto;
+    private LocalDate dtVcto;
+    private LocalDate dtPgto;
 
     public enum DocumentoArrecadacao implements EnumCodificado {
 

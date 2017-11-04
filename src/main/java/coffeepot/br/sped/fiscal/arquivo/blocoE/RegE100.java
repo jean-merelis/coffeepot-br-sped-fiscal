@@ -22,13 +22,10 @@ package coffeepot.br.sped.fiscal.arquivo.blocoE;
  * limitations under the License.
  * #L%
  */
-
-
-import java.util.Date;
-
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,8 +42,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RegE100{
-    private Date dtIni;
-    private Date dtFin;
+    private LocalDate dtIni;
+    private LocalDate dtFin;
     private RegE110 regE110;
-    
+
 }

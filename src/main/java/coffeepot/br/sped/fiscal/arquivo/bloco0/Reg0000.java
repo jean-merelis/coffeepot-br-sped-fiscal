@@ -32,10 +32,9 @@ import coffeepot.br.sped.fiscal.tipos.FinalidadeArquivo;
 import coffeepot.br.sped.fiscal.tipos.IndicadorAtividade;
 import coffeepot.br.sped.fiscal.tipos.Perfil;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 /**
  *
@@ -64,8 +63,8 @@ public class Reg0000 {
 
     private VersaoLayout codVer;
     private FinalidadeArquivo codFin;
-    private Date dtIni;
-    private Date dtFin;
+    private LocalDate dtIni;
+    private LocalDate dtFin;
     private String nome;
     private String cnpj;
     private String cpf;

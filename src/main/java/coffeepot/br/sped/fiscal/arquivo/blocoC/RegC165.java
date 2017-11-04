@@ -3,8 +3,6 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
-import java.util.Date;
-
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -30,6 +28,7 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import coffeepot.bean.wr.types.Align;
+import java.time.LocalTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,7 +42,7 @@ import lombok.Setter;
     @Field(name = "veicId", params = {DefaultStringHandler.PARAM_FILTER_NUMBER_LETTERS_ONLY}),
     @Field(name = "codAut"),
     @Field(name = "nrPasse"),
-    @Field(name = "hora", params = {"time"}),
+    @Field(name = "hora"),
     @Field(name = "temper"),
     @Field(name = "qtdVol"),
     @Field(name = "pesoBrt"),
@@ -60,7 +59,7 @@ public class RegC165 {
     private String veicId;
     private String codAut;
     private String nrPasse;
-    private Date hora;
+    private LocalTime hora;
     private Double temper;
     private Integer qtdVol;
     private Double pesoBrt;
@@ -68,5 +67,5 @@ public class RegC165 {
     private String nomMot;
     private String cpf;
     private String ufId;
-    
+
 }

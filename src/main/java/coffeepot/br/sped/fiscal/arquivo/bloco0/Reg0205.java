@@ -26,10 +26,10 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 
 /**
  *
@@ -47,8 +47,8 @@ import java.util.Date;
 public class Reg0205 {
 
     private String descrAntItem;
-    private Date dtIni;
-    private Date dtFim;
+    private LocalDate dtIni;
+    private LocalDate dtFim;
     private String codAntItem;
 
 }

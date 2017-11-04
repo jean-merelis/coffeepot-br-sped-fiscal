@@ -37,6 +37,7 @@ import coffeepot.br.sped.fiscal.arquivo.EstruturaTest;
 import coffeepot.br.sped.fiscal.tipos.IndicadorMovimento;
 import coffeepot.br.sped.fiscal.util.RecordCounter;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
+import java.time.LocalDate;
 import org.junit.Test;
 
 /**
@@ -101,8 +102,8 @@ public class BlocoETest {
     public static RegE100 createRegE100() {
 
         RegE100 reg = new RegE100();
-        reg.setDtIni(Calendar.getInstance().getTime());
-        reg.setDtFin(Calendar.getInstance().getTime());
+        reg.setDtIni(LocalDate.now());
+        reg.setDtFin(LocalDate.now());
 
         RegE110 re110 = new RegE110();
         re110.setVlTotDebitos(2000.00);

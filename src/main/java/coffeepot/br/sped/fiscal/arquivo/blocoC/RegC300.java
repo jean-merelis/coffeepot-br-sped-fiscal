@@ -27,10 +27,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -62,7 +61,7 @@ public class RegC300 {
     private String sub;
     private Integer numDocIni;
     private Integer numDocFin;
-    private Date dtDoc;
+    private LocalDate dtDoc;
     private Double vlDoc;
     private Double vlPis;
     private Double vlCofins;

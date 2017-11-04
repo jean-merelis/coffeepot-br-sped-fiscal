@@ -27,10 +27,9 @@ package coffeepot.br.sped.fiscal.arquivo.blocoH;
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.MotivoInventario;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,7 +47,7 @@ import java.util.List;
 @Setter
 public class RegH005 {
 
-    private Date dtInv;
+    private LocalDate dtInv;
     private Double vlInv;
     private MotivoInventario motInv;
     private List<RegH010> regH010List;

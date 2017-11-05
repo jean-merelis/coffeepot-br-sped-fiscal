@@ -4,10 +4,11 @@ coffeepot-br-sped-fiscal
 Project to be used in Brazil to write file in accordance to local regulations.
 
 Este projeto é um mapeamento de classes Java para formatação e gravação do arquivo texto no layout definido para o SPED Fiscal.
+O projeto também possui um componente de leitura dos arquivos.
 
-Para manter uma relação com a documentação oficial do Sped e facilitar o entendimento dos campos, os nomes dos campos seguem a mesma nomeclatura que está no layout técnico do Sped, mas sem a utilização do underline, usando a notação camelCase.
+Para manter uma relação com a documentação oficial do SPED e facilitar o entendimento dos campos, os nomes dos campos seguem a mesma nomeclatura que está no layout técnico do Sped, mas sem a utilização do underline, usando a notação camelCase.
 
-Projeto baseado em Maven. Utilizando JDK 1.7
+Requer JDK 1.8
 
 Documentação técnica e layout:
   http://sped.rfb.gov.br/estatico/55/84F292AA956E838ED01DB91A8D4C6ECD9E53C8/GUIA%20PR%C3%81TICO%20DA%20EFD%20-%20Vers%C3%A3o%202.0.20.pdf
@@ -15,15 +16,22 @@ Documentação técnica e layout:
 Dependência: coffeepot-bean-wr -
 	https://github.com/jean-merelis/coffeepot-bean-wr
 
-Download from Maven central
+##Maven central
 
 ```xml
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.8</version>
+            <version>1.0.0-Beta.9</version>
         </dependency>
 ```
+
+##BREAKING CHANGES
+
+A partir da versão 1.0.0-Beta.9 o projeto passa a utilizar a nova API de datas do Java 8. 
+
+
+##Exemplos
 
 Exemplo escrevendo registro a registro no arquivo:
 ```java

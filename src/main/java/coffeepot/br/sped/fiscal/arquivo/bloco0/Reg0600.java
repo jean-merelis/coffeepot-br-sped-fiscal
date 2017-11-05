@@ -26,10 +26,9 @@ package coffeepot.br.sped.fiscal.arquivo.bloco0;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 /**
  *
@@ -44,7 +43,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Reg0600 {
-    private Date dtAlt;
+    private LocalDate dtAlt;
     private String codCcus;
     private String ccus;
 

@@ -28,10 +28,9 @@ import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.NaturezaContaContabil;
 import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 /**
  *
@@ -50,7 +49,7 @@ import java.util.Date;
 @Setter
 public class Reg0500 {
 
-    private Date dtAlt;
+    private LocalDate dtAlt;
     private NaturezaContaContabil codNatCc;
     private TipoContaContabil indCta;
     private Integer nivel;

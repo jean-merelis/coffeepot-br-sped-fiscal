@@ -22,21 +22,18 @@ package coffeepot.br.sped.fiscal.arquivo.blocoC;
  * limitations under the License.
  * #L%
  */
-
-
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 /**
  *
  * @author Jeandeson O. Merelis
  */
 @Record(fields = {
-    @Field(name = "", id=true, constantValue = "C173"),
+    @Field(name = "", id = true, constantValue = "C173"),
     @Field(name = "loteMed"),
     @Field(name = "qtdItem"),
     @Field(name = "dtFab"),
@@ -51,8 +48,8 @@ public class RegC173 {
 
     private String loteMed;
     private Double qtdItem;
-    private Date dtFab;
-    private Date dtVal;
+    private LocalDate dtFab;
+    private LocalDate dtVal;
     private String indMed;
     private String tpProd;
     private Double vlTabMax;

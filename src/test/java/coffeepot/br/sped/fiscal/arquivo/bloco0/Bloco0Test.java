@@ -58,6 +58,7 @@ import coffeepot.br.sped.fiscal.tipos.TipoContaContabil;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.util.Util;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
+import java.time.LocalDate;
 
 /**
  *
@@ -199,8 +200,8 @@ public class Bloco0Test {
         reg.setCodFin(FinalidadeArquivo.ARQUIVO_ORIGINAL);
         reg.setCodMun(555);
         reg.setCodVer(VersaoLayout.getLastVersionImpl());
-        reg.setDtFin(new Date());
-        reg.setDtIni(new Date());
+        reg.setDtFin(LocalDate.now());
+        reg.setDtIni(LocalDate.now());
         reg.setIe("AA-1516BBB-16.5");
         reg.setIm("adfdfa1111");
         reg.setIndAtiv(IndicadorAtividade.INDUSTRIAL);
@@ -293,14 +294,14 @@ public class Bloco0Test {
         List<Reg0175> list = new ArrayList<>();
 
         Reg0175 r0175 = new Reg0175();
-        r0175.setDtAlt(new Date());
+        r0175.setDtAlt(LocalDate.now());
         r0175.setNrCamp(3);
         r0175.setContAnt("Joana da silva");
 
         list.add(r0175);
 
         r0175 = new Reg0175();
-        r0175.setDtAlt(new Date());
+        r0175.setDtAlt(LocalDate.now());
         r0175.setNrCamp(10);
         r0175.setContAnt("Rua Sem Nome");
         list.add(r0175);
@@ -375,19 +376,19 @@ public class Bloco0Test {
         reg0205 = new Reg0205();
         reg0205.setCodAntItem("CODIGO ANTERIOR");
         reg0205.setDescrAntItem("Descricao anterior");
-        reg0205.setDtIni(new Date());
+        reg0205.setDtIni(LocalDate.now());
         reg0205.setDtFim(reg0205.getDtIni());
         reg0205List.add(reg0205);
         reg0205 = new Reg0205();
         reg0205.setCodAntItem("CODIGO ANTERIOR 2");
         reg0205.setDescrAntItem("Descricao anterior 2");
-        reg0205.setDtIni(new Date());
+        reg0205.setDtIni(LocalDate.now());
         reg0205.setDtFim(reg0205.getDtIni());
         reg0205List.add(reg0205);
         reg0205 = new Reg0205();
         reg0205.setCodAntItem("CODIGO ANTERIOR 3");
         reg0205.setDescrAntItem("Descricao anterior 3");
-        reg0205.setDtIni(new Date());
+        reg0205.setDtIni(LocalDate.now());
         reg0205.setDtFim(reg0205.getDtIni());
         reg0205List.add(reg0205);
 
@@ -499,7 +500,7 @@ public class Bloco0Test {
         reg = new Reg0500();
         reg.setCodCta("cod conta");
         reg.setCodNatCc(NaturezaContaContabil.ATIVO);
-        reg.setDtAlt(new Date());
+        reg.setDtAlt(LocalDate.now());
         reg.setIndCta(TipoContaContabil.SINTETICA);
         reg.setNivel(1);
         reg.setNomeCta("Nome da conta");
@@ -508,7 +509,7 @@ public class Bloco0Test {
         reg = new Reg0500();
         reg.setCodCta("cod conta 2");
         reg.setCodNatCc(NaturezaContaContabil.PASSIVO);
-        reg.setDtAlt(new Date());
+        reg.setDtAlt(LocalDate.now());
         reg.setIndCta(TipoContaContabil.ANALITICA);
         reg.setNivel(1);
         reg.setNomeCta("Nome da conta 2");
@@ -525,13 +526,13 @@ public class Bloco0Test {
         reg = new Reg0600();
         reg.setCodCcus("codigo centro custo");
         reg.setCcus("nome centro custo");
-        reg.setDtAlt(new Date());
+        reg.setDtAlt(LocalDate.now());
         list.add(reg);
 
         reg = new Reg0600();
         reg.setCodCcus("codigo centro custo 2");
         reg.setCcus("nome centro custo 2");
-        reg.setDtAlt(new Date());
+        reg.setDtAlt(LocalDate.now());
         list.add(reg);
         return list;
     }

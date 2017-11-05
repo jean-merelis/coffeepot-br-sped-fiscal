@@ -23,13 +23,11 @@ package coffeepot.br.sped.fiscal.arquivo.blocoE;
  * #L%
  */
 
-
-import java.util.Date;
-
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -51,13 +49,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RegE113{
-	
+
 	private String codPart;
 	private DocumentoFiscal codMod;
 	private String ser;
 	private Integer sub;
 	private Long numDoc;
-	private Date dtDoc;
+	private LocalDate dtDoc;
 	private String codItem;
 	private Double vlAjItem;
 

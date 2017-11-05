@@ -22,15 +22,12 @@ package coffeepot.br.sped.fiscal.arquivo.blocoE;
  * limitations under the License.
  * #L%
  */
-
-
-import java.util.Date;
-
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
 import coffeepot.bean.wr.types.AccessorType;
 import coffeepot.br.sped.fiscal.tipos.IndicadorOrigemProcesso;
 import coffeepot.br.sped.fiscal.tipos.ObrigacaoIcmsRecolher;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,28 +36,29 @@ import lombok.Setter;
  * @author Mauricio R. Morais
  */
 @Record(accessorType = AccessorType.PROPERTY, fields = {
-    @Field(name = "reg", id = true, constantValue="E116"),
-	@Field(name = "codOr"),
-	@Field(name = "vlOr"),
-	@Field(name = "dtVcto"),
-	@Field(name = "codRec"),
-	@Field(name = "numProc", maxLength = 15),
-	@Field(name = "indProc"),
-	@Field(name = "proc"),
-	@Field(name = "txtCompl"),
-	@Field(name = "mesRef")
+    @Field(name = "reg", id = true, constantValue = "E116"),
+    @Field(name = "codOr"),
+    @Field(name = "vlOr"),
+    @Field(name = "dtVcto"),
+    @Field(name = "codRec"),
+    @Field(name = "numProc", maxLength = 15),
+    @Field(name = "indProc"),
+    @Field(name = "proc"),
+    @Field(name = "txtCompl"),
+    @Field(name = "mesRef")
 })
 @Getter
 @Setter
-public class RegE116{
-	private ObrigacaoIcmsRecolher codOr;
-	private Double vlOr;
-	private Date dtVcto;
-	private String codRec;
-	private String numProc;
-	private IndicadorOrigemProcesso indProc;
-	private String proc;
-	private String txtCompl;
-	private String mesRef;
-	
+public class RegE116 {
+    
+    private ObrigacaoIcmsRecolher codOr;
+    private Double vlOr;
+    private LocalDate dtVcto;
+    private String codRec;
+    private String numProc;
+    private IndicadorOrigemProcesso indProc;
+    private String proc;
+    private String txtCompl;
+    private String mesRef;
+
 }

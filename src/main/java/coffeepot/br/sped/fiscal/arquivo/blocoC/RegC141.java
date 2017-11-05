@@ -3,8 +3,6 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
-import java.util.Date;
-
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -28,6 +26,7 @@ import java.util.Date;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,7 +45,7 @@ import lombok.Setter;
 public class RegC141 {
 
     private Integer numParc;
-    private Date dtVcto;
+    private LocalDate dtVcto;
     private Double vlParc;
 
 }

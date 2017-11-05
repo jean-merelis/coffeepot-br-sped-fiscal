@@ -51,6 +51,8 @@ import coffeepot.br.sped.fiscal.tipos.TipoTituloCredito;
 import coffeepot.br.sped.fiscal.tipos.TipoTransporte;
 import coffeepot.br.sped.fiscal.util.RecordCounter;
 import coffeepot.br.sped.fiscal.writer.SpedFiscalWriter;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
@@ -86,11 +88,11 @@ public class BlocoCTest {
         bloco.setRegC100List(createRegC100List());
         //TODO: completar testes bloco C
         //bloco.setRegC300List(createRegC300List());
-       
-        
-        long sizeOf = RecordCounter.count(bloco);        
+
+
+        long sizeOf = RecordCounter.count(bloco);
         RegC990 regC990 = new RegC990(sizeOf + 1);
-        
+
         bloco.setRegC990(regC990);
         return bloco;
     }
@@ -115,7 +117,7 @@ public class BlocoCTest {
         reg.setCodMod(DocumentoFiscal.M55);
         reg.setCodPart("0001");
         reg.setCodSit(SituacaoDocumento.REGULAR);
-        reg.setDtDoc(new Date());
+        reg.setDtDoc(LocalDate.now());
         reg.setIndEmit(EmissaoDocumento.PROPRIA);
         reg.setIndFrt(Frete.EMITENTE);
         reg.setIndOper(Operacao.SAIDA);
@@ -206,8 +208,8 @@ public class BlocoCTest {
         RegC112 reg = new RegC112();
         reg.setCodAut("Cod aut");
         reg.setCodDa(RegC112.DocumentoArrecadacao.GNRE);
-        reg.setDtPgto(new Date());
-        reg.setDtVcto(new Date());
+        reg.setDtPgto(LocalDate.now());
+        reg.setDtVcto(LocalDate.now());
         reg.setNumDa("num DA");
         reg.setUf("ES");
         reg.setVlDa(88.0);
@@ -226,7 +228,7 @@ public class BlocoCTest {
         RegC113 reg = new RegC113();
         reg.setCodMod(DocumentoFiscal.M16);
         reg.setCodPart("0001");
-        reg.setDtDoc(new Date());
+        reg.setDtDoc(LocalDate.now());
         reg.setIndEmit(EmissaoDocumento.TERCEIROS);
         reg.setIndOper(Operacao.ENTRADA);
         reg.setNumDoc(123L);
@@ -246,7 +248,7 @@ public class BlocoCTest {
     public static RegC114 createRegC114() {
         RegC114 reg = new RegC114();
         reg.setCodMod(DocumentoFiscal.M16);
-        reg.setDtDoc(new Date());
+        reg.setDtDoc(LocalDate.now());
         reg.setEcfCx(1);
         reg.setEcfFab("FAB000000000000000000001");
         reg.setNumDoc(123L);
@@ -285,7 +287,7 @@ public class BlocoCTest {
         RegC116 reg = new RegC116();
         reg.setChvCfe("1234567890 1234567890 1234564567890 1234567890 1234");
         reg.setCodMod(DocumentoFiscal.M65);
-        reg.setDtDoc(new Date());
+        reg.setDtDoc(LocalDate.now());
         reg.setNrSat("000000001");
         reg.setNumCfe(123);
         return reg;
@@ -345,7 +347,7 @@ public class BlocoCTest {
 
     public static RegC141 createRegC141() {
         RegC141 reg = new RegC141();
-        reg.setDtVcto(new Date());
+        reg.setDtVcto(LocalDate.now());
         reg.setNumParc(1);
         reg.setVlParc(33.33);
         return reg;
@@ -375,7 +377,7 @@ public class BlocoCTest {
         reg.setCodAut("lakdfjalk");
         reg.setCodPart("0001");
         reg.setCpf("123 123 123 11");
-        reg.setHora(new Date());
+        reg.setHora(LocalTime.now());
         reg.setNomMot("Fulano de Tal");
         reg.setNrPasse("213156465");
         reg.setPesoBrt(1500.5);
@@ -488,8 +490,8 @@ public class BlocoCTest {
 
     public static RegC173 createRegC173() {
         RegC173 reg = new RegC173();
-        reg.setDtFab(new Date());
-        reg.setDtVal(new Date());
+        reg.setDtFab(LocalDate.now());
+        reg.setDtVal(LocalDate.now());
         reg.setIndMed("1");
         reg.setLoteMed("123");
         reg.setQtdItem(12.12);
@@ -543,7 +545,7 @@ public class BlocoCTest {
         RegC176 reg = new RegC176();
         reg.setCodModUltE("00");
         reg.setCodPartUltE("0001");
-        reg.setDtUltE(new Date());
+        reg.setDtUltE(LocalDate.now());
         reg.setNumDocUltE(123L);
         reg.setQuantUltE(12.12);
         reg.setSerUltE("1");

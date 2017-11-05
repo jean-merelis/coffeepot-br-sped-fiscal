@@ -29,7 +29,13 @@ import coffeepot.bean.wr.typeHandler.DefaultDateHandler;
 import coffeepot.bean.wr.typeHandler.DefaultDoubleHandler;
 import coffeepot.br.sped.fiscal.tipos.VersaoLayout;
 import coffeepot.br.sped.fiscal.typeHandler.CustomEnumHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalDateHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalDateTimeHandler;
+import coffeepot.br.sped.fiscal.typeHandler.LocalTimeHandler;
 import java.io.Reader;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  *
@@ -61,15 +67,14 @@ public class ReaderFactory {
 
 
         reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor( Enum.class, CustomEnumHandler.class );
+        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalDate.class, LocalDateHandler.class);
+        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalDateTime.class, LocalDateTimeHandler.class);
+        reader.getObjectMapperFactory().getHandlerFactory().registerTypeHandlerClassFor(LocalTime.class, LocalTimeHandler.class);
 
         DefaultDoubleHandler.setPatternDefault( "#0.##########" );
         DefaultDoubleHandler.setDecimalSeparatorDefault( ',' );
         DefaultDoubleHandler.setGroupingSeparatorDefault( '.' );
 
-        DefaultDateHandler.setPatternDefaultForDate( "ddMMyyyy" );
-        DefaultDateHandler.setPatternDefaultForTime( "HHmmss" );
-        DefaultDateHandler.setPatternDefaultForDateTime( "ddMMyyyyHHmmss" );
-        DefaultDateHandler.setPatternDefault( "ddMMyyyy" );
 
         return reader;
     }

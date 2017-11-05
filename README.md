@@ -16,7 +16,7 @@ Documentação técnica e layout:
 Dependência: coffeepot-bean-wr -
 	https://github.com/jean-merelis/coffeepot-bean-wr
 
-##Maven central
+## Maven central
 
 ```xml
         <dependency>
@@ -26,12 +26,12 @@ Dependência: coffeepot-bean-wr -
         </dependency>
 ```
 
-##BREAKING CHANGES
+## BREAKING CHANGES
 
 A partir da versão 1.0.0-Beta.9 o projeto passa a utilizar a nova API de datas do Java 8. 
 
 
-##Exemplos
+## Exemplos
 
 Exemplo escrevendo registro a registro no arquivo:
 ```java

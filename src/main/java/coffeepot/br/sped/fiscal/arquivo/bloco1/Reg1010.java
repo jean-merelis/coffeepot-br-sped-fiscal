@@ -43,7 +43,10 @@ import lombok.Setter;
     @Field(name = "indEe", params = "S;N"),
     @Field(name = "indCart", params = "S;N"),
     @Field(name = "indForm", params = "S;N"),
-    @Field(name = "indAer", params = "S;N")
+    @Field(name = "indAer", params = "S;N"),
+    @Field(name = "indGiaf1", params = "S;N"),
+    @Field(name = "indGiaf3", params = "S;N"),
+    @Field(name = "indGiaf4", params = "S;N")
 })
 @Getter
 @Setter
@@ -58,5 +61,8 @@ public class Reg1010 {
     private Boolean indCart;
     private Boolean indForm;
     private Boolean indAer;
+    private Boolean indGiaf1;
+    private Boolean indGiaf3;
+    private Boolean indGiaf4;
 
 }

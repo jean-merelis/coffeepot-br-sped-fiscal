@@ -1,6 +1,7 @@
 /target/
 /*Test.txt
 *.tmp
+*.iml
 .classpath
 .project
 .settings

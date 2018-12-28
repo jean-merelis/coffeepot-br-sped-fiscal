@@ -44,9 +44,9 @@ import lombok.Setter;
     @Field(name = "indCart", params = "S;N"),
     @Field(name = "indForm", params = "S;N"),
     @Field(name = "indAer", params = "S;N"),
-    @Field(name = "indGiaf1", params = "S;N"),
-    @Field(name = "indGiaf3", params = "S;N"),
-    @Field(name = "indGiaf4", params = "S;N")
+    @Field(name = "indGiaf1", params = "S;N", minVersion = 13),
+    @Field(name = "indGiaf3", params = "S;N", minVersion = 13),
+    @Field(name = "indGiaf4", params = "S;N", minVersion = 13)
 })
 @Getter
 @Setter

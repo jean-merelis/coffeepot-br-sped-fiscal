@@ -46,7 +46,8 @@ import lombok.Setter;
     @Field(name = "ser"),
     @Field(name = "sub"),
     @Field(name = "numDoc"),
-    @Field(name = "dtDoc")
+    @Field(name = "dtDoc"),
+    @Field(name = "chvDocE")
 })
 @Getter
 @Setter
@@ -60,5 +61,6 @@ public class RegC113 {
     private Integer sub;
     private Long numDoc;
     private LocalDate dtDoc;
+    private String chvDocE;
 
 }

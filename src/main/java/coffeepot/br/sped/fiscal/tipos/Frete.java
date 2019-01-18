@@ -29,23 +29,36 @@ package coffeepot.br.sped.fiscal.tipos;
  */
 public enum Frete implements EnumCodificado {
 
-    EMITENTE(0),
-    DESTINATARIO_REMETENTE(1),
-    TERCEIROS(2),
-    SEM_FRETE(9);
+	// 0 - Contratação do Frete por conta do Remetente (CIF);
+	EMITENTE(0),
 
-    private final int codigo;
+	// 1 - Contratação do Frete por conta do Destinatário (FOB);
+	DESTINATARIO_REMETENTE(1),
 
-    private Frete(int codigo) {
-        this.codigo = codigo;
-    }
+	// 2 - Contratação do Frete por conta de Terceiros;
+	TERCEIROS(2),
+	
+	// 3 - Transporte Próprio por conta do Remetente;
+	PROPRIO_REMETENTE(3),
 
-    @Override
-    public String getCodigo() {
-        return String.valueOf(codigo);
-    }
+	// 4 - Transporte Próprio por conta do Destinatário;
+	PROPRIO_DESTINATARIO(4),
 
-    public int getCodigoAsInt() {
-        return codigo;
-    }
+	// 9 - Sem Ocorrência de Transporte
+	SEM_FRETE(9);
+
+	private final int codigo;
+
+	private Frete(int codigo) {
+		this.codigo = codigo;
+	}
+
+	@Override
+	public String getCodigo() {
+		return String.valueOf(codigo);
+	}
+
+	public int getCodigoAsInt() {
+		return codigo;
+	}
 }

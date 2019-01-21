@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoC;
 
+import java.time.LocalDate;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -29,7 +31,6 @@ import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sped.fiscal.tipos.DocumentoFiscal;
 import coffeepot.br.sped.fiscal.tipos.EmissaoDocumento;
 import coffeepot.br.sped.fiscal.tipos.Operacao;
-import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,7 +47,8 @@ import lombok.Setter;
     @Field(name = "ser"),
     @Field(name = "sub"),
     @Field(name = "numDoc"),
-    @Field(name = "dtDoc")
+    @Field(name = "dtDoc"),
+    @Field(name = "chvDocE", minVersion = 11)
 })
 @Getter
 @Setter
@@ -60,5 +62,6 @@ public class RegC113 {
     private Integer sub;
     private Long numDoc;
     private LocalDate dtDoc;
+    private String chvDocE;
 
 }

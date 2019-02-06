@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.bloco1;
 
+import java.util.List;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -46,7 +48,7 @@ import lombok.Setter;
     //    @Field(name = "reg1390List"),
     //    @Field(name = "reg1400List"),
     //    @Field(name = "reg1500List"),
-    //    @Field(name = "reg1600List"),
+    @Field(name = "reg1600List"),
     //    @Field(name = "reg1700List"),
     //    @Field(name = "reg1800"),
     //    @Field(name = "reg1900List"),
@@ -66,7 +68,7 @@ public class Bloco1 {
 //    private List<Reg1390> reg1390List;
 //    private List<Reg1400> reg1400List;
 //    private List<Reg1500> reg1500List;
-//    private List<Reg1600> reg1600List;
+    private List<Reg1600> reg1600List;
 //    private List<Reg1700> reg1700List;
 //    private Reg1800 reg1800;
 //    private List<Reg1900> reg1900List;

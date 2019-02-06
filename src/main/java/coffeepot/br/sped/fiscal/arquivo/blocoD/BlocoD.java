@@ -3,6 +3,8 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoD;
 
+import java.util.List;
+
 /*
  * #%L
  * coffeepot-br-sped-fiscal
@@ -36,8 +38,8 @@ import lombok.Setter;
  */
 @Record(fields = {
     @Field(name = "regD001"),
+    @Field(name = "regD100List"),
     //TODO: Registros Bloco D ainda não implementados
-    //    @Field(name = "regD100List"),
     //    @Field(name = "regD300List"),
     //    @Field(name = "regD350List"),
     //    @Field(name = "regD400List"),
@@ -51,8 +53,8 @@ import lombok.Setter;
 public class BlocoD {
 
     private RegD001 regD001;
+    private List<RegD100> regD100List;
     //TODO: Registros Bloco D ainda não implementados
-//    private List<RegD100> regD100List;
 //    private List<RegD300> regD300List;
 //    private List<RegD350> regD350List;
 //    private List<RegD400> regD400List;

@@ -23,24 +23,24 @@ package coffeepot.br.sped.fiscal.tipos;
  * #L%
  */
 
+
 /**
- * Indicador do emitente do documento fiscal, referenciado no registro C100,
- * C140 e D100.
- *
- * @author Jeandeson O. Merelis
+ * Indicador do tipo de operação, referenciado no registro D100.
+ * 
  */
-public enum EmissaoDocumento implements EnumCodificado {
+public enum OperacaoFrete implements EnumCodificado {
 
-    PROPRIA("0"),
-    TERCEIROS("1");
-    private final String codigo;
+    AQUISICAO(0),
+    PRESTACAO(1);
+    private final Integer codigo;
 
-    private EmissaoDocumento(String codigo) {
+    private OperacaoFrete(int codigo) {
         this.codigo = codigo;
     }
 
     @Override
     public String getCodigo() {
-        return codigo;
+        return codigo.toString();
     }
+   
 }

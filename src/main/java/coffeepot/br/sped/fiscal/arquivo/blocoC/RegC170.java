@@ -75,6 +75,7 @@ import lombok.Setter;
     @Field(name = "aliqCofinsReal"),
     @Field(name = "vlCofins"),
     @Field(name = "codCta"),
+    @Field(name = "vlAbatNt", minVersion = 13),
     //---
     @Field(name = "regC171List"),
     @Field(name = "regC172List"),
@@ -126,6 +127,7 @@ public class RegC170 {
     private Double aliqCofinsReal;
     private Double vlCofins;
     private String codCta;
+    private Double vlAbatNt;
     //---
     private List<RegC171> regC171List;
     private List<RegC172> regC172List;

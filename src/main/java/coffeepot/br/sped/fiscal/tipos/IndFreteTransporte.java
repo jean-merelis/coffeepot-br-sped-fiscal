@@ -22,25 +22,36 @@ package coffeepot.br.sped.fiscal.tipos;
  * limitations under the License.
  * #L%
  */
-
 /**
- * Indicador do emitente do documento fiscal, referenciado no registro C100,
- * C140 e D100.
+ * Indicador do tipo do frete referenciado no registro D100.
  *
- * @author Jeandeson O. Merelis
  */
-public enum EmissaoDocumento implements EnumCodificado {
+public enum IndFreteTransporte implements EnumCodificado {
 
-    PROPRIA("0"),
-    TERCEIROS("1");
-    private final String codigo;
+	// 0- Por conta do emitente;
+	EMITENTE(0),
 
-    private EmissaoDocumento(String codigo) {
-        this.codigo = codigo;
-    }
+	// 1- Por conta do destinatário/remetente;
+	DESTINATARIO_REMETENTE(1),
 
-    @Override
-    public String getCodigo() {
-        return codigo;
-    }
+	// 2- Por conta de terceiros;
+	TERCEIROS(2),
+	
+	// 9 - Sem cobrança de frete
+	SEM_FRETE(9);
+
+	private final int codigo;
+
+	private IndFreteTransporte(int codigo) {
+		this.codigo = codigo;
+	}
+
+	@Override
+	public String getCodigo() {
+		return String.valueOf(codigo);
+	}
+
+	public int getCodigoAsInt() {
+		return codigo;
+	}
 }

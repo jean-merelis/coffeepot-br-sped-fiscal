@@ -69,16 +69,17 @@ import lombok.Setter;
     @Field(name = "codMunOrig", minVersion = 12),
     @Field(name = "codMunDest", minVersion = 12),
     //--- detalhes ---
- /* @Field(name = "regD101"),
-    @Field(name = "regD110List"),
-    @Field(name = "regD130List"),
-    @Field(name = "regD140"),
-    @Field(name = "regD150"),
-    @Field(name = "regD160List"),
-    @Field(name = "regD170"),
-    @Field(name = "regD180List"),
+//    @Field(name = "regD101"),
+//    @Field(name = "regD110List"),
+//    @Field(name = "regD130List"),
+//    @Field(name = "regD140"),
+//    @Field(name = "regD150"),
+//    @Field(name = "regD160List"),
+//    @Field(name = "regD170"),
+//    @Field(name = "regD180List"),
     @Field(name = "regD190List"),
-    @Field(name = "regD195List"),*/})
+//    @Field(name = "regD195List")
+    })
 @Getter
 @Setter
 public class RegD100 {

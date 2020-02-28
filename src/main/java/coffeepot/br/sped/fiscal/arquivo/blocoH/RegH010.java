@@ -47,6 +47,7 @@ import java.util.List;
     @Field(name = "codPart"),
     @Field(name = "txtCompl"),
     @Field(name = "codCta"),
+    @Field(name = "vlItemIr"),
     //--
     @Field(name = "regH020List")
 })
@@ -63,6 +64,7 @@ public class RegH010 {
     private String codPart;
     private String txtCompl;
     private String codCta;
+    private Double vlItemIr;
     //---
     private List<RegH020> regH020List;
 

@@ -22,7 +22,7 @@ Dependência: coffeepot-bean-wr -
         <dependency>
             <groupId>com.github.jean-merelis</groupId>
             <artifactId>coffeepot-br-sped-fiscal</artifactId>
-            <version>1.0.0-Beta.16</version>
+            <version>1.0.0-Beta.18</version>
         </dependency>
 ```
 
